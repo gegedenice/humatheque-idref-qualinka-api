@@ -38,7 +38,7 @@ REFERENCES_ENDPOINT = os.getenv(
     "https://www.idref.fr/services/references/{ppn}.json",
 )
 USER_AGENT = os.getenv("IDREF_USER_AGENT", "humatheque-idref-qualinka-api/0.1")
-API_KEY = os.getenv("IDREF_API_KEY", "")
+API_KEY = os.getenv("API_KEY", "")
 RETRIED_STATUS = {429, 500, 502, 503, 504}
 
 DEFAULT_TIMEOUT = float(os.getenv("IDREF_HTTP_TIMEOUT", "20.0"))
@@ -360,9 +360,13 @@ def fetch_references(
         candidate.references = None
         return
 
-    for role in payload.get("roles", []):
-        if isinstance(role, dict) and isinstance(role.get("docs"), list):
-            role["docs"] = role["docs"][:max_docs_per_role]
+    for role in iter_reference_roles(payload):
+        for docs_key in ("docs", "doc"):
+            docs = role.get(docs_key)
+            if isinstance(docs, list):
+                role[docs_key] = docs[:max_docs_per_role]
+            elif isinstance(docs, dict) and max_docs_per_role == 0:
+                role[docs_key] = []
     candidate.references = payload
 
 
@@ -386,16 +390,35 @@ def preferred_forms(candidate: Candidate) -> list[str]:
     return forms
 
 
+def listify(value: Any) -> list[Any]:
+    if value is None:
+        return []
+    return value if isinstance(value, list) else [value]
+
+
+def iter_reference_roles(refs: dict[str, Any]) -> list[dict[str, Any]]:
+    roles = [role for role in listify(refs.get("roles")) if isinstance(role, dict)]
+
+    for service_payload in refs.values():
+        if not isinstance(service_payload, dict):
+            continue
+        result = service_payload.get("result")
+        if not isinstance(result, dict):
+            continue
+        roles.extend(role for role in listify(result.get("role")) if isinstance(role, dict))
+
+    return roles
+
+
 def reference_citations(candidate: Candidate) -> list[dict[str, str]]:
     refs = candidate.references or {}
     citations = []
-    for role in refs.get("roles", []):
-        if not isinstance(role, dict):
-            continue
-        role_name = str(role.get("role_name") or "")
-        for doc in role.get("docs", []):
-            if isinstance(doc, dict) and doc.get("citation"):
-                citations.append({"role": role_name, "citation": str(doc["citation"])})
+    for role in iter_reference_roles(refs):
+        role_name = str(role.get("role_name") or role.get("roleName") or "")
+        for docs_key in ("docs", "doc"):
+            for doc in listify(role.get(docs_key)):
+                if isinstance(doc, dict) and doc.get("citation"):
+                    citations.append({"role": role_name, "citation": str(doc["citation"])})
     return citations
 
 
@@ -668,4 +691,5 @@ async def align_person_endpoint(
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("app:app", host="0.0.0.0", port=8001)
+    port = int(os.getenv("PORT", "8000"))
+    uvicorn.run("app:app", host="0.0.0.0", port=port)

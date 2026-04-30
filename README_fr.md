@@ -38,7 +38,7 @@ les indices issus de la notice d'autorite et les indices du voisinage bibliograp
 Endpoint :
 
 ```text
-https://qualinka.idref.fr/data/find-ra-idref/api/v2/debug/req
+https://qualinka.idref.fr/data/find-ra-idref/api/v2/req
 ```
 
 Ce service est utilise pour générer les candidats. Il accepte un nom de famille
@@ -278,11 +278,21 @@ Le score est plafonne à `1.0`.
 
 ```text
 final =
-  0.40 * name
-+ 0.25 * attrra_source
-+ 0.15 * attrra_note
-+ 0.15 * references
-+ 0.05 * institution_year
+  weight_name * name
++ weight_attrra_source * attrra_source
++ weight_attrra_note * attrra_note
++ weight_references * references
++ weight_institution_year * institution_year
+```
+
+Poids par défaut :
+
+```text
+weight_name = 0.40
+weight_attrra_source = 0.25
+weight_attrra_note = 0.15
+weight_references = 0.15
+weight_institution_year = 0.05
 ```
 
 Seuils par défaut :
@@ -387,7 +397,12 @@ Corps de requête :
   "reference_top_k": 3,
   "embedding_model": "",
   "accept_threshold": 0.65,
-  "margin_threshold": 0.08
+  "margin_threshold": 0.08,
+  "weight_name": 0.40,
+  "weight_attrra_source": 0.25,
+  "weight_attrra_note": 0.15,
+  "weight_references": 0.15,
+  "weight_institution_year": 0.05
 }
 ```
 
@@ -500,6 +515,11 @@ Copier `.example.env` vers `.env` et ajuster les valeurs.
 | `IDREF_ACCEPT_THRESHOLD` | `0.65` | Score minimum pour accepter |
 | `IDREF_MARGIN_THRESHOLD` | `0.08` | Marge minimale entre le premier et le deuxieme score |
 | `IDREF_EMBEDDING_MODEL` | vide | Modèle sentence-transformers optionnel par defaut pour la similarité sémantique par embedding |
+| `IDREF_WEIGHT_NAME` | `0.40` | Poids par défaut de la similarité du nom |
+| `IDREF_WEIGHT_ATTRRA_SOURCE` | `0.25` | Poids par défaut de la similarité avec `attrra.source` |
+| `IDREF_WEIGHT_ATTRRA_NOTE` | `0.15` | Poids par défaut de la similarité avec `noteGen`/`bioNote` |
+| `IDREF_WEIGHT_REFERENCES` | `0.15` | Poids par défaut de la similarité avec les citations de références IdRef |
+| `IDREF_WEIGHT_INSTITUTION_YEAR` | `0.05` | Poids par défaut de la cohérence établissement, école doctorale et année |
 
 Mode embedding pour toutes les requêtes :
 

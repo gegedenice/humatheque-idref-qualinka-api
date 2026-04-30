@@ -9,7 +9,7 @@ The API is intentionally deterministic: it generates candidate authority PPNs,
 fetches evidence for each candidate, computes transparent evidence scores, and
 returns either an accepted PPN or an abstention status.
 
-## Why This Service Exists
+## Why this service
 
 The input data usually contains extracted fields such as:
 
@@ -30,14 +30,14 @@ The service aligns one person at a time. For example, given the extracted name
 corresponding IdRef authority PPN by using authority-record evidence
 and bibliographic-neighborhood evidence.
 
-## External APIs Used
+## External APIs used
 
 ### Qualinka `find-ra-idref`
 
 Endpoint:
 
 ```text
-https://qualinka.idref.fr/data/find-ra-idref/api/v2/debug/req
+https://qualinka.idref.fr/data/find-ra-idref/api/v2/req
 ```
 
 This service is used for candidate generation. It accepts a parsed last name and
@@ -85,7 +85,7 @@ used as a strong ranking signal.
 (For example a thesis advisor may mostly appear as an author
 in IdRef, and role labels can introduce bias.)
 
-## Alignment Logic
+## Alignment logic
 
 `POST /align/person` runs the full flow.
 
@@ -117,9 +117,9 @@ The service uses two different kinds of similarity:
 The name score is always string-based. The bibliographic semantic scores can run
 in either lexical mode or embedding mode.
 
-### Similarity Modes
+### Similarity modes
 
-#### String Similarity For Names
+#### String similarity for names
 
 The `name` score compares the extracted person name with candidate authority
 forms using normalized string similarity (custom fuzzy score using Python SequenceMatcher).
@@ -135,7 +135,7 @@ This is deliberately not embedding-based. Names need strict identity evidence;
 an embedding model could make two different people look close because their
 names or topics are semantically nearby.
 
-#### Lexical Semantic Similarity
+#### Lexical semantic similarity
 
 This is the default mode for bibliographic evidence with a simple bag-of-words count vector (similar in spirit to CountVectorizer).
 
@@ -154,7 +154,7 @@ IDREF_EMBEDDING_MODEL=
 The service builds normalized token-count vectors and computes cosine
 similarity. This is lightweight, deterministic, and does not load any ML model.
 
-#### Embedding Semantic Similarity
+#### Embedding semantic similarity
 
 Embedding mode is used when a sentence-transformers encoder model name is supplied.
 
@@ -201,7 +201,7 @@ or:
 }
 ```
 
-## Score Calculation
+## Score calculation
 
 Each candidate receives five component scores.
 
@@ -269,11 +269,21 @@ The score is capped at `1.0`.
 
 ```text
 final =
-  0.40 * name
-+ 0.25 * attrra_source
-+ 0.15 * attrra_note
-+ 0.15 * references
-+ 0.05 * institution_year
+  weight_name * name
++ weight_attrra_source * attrra_source
++ weight_attrra_note * attrra_note
++ weight_references * references
++ weight_institution_year * institution_year
+```
+
+Default weights:
+
+```text
+weight_name = 0.40
+weight_attrra_source = 0.25
+weight_attrra_note = 0.15
+weight_references = 0.15
+weight_institution_year = 0.05
 ```
 
 Default thresholds:
@@ -298,7 +308,7 @@ else:
 
 `best_ppn` is set only when `status` is `accepted`.
 
-## API Endpoints
+## API endpoints
 
 Interactive documentation is available at:
 
@@ -378,7 +388,12 @@ Request body:
   "reference_top_k": 3,
   "embedding_model": "",
   "accept_threshold": 0.65,
-  "margin_threshold": 0.08
+  "margin_threshold": 0.08,
+  "weight_name": 0.40,
+  "weight_attrra_source": 0.25,
+  "weight_attrra_note": 0.15,
+  "weight_references": 0.15,
+  "weight_institution_year": 0.05
 }
 ```
 
@@ -470,7 +485,7 @@ X-API-Key: <your key>
 
 If `API_KEY` is empty, endpoints are public.
 
-## Environment Variables
+## Environment variables
 
 Copy `.example.env` to `.env` and adjust values.
 
@@ -491,6 +506,11 @@ Copy `.example.env` to `.env` and adjust values.
 | `IDREF_ACCEPT_THRESHOLD` | `0.65` | Minimum score to accept |
 | `IDREF_MARGIN_THRESHOLD` | `0.08` | Minimum top-vs-second score margin |
 | `IDREF_EMBEDDING_MODEL` | empty | Optional default sentence-transformers model for embedding semantic similarity |
+| `IDREF_WEIGHT_NAME` | `0.40` | Default weight for name similarity |
+| `IDREF_WEIGHT_ATTRRA_SOURCE` | `0.25` | Default weight for Qualinka `attrra.source` similarity |
+| `IDREF_WEIGHT_ATTRRA_NOTE` | `0.15` | Default weight for Qualinka `noteGen`/`bioNote` similarity |
+| `IDREF_WEIGHT_REFERENCES` | `0.15` | Default weight for IdRef reference citation similarity |
+| `IDREF_WEIGHT_INSTITUTION_YEAR` | `0.05` | Default weight for institution, doctoral school, and year consistency |
 
 Embedding mode for all requests:
 
@@ -501,7 +521,7 @@ IDREF_EMBEDDING_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v
 When this variable is empty, all requests use lexical semantic similarity unless
 the request body explicitly provides `embedding_model`.
 
-## Local Run
+## Local run
 
 ```bash
 cp .example.env .env
@@ -520,7 +540,7 @@ The Docker image follows the same deployment style as
 `humatheque-postgres-api`: Python slim image, `requirements.txt`, non-root user,
 and `uvicorn app:app`.
 
-## Operational Notes
+## Operational notes
 
 - The service performs blocking HTTP calls to public IdRef and Qualinka
   endpoints. FastAPI runs them in a threadpool for API endpoints.

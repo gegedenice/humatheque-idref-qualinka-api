@@ -27,7 +27,7 @@ load_dotenv()
 
 FIND_RA_ENDPOINT = os.getenv(
     "FIND_RA_ENDPOINT",
-    "https://qualinka.idref.fr/data/find-ra-idref/api/v2/debug/req",
+    "https://qualinka.idref.fr/data/find-ra-idref/api/v2/req",
 )
 ATTRRA_ENDPOINT = os.getenv(
     "ATTRRA_ENDPOINT",
@@ -50,6 +50,11 @@ DEFAULT_REFERENCE_TOP_K = int(os.getenv("IDREF_REFERENCE_TOP_K", "3"))
 DEFAULT_ACCEPT_THRESHOLD = float(os.getenv("IDREF_ACCEPT_THRESHOLD", "0.65"))
 DEFAULT_MARGIN_THRESHOLD = float(os.getenv("IDREF_MARGIN_THRESHOLD", "0.08"))
 DEFAULT_EMBEDDING_MODEL = os.getenv("IDREF_EMBEDDING_MODEL", "")
+DEFAULT_WEIGHT_NAME = float(os.getenv("IDREF_WEIGHT_NAME", "0.40"))
+DEFAULT_WEIGHT_ATTRRA_SOURCE = float(os.getenv("IDREF_WEIGHT_ATTRRA_SOURCE", "0.25"))
+DEFAULT_WEIGHT_ATTRRA_NOTE = float(os.getenv("IDREF_WEIGHT_ATTRRA_NOTE", "0.15"))
+DEFAULT_WEIGHT_REFERENCES = float(os.getenv("IDREF_WEIGHT_REFERENCES", "0.15"))
+DEFAULT_WEIGHT_INSTITUTION_YEAR = float(os.getenv("IDREF_WEIGHT_INSTITUTION_YEAR", "0.05"))
 
 EMBEDDER = None
 EMBEDDING_CACHE: dict[str, list[float]] = {}
@@ -92,6 +97,11 @@ class AlignPersonRequest(BaseModel):
     )
     accept_threshold: float = Field(DEFAULT_ACCEPT_THRESHOLD, ge=0.0, le=1.0)
     margin_threshold: float = Field(DEFAULT_MARGIN_THRESHOLD, ge=0.0, le=1.0)
+    weight_name: float = Field(DEFAULT_WEIGHT_NAME, ge=0.0)
+    weight_attrra_source: float = Field(DEFAULT_WEIGHT_ATTRRA_SOURCE, ge=0.0)
+    weight_attrra_note: float = Field(DEFAULT_WEIGHT_ATTRRA_NOTE, ge=0.0)
+    weight_references: float = Field(DEFAULT_WEIGHT_REFERENCES, ge=0.0)
+    weight_institution_year: float = Field(DEFAULT_WEIGHT_INSTITUTION_YEAR, ge=0.0)
     timeout: float = Field(DEFAULT_TIMEOUT, gt=0.0, le=120.0)
     retries: int = Field(DEFAULT_RETRIES, ge=0, le=10)
     backoff: float = Field(DEFAULT_BACKOFF, ge=0.0, le=30.0)
@@ -280,6 +290,18 @@ def common_authority_record(ppn: str, first_name: Any = None, last_name: Any = N
     }
 
 
+def iter_candidate_items(payload: Any) -> list[dict[str, Any]]:
+    if isinstance(payload, dict):
+        return [item for item in payload.get("ids", []) if isinstance(item, dict)]
+
+    items = []
+    if isinstance(payload, list):
+        for block in payload:
+            if isinstance(block, dict):
+                items.extend(item for item in block.get("results", []) if isinstance(item, dict))
+    return items
+
+
 def find_candidates(
     full_name: str,
     first_name_override: str | None,
@@ -312,26 +334,25 @@ def find_candidates(
     payload, error = request_json(url, timeout, retries, backoff)
     meta["url"] = url
     meta["error"] = error
-    if error or not isinstance(payload, list):
+    if error:
         return [], meta
 
     candidates: list[Candidate] = []
     seen = set()
-    for block in payload:
-        for item in block.get("results", []) if isinstance(block, dict) else []:
-            ppn = str(item.get("ppn") or "").strip()
-            if not ppn or ppn in seen:
-                continue
-            seen.add(ppn)
-            candidates.append(
-                Candidate(
-                    ppn=ppn,
-                    first_name=item.get("firstName"),
-                    last_name=item.get("lastName"),
-                )
+    for item in iter_candidate_items(payload):
+        ppn = str(item.get("ppn") or "").strip()
+        if not ppn or ppn in seen:
+            continue
+        seen.add(ppn)
+        candidates.append(
+            Candidate(
+                ppn=ppn,
+                first_name=item.get("firstName"),
+                last_name=item.get("lastName"),
             )
-            if len(candidates) >= max_candidates:
-                return candidates, meta
+        )
+        if len(candidates) >= max_candidates:
+            return candidates, meta
     return candidates, meta
 
 
@@ -512,11 +533,11 @@ def score_candidate(payload: AlignPersonRequest, candidate: Candidate) -> None:
     candidate.score.institution_year = institution_year_score(payload, candidate)
 
     candidate.score.final = (
-        0.40 * candidate.score.name
-        + 0.25 * candidate.score.attrra_source
-        + 0.15 * candidate.score.attrra_note
-        + 0.15 * candidate.score.references
-        + 0.05 * candidate.score.institution_year
+        payload.weight_name * candidate.score.name
+        + payload.weight_attrra_source * candidate.score.attrra_source
+        + payload.weight_attrra_note * candidate.score.attrra_note
+        + payload.weight_references * candidate.score.references
+        + payload.weight_institution_year * candidate.score.institution_year
     )
     candidate.evidence = {
         "preferred_forms": forms,
@@ -535,6 +556,16 @@ def status_for_ranked(ranked: list[Candidate], accept_threshold: float, margin_t
     if len(ranked) > 1 and top.score.final - ranked[1].score.final < margin_threshold:
         return "ambiguous"
     return "accepted"
+
+
+def score_weights_to_json(payload: AlignPersonRequest) -> dict[str, float]:
+    return {
+        "name": payload.weight_name,
+        "attrra_source": payload.weight_attrra_source,
+        "attrra_note": payload.weight_attrra_note,
+        "references": payload.weight_references,
+        "institution_year": payload.weight_institution_year,
+    }
 
 
 def candidate_to_json(candidate: Candidate) -> dict[str, Any]:
@@ -588,6 +619,7 @@ def align_person(payload: AlignPersonRequest) -> dict[str, Any]:
             "year": payload.year,
         },
         "candidate_search": search_meta,
+        "score_weights": score_weights_to_json(payload),
         "status": status,
         "best_ppn": ranked[0].ppn if status == "accepted" else None,
         "best_candidate": candidate_to_json(ranked[0]) if ranked else None,

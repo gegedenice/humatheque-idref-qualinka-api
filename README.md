@@ -65,10 +65,11 @@ useful fields are:
 - `preferedform`: preferred authority label, used for name matching.
 - `source`: bibliographic source text attached to the authority record.
 - `noteGen`: general notes, often containing degree, institution, discipline, or year.
+- `bioNote`: biographical notes, used as note evidence when present.
 
-For thesis alignment, `attrra.source` and `attrra.noteGen` can be stronger than
-generic linked references because they often describe exactly why the authority
-record was created.
+For thesis alignment, `attrra.source`, `attrra.noteGen`, and `attrra.bioNote`
+can be stronger than generic linked references because they often describe
+exactly why the authority record was created.
 
 ### IdRef `references`
 
@@ -94,7 +95,7 @@ in IdRef, and role labels can introduce bias.)
 4. For each candidate PPN:
    - fetch `attrra`
    - fetch IdRef `references`
-   - extract preferred labels, authority notes, authority sources, and reference citations
+   - extract preferred labels, authority notes (`noteGen` and `bioNote`), authority sources, and reference citations
 5. Build the current document context from:
    - person name
    - title
@@ -111,7 +112,7 @@ in IdRef, and role labels can introduce bias.)
 The service uses two different kinds of similarity:
 
 - string similarity for the authority name itself -> lexical score
-- semantic similarity for bibliographic evidence such as `attrra.source`, `attrra.noteGen`, and IdRef reference citations -> semantic score
+- semantic similarity for bibliographic evidence such as `attrra.source`, `attrra.noteGen`, `attrra.bioNote`, and IdRef reference citations -> semantic score
 
 The name score is always string-based. The bibliographic semantic scores can run
 in either lexical mode or embedding mode.
@@ -229,7 +230,7 @@ as title, date, institution, and author name.
 ### `attrra_note`
 
 Best semantic similarity between the current document context and each
-`attrra.noteGen` value.
+`attrra.noteGen` or `attrra.bioNote` value.
 
 This uses the same semantic mode as `attrra_source`.
 
@@ -237,6 +238,7 @@ This is useful when notes contain information such as:
 
 ```text
 Titulaire d'un doctorat d'université en médecine spécialisée (Nancy 1,2003)
+Auteur d'une thèse en Sciences cognitives, psychologie et neurocognition à Université Grenoble Alpes en 2023
 ```
 
 ### `references`

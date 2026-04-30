@@ -2,15 +2,15 @@
 
 Service FastAPI pour aligner des noms de personnes extraits avec des notices
 d'autorite françaises IdRef. Le service est conçu pour un pipeline de
-catalogage dans lequel des metadonnees ont d'abord été extraites d'images de
-pages de titre de theses ou memoires, et ou l'étape suivante
+catalogage dans lequel des métadonnees ont d'abord été extraites d'images de
+pages de titre de thèses ou mémoires, et ou l'étape suivante
 consiste à trouver le PPN IdRef le plus plausible pour chaque personne extraite.
 
-L'API est volontairement deterministe : elle génère des PPN candidats
+L'API est volontairement déterministe : elle génère des PPN candidats
 d'autorites, récupère des indices pour chaque candidat, calcule des scores
 transparents, puis retourne soit un PPN accepté, soit un statut d'abstention.
 
-## Pourquoi Ce Service Existe
+## Pourquoi ce service 
 
 Les données d'entrée contiennent generalement des champs extraits comme :
 
@@ -31,7 +31,7 @@ Le service aligne une personne à la fois. Par exemple, à partir du nom extrait
 d'identifier le PPN de l'autorite IdRef correspondante en utilisant pour chaque autorité candidate 
 les indices issus de la notice d'autorite et les indices du voisinage bibliographique.
 
-## API Externes Utilisees
+## API externes utilisees
 
 ### Qualinka `find-ra-idref`
 
@@ -67,10 +67,11 @@ d'autorité. Les champs les plus utiles sont :
 - `preferedform` : libellé préféré de l'autorité, utilisé pour comparer les noms.
 - `source` : texte de source bibliographique rattaché à la notice d'autorité.
 - `noteGen` : notes générales, contenant souvent le diplôme, l'établissement, la discipline ou l'année.
+- `bioNote` : notes biographiques, utilisées comme indice de note lorsqu'elles sont présentes.
 
-Pour l'alignement de theses, `attrra.source` et `attrra.noteGen` peuvent être
-plus forts que les références liées génériques, car ils décrivent souvent
-precisément pourquoi la notice d'autorite a été créée.
+Pour l'alignement de theses, `attrra.source`, `attrra.noteGen` et
+`attrra.bioNote` peuvent être plus forts que les références liées génériques,
+car ils décrivent souvent précisément pourquoi la notice d'autorite a été créée.
 
 ### IdRef `references`
 
@@ -86,7 +87,7 @@ d'explicabilité, mais ils ne sont pas utilisés comme signal fort de classement
 (Par exemple, un directeur de thèse peut apparaitre principalement comme auteur dans IdRef, et
 les libellés de rôle peuvent introduire un biais.)
 
-## Logique D'alignement
+## Logique d'alignement
 
 `POST /align/person` exécute le flux complet.
 
@@ -96,7 +97,7 @@ les libellés de rôle peuvent introduire un biais.)
 4. Pour chaque PPN candidat :
    - récupérer `attrra`
    - récupérer les `references` IdRef
-   - extraire les formes préférées, notes d'autorité, sources d'autorité et citations de references
+   - extraire les formes préférées, notes d'autorité (`noteGen` et `bioNote`), sources d'autorité et citations de references
 5. Construire le contexte du document courant à partir de :
    - nom de la personne
    - titre
@@ -113,7 +114,7 @@ les libellés de rôle peuvent introduire un biais.)
 Le service utilise deux types de similarité différents :
 
 - similarité lexicale de chaine pour le nom d'autorité lui-même -> score `name` lexical
-- similarité sémantique pour les indices bibliographiques comme `attrra.source`, `attrra.noteGen` et les citations de références IdRef -> score sémantique
+- similarité sémantique pour les indices bibliographiques comme `attrra.source`, `attrra.noteGen`, `attrra.bioNote` et les citations de références IdRef -> score sémantique
 
 Le score de nom est toujours fondé sur des chaines. Les scores sémantiques
 bibliographiques peuvent fonctionner soit en mode lexical, soit en mode
@@ -237,7 +238,7 @@ d'une thèse, comme le titre, la date, l'établissement et le nom de l'auteur.
 ### `attrra_note`
 
 Meilleure similarité sémantique entre le contexte du document courant et chaque
-valeur de `attrra.noteGen`.
+valeur de `attrra.noteGen` ou `attrra.bioNote`.
 
 Ce score utilise le même mode sémantique que `attrra_source`.
 
@@ -245,6 +246,7 @@ Il est utile lorsque les notes contiennent des informations comme :
 
 ```text
 Titulaire d'un doctorat d'université en médecine spécialisée (Nancy 1,2003)
+Auteur d'une thèse en Sciences cognitives, psychologie et neurocognition à Université Grenoble Alpes en 2023
 ```
 
 ### `references`

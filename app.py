@@ -378,6 +378,10 @@ def as_text_list(value: Any) -> list[str]:
     return [str(value)] if str(value).strip() else []
 
 
+def attrra_notes(attrra: dict[str, Any]) -> list[str]:
+    return as_text_list(attrra.get("noteGen")) + as_text_list(attrra.get("bioNote"))
+
+
 def preferred_forms(candidate: Candidate) -> list[str]:
     forms = []
     attrra = candidate.attrra or {}
@@ -469,9 +473,10 @@ def top_k_average_similarity(
 
 
 def institution_year_score(payload: AlignPersonRequest, candidate: Candidate) -> float:
+    attrra = candidate.attrra or {}
     evidence_text = " ".join(
-        as_text_list((candidate.attrra or {}).get("noteGen"))
-        + as_text_list((candidate.attrra or {}).get("source"))
+        attrra_notes(attrra)
+        + as_text_list(attrra.get("source"))
         + [item["citation"] for item in reference_citations(candidate)]
     )
     score = 0.0
@@ -489,8 +494,9 @@ def score_candidate(payload: AlignPersonRequest, candidate: Candidate) -> None:
     candidate.score.name = max((name_similarity(payload.name, form) for form in forms), default=0.0)
 
     query = current_context(payload)
-    sources = as_text_list((candidate.attrra or {}).get("source"))
-    notes = as_text_list((candidate.attrra or {}).get("noteGen"))
+    attrra = candidate.attrra or {}
+    sources = as_text_list(attrra.get("source"))
+    notes = attrra_notes(attrra)
     refs = reference_citations(candidate)
     ref_texts = [item["citation"] for item in refs]
 

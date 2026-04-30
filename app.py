@@ -38,7 +38,7 @@ REFERENCES_ENDPOINT = os.getenv(
     "https://www.idref.fr/services/references/{ppn}.json",
 )
 USER_AGENT = os.getenv("IDREF_USER_AGENT", "humatheque-idref-qualinka-api/0.1")
-API_KEY = os.getenv("API_KEY", "")
+API_KEY = os.getenv("IDREF_API_KEY", "")
 RETRIED_STATUS = {429, 500, 502, 503, 504}
 
 DEFAULT_TIMEOUT = float(os.getenv("IDREF_HTTP_TIMEOUT", "20.0"))

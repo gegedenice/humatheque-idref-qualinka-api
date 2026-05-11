@@ -1,18 +1,18 @@
 # API Humatheque IdRef Qualinka
 
 Service FastAPI pour aligner des noms de personnes extraits avec des notices
-d'autorite françaises IdRef. Le service est conçu pour un pipeline de
-catalogage dans lequel des métadonnees ont d'abord été extraites d'images de
+d'autorité françaises IdRef. Le service est conçu pour un pipeline de
+catalogage dans lequel des métadonnées ont d'abord été extraites d'images de
 pages de titre de thèses ou mémoires, et ou l'étape suivante
 consiste à trouver le PPN IdRef le plus plausible pour chaque personne extraite.
 
 L'API est volontairement déterministe : elle génère des PPN candidats
-d'autorites, récupère des indices pour chaque candidat, calcule des scores
+d'autorites, récupère des informations pour chaque candidat, calcule des scores
 transparents, puis retourne soit un PPN accepté, soit un statut d'abstention.
 
 ## Pourquoi ce service 
 
-Les données d'entrée contiennent generalement des champs extraits comme :
+Les données d'entrée contiennent généralement des champs extraits comme :
 
 - auteur
 - directeur
@@ -29,9 +29,9 @@ Les données d'entrée contiennent generalement des champs extraits comme :
 Le service aligne une personne à la fois. Par exemple, à partir du nom extrait
 `Valérie Robert` et des metadonnées documentaires environnantes, il essaie
 d'identifier le PPN de l'autorite IdRef correspondante en utilisant pour chaque autorité candidate 
-les indices issus de la notice d'autorite et les indices du voisinage bibliographique.
+les éléments issus de la notice d'autorite et les éléments du voisinage bibliographique (notices bibliographiques liées).
 
-## API externes utilisees
+## API externes utilisées
 
 ### Qualinka `find-ra-idref`
 
@@ -41,15 +41,15 @@ Endpoint :
 https://qualinka.idref.fr/data/find-ra-idref/api/v2/req
 ```
 
-Ce service est utilise pour générer les candidats. Il accepte un nom de famille
+Ce service est utilisé pour générer les candidats. Il accepte un nom de famille
 analyse et un prénom optionnel :
 
 ```text
 ?lastName=robert&firstName=val%C3%A9rie
 ```
 
-Il retourne des PPN candidats d'autorites personnes IdRef. Il est préféré à une
-simple requete Solr IdRef écrite à la main parce qu'il compacte plusieurs
+Il retourne des PPN candidats d'autorités personnes IdRef. Il est préféré à une
+simple requete Solr IdRef écrite à la main car il compacte plusieurs
 stratégies de recherche propres à IdRef et gère mieux la recherche par nom de
 personne.
 
@@ -69,9 +69,9 @@ d'autorité. Les champs les plus utiles sont :
 - `noteGen` : notes générales, contenant souvent le diplôme, l'établissement, la discipline ou l'année.
 - `bioNote` : notes biographiques, utilisées comme indice de note lorsqu'elles sont présentes.
 
-Pour l'alignement de theses, `attrra.source`, `attrra.noteGen` et
+Pour l'alignement des thèses, `attrra.source`, `attrra.noteGen` et
 `attrra.bioNote` peuvent être plus forts que les références liées génériques,
-car ils décrivent souvent précisément pourquoi la notice d'autorite a été créée.
+car ils décrivent souvent précisément pourquoi la notice d'autorité a été créée.
 
 ### IdRef `references`
 
@@ -97,7 +97,7 @@ les libellés de rôle peuvent introduire un biais.)
 4. Pour chaque PPN candidat :
    - récupérer `attrra`
    - récupérer les `references` IdRef
-   - extraire les formes préférées, notes d'autorité (`noteGen` et `bioNote`), sources d'autorité et citations de references
+   - extraire les formes préférées, notes d'autorité (`noteGen` et `bioNote`), sources d'autorité et citations de références
 5. Construire le contexte du document courant à partir de :
    - nom de la personne
    - titre
@@ -107,22 +107,22 @@ les libellés de rôle peuvent introduire un biais.)
    - ecole doctorale
    - type de diplôme
    - année
-6. Noter chaque candidat avec des composantes d'indices separées.
+6. Noter chaque candidat avec des composantes d'éléments separées.
 7. Classer les candidats par score final.
 8. Accepter uniquement si le meilleur candidat dépasse le seuil et dispose d'une marge suffisante sur le deuxième candidat.
 
-Le service utilise deux types de similarité différents :
+Le service utilise deux types de similarité différentes :
 
-- similarité lexicale de chaine pour le nom d'autorité lui-même -> score `name` lexical
-- similarité sémantique pour les indices bibliographiques comme `attrra.source`, `attrra.noteGen`, `attrra.bioNote` et les citations de références IdRef -> score sémantique
+- similarité lexicale de chaine de caractères pour le nom d'autorité lui-même -> score `name` lexical
+- similarité sémantique pour les informations bibliographiques comme `attrra.source`, `attrra.noteGen`, `attrra.bioNote` et les citations de références IdRef -> score sémantique
 
-Le score de nom est toujours fondé sur des chaines. Les scores sémantiques
+Le score de nom est toujours fondé sur des chaines de caractères. Les scores sémantiques
 bibliographiques peuvent fonctionner soit en mode lexical, soit en mode
 embedding.
 
 ### Modes de similarité
 
-#### Similarité de chaine pour les noms
+#### Similarité de chaine de caractères pour les noms
 
 Le score `name` compare le nom de personne extrait avec les formes d'autorité
 candidates au moyen d'une similarité de chaine normalisée (fuzzy score basé sur la classe python SequenceMatcher).
@@ -134,14 +134,14 @@ Normalisation :
 - remplacement de la ponctuation par des espaces
 - comparaison du recouvrement des tokens et de la similarité de caractères
 
-Ce score n'est volontairement pas fondé sur des embeddings. Les noms exigent un
-indice d'identité strict ; un modèle d'embedding pourrait rendre deux personnes
-differentes proches parce que leurs noms ou leurs sujets sont semantiquement
-voisins.
+Ce score n'est volontairement pas fondé sur des embeddings car les noms exigent un
+indice d'identité strict, et un modèle d'embedding pourrait rendre deux personnes
+differentes proches parce que leurs noms ont sémantiquement
+voisins (eg "Diane Rivière" et "Dominique Poisson").
 
 #### Similarite sémantique lexicale
 
-C'est le mode par défaut pour les indices bibliographiques avec un simple bag-of-words + count vector (similaire dans l'esprit à CountVectorizer)
+C'est le mode par défaut pour les informations bibliographiques avec un simple bag-of-words + count vector (similaire dans l'esprit à CountVectorizer)
 
 Il est utilisé lorsque :
 
@@ -156,10 +156,10 @@ IDREF_EMBEDDING_MODEL=
 ```
 
 Le service construit des vecteurs de tokens normalisés basés sur du comptage d'occurrences et calcule
-une similarité cosinus. C'est léger, déterministe, et aucun modèle de machine
-learning n'est chargé.
+une similarité cosinus. 
+-> Léger, déterministe, et aucun modèle de machine learning n'est chargé.
 
-#### Similarite sémantique par embedding
+#### Similarité sémantique par embedding
 
 Le mode embedding est utilisé lorsqu'un nom de modèle encoder sentence-transformers est
 fourni.
@@ -181,14 +181,14 @@ IDREF_EMBEDDING_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v
 ```
 
 En mode embedding, le service encode le contexte du document courant et chaque
-texte d'indice candidat avec `SentenceTransformer(...).encode(...,
+texte d'information candidat avec `SentenceTransformer(...).encode(...,
 normalize_embeddings=True)`, puis calcule une similarité par produit scalaire.
 Comme les vecteurs sont normalisés, le produit scalaire correspond à une
 similarite cosinus.
 
 Le mode embedding peut améliorer la proximité bibliographique, surtout lorsque
-la formulation differe entre les metadonnées extraites et les indices IdRef. 
-(Mais le chargement du modèle augmente aussi la latence de la premiere requete).
+la formulation diffère entre les metadonnées extraites et les informations IdRef. 
+(A noter le chargement du modèle augmente aussi la latence de la premiere requête).
 
 La réponse de `/align/person` inclut :
 
@@ -208,19 +208,19 @@ ou :
 }
 ```
 
-## Calcul Du Score
+## Calcul du score
 
 Chaque candidat reçoit cinq scores de composantes.
 
 ### `name`
 
-Similarité de chaine entre le nom de personne extrait et les formes d'autorité
+Similarité de chaine de caractères entre le nom de personne extrait et les formes d'autorité
 candidates :
 
 - `attrra.preferedform[*].value`
 - prénom + nom du candidat provenant de `find-ra-idref`
 
-Ce score est séparé de la similarité semantique afin qu'un candidat ayant un
+Ce score est séparé de la similarité sémantique afin qu'un candidat ayant un
 sujet proche mais un mauvais appariement de nom ne "gagne" pas trop facilement.
 
 ### `attrra_source`
@@ -228,9 +228,9 @@ sujet proche mais un mauvais appariement de nom ne "gagne" pas trop facilement.
 Meilleure similarité sémantique entre le contexte du document courant et chaque
 valeur de `attrra.source`.
 
-Ce score utilise par defaut la similarité sémantique lexicale, ou la similarité
+Ce score utilise par défaut la similarité sémantique lexicale, ou la similarité
 sémantique par embedding lorsque `embedding_model` / `IDREF_EMBEDDING_MODEL` est
-defini.
+défini.
 
 Il est fortement pondéré parce que `source` peut contenir des indices proches
 d'une thèse, comme le titre, la date, l'établissement et le nom de l'auteur.
@@ -254,11 +254,11 @@ Auteur d'une thèse en Sciences cognitives, psychologie et neurocognition à Uni
 Moyenne top-k des similarités sémantiques entre le contexte du document courant
 et les citations de références liées au candidat dans IdRef.
 
-Le service utilise un top-k plutot qu'une moyenne de toutes les références. Cela
+Le service utilise un top-k plutot qu'une moyenne de toutes les références car cela
 évite de pénaliser les auteurs prolifiques dont la bibliographie large diluerait
 le signal.
 
-Par defaut :
+Par défaut :
 
 ```text
 reference_top_k = 3
@@ -268,11 +268,11 @@ reference_top_k = 3
 
 Petit score déterministe de cohérence :
 
-- `+0.50` si l'établissement extrait apparait dans les indices du candidat
-- `+0.25` si l'école doctorale extraite apparait dans les indices du candidat
-- `+0.25` si l'année extraite apparait dans les indices du candidat
+- `+0.50` si l'établissement extrait apparait dans les éléments du ppn candidat
+- `+0.25` si l'école doctorale extraite apparait dans les éléments du ppn candidat
+- `+0.25` si l'année extraite apparait dans les élément du ppn candidat
 
-Le score est plafonne à `1.0`.
+**Le score est plafonné à `1.0`.**
 
 ### Score Final
 
@@ -358,7 +358,7 @@ curl "http://localhost:8000/find-person?name=Val%C3%A9rie%20Robert"
 
 ### `GET /attrra/{ppn}`
 
-Recupère les indices Qualinka `attrra` pour un PPN IdRef.
+Recupère les informations Qualinka `attrra` pour un PPN IdRef.
 
 Exemple :
 
@@ -406,7 +406,7 @@ Corps de requête :
 }
 ```
 
-`embedding_model` controle le scoring sémantique des indices bibliographiques :
+`embedding_model` contrôle le scoring sémantique des indices bibliographiques :
 
 - chaine vide : similarité cosinus lexicale sur tokens
 - nom de modèle sentence-transformers non vide : similarité cosinus par embedding

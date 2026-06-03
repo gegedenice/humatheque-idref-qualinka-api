@@ -28,7 +28,7 @@ The input data usually contains extracted fields such as:
 The service aligns one person at a time. For example, given the extracted name
 `Valérie Robert` and the surrounding document metadata, it tries to identify the
 corresponding IdRef authority PPN by using authority-record evidence
-and bibliographic-neighborhood evidence (linked bibliographic records).
+and bibliographic-neighborhood evidence.
 
 ## External APIs used
 
@@ -131,9 +131,9 @@ Normalization:
 - replace punctuation with spaces
 - compare token overlap and character similarity
 
-This is deliberately not embedding-based. Names need strict identity evidence because
+This is deliberately not embedding-based. Names need strict identity evidence;
 an embedding model could make two different people look close because their
-names are semantically nearby (eg "Diane Rivière" et "Dominique Poisson").
+names or topics are semantically nearby.
 
 #### Lexical semantic similarity
 
@@ -152,8 +152,7 @@ IDREF_EMBEDDING_MODEL=
 ```
 
 The service builds normalized token-count vectors and computes cosine
-similarity. 
--> Lightweight, deterministic, and does not load any ML model.
+similarity. This is lightweight, deterministic, and does not load any ML model.
 
 #### Embedding semantic similarity
 
@@ -182,7 +181,7 @@ vectors are normalized, the dot product is cosine similarity.
 
 Embedding mode may improve bibliographic proximity, especially when the wording
 differs between the extracted metadata and IdRef evidence. 
-(Note: first modle loading also increases first-request latency).
+(But first modle loading also increases first-request latency).
 
 The `/align/person` response includes:
 
@@ -247,7 +246,7 @@ Auteur d'une thèse en Sciences cognitives, psychologie et neurocognition à Uni
 Top-k average semantic similarity between the current document context and the
 candidate's linked reference citations from IdRef.
 
-The service uses top-k rather than averaging all references because this avoids
+The service uses top-k rather than averaging all references. This avoids
 penalizing prolific authors whose broad bibliography would dilute the signal.
 
 Default:
@@ -260,11 +259,11 @@ reference_top_k = 3
 
 Small deterministic consistency score:
 
-- `+0.50` if the extracted institution appears in ppn candidate evidence
-- `+0.25` if the extracted doctoral school appears in ppn candidate evidence
-- `+0.25` if the extracted year appears in ppn candidate evidence
+- `+0.50` if the extracted institution appears in candidate evidence
+- `+0.25` if the extracted doctoral school appears in candidate evidence
+- `+0.25` if the extracted year appears in candidate evidence
 
-**The score is capped at `1.0`.**
+The score is capped at `1.0`.
 
 ### Final Score
 
@@ -478,13 +477,13 @@ Response shape:
 
 Authentication is optional.
 
-Set `API_KEY` in `.env` to require clients to send:
+Set `IDREF_API_KEY` in `.env` to require clients to send:
 
 ```text
 X-API-Key: <your key>
 ```
 
-If `API_KEY` is empty, endpoints are public.
+If `IDREF_API_KEY` is empty, endpoints are public.
 
 ## Environment variables
 
@@ -493,7 +492,7 @@ Copy `.example.env` to `.env` and adjust values.
 | Variable | Default | Description |
 |---|---|---|
 | `PORT` | `8000` | HTTP server port |
-| `API_KEY` | empty | Optional API key |
+| `IDREF_API_KEY` | empty | Optional API key |
 | `FIND_RA_ENDPOINT` | Qualinka public endpoint | Candidate generation endpoint |
 | `ATTRRA_ENDPOINT` | Qualinka public endpoint | Authority enrichment endpoint |
 | `REFERENCES_ENDPOINT` | IdRef public endpoint | Linked references endpoint |

@@ -24,10 +24,9 @@ from pydantic import BaseModel, Field
 
 load_dotenv()
 
-
 FIND_RA_ENDPOINT = os.getenv(
     "FIND_RA_ENDPOINT",
-    "https://qualinka.idref.fr/data/find-ra-idref/api/v2/req",
+    "https://qualinka.idref.fr/data/find-ra-idref/api/v2/debug/req",
 )
 ATTRRA_ENDPOINT = os.getenv(
     "ATTRRA_ENDPOINT",
@@ -39,6 +38,7 @@ REFERENCES_ENDPOINT = os.getenv(
 )
 USER_AGENT = os.getenv("IDREF_USER_AGENT", "humatheque-idref-qualinka-api/0.1")
 API_KEY = os.getenv("IDREF_API_KEY", "")
+HF_TOKEN = os.getenv("HF_TOKEN", "") or None
 RETRIED_STATUS = {429, 500, 502, 503, 504}
 
 DEFAULT_TIMEOUT = float(os.getenv("IDREF_HTTP_TIMEOUT", "20.0"))
@@ -197,7 +197,7 @@ def load_embedder(model_name: str) -> Any:
     if EMBEDDER is None:
         from sentence_transformers import SentenceTransformer
 
-        EMBEDDER = SentenceTransformer(model_name)
+        EMBEDDER = SentenceTransformer(model_name, token=HF_TOKEN)
     return EMBEDDER
 
 

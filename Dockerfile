@@ -14,8 +14,11 @@ RUN pip install -U pip && \
 
 COPY . /app
 
-EXPOSE 8001
+EXPOSE 8000
 
 USER appuser
 
-CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port 8001 --workers 1 --timeout-keep-alive 0"]
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:' + __import__('os').getenv('PORT', '8000') + '/health')"
+
+CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-8000} --workers 1 --timeout-keep-alive 0"]

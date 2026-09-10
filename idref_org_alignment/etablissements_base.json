@@ -1,0 +1,6013 @@
+[
+  {
+    "code": "AGPT",
+    "nom": "AgroParisTech",
+    "date_debut": "2007-01-01",
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPAS"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "IAVF"
+        ],
+        "date_debut": "2016-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "EIAA"
+        ],
+        "date_debut": "2007-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENGR"
+        ],
+        "date_debut": "2007-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "INAP"
+        ],
+        "date_debut": "2007-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir aussi SACL de 2015-09-01 à 2019-12-31 Voir aussi UPAS à partir de 2020-01-01 Voir aussi IAVF à partir de 2016-09-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "AGRO",
+    "nom": "Institut Agro",
+    "date_debut": "2025-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "UBFC"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "NSAM"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "NSAR"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "AGUY",
+    "nom": "Antilles-Guyane",
+    "date_debut": null,
+    "date_fin": "2015-03-16",
+    "voir_apres": [
+      {
+        "codes": [
+          "ANTI"
+        ],
+        "date_debut": "2015-06-25",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "YANE"
+        ],
+        "date_debut": "2015-03-16",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir ANTI à partir de 2015-06-25 Voir YANE à partir de 2015-03-16",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "AIX1",
+    "nom": "Aix-Marseille 1",
+    "date_debut": null,
+    "date_fin": "2012-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "AIXM"
+        ],
+        "date_debut": "2012-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir AIXM à partir de 2012-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "AIX2",
+    "nom": "Aix-Marseille 2",
+    "date_debut": null,
+    "date_fin": "2012-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "AIXM"
+        ],
+        "date_debut": "2012-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir AIXM à partir de 2012-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "AIX3",
+    "nom": "Aix-Marseille 3",
+    "date_debut": null,
+    "date_fin": "2012-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "AIXM"
+        ],
+        "date_debut": "2012-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir AIXM à partir de 2012-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "AIXM",
+    "nom": "Aix-Marseille",
+    "date_debut": "2012-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "AIX1"
+        ],
+        "date_debut": "2012-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "AIX2"
+        ],
+        "date_debut": "2012-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "AIX3"
+        ],
+        "date_debut": "2012-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ALGF",
+    "nom": "Alger (1909-1962)",
+    "date_debut": "1909",
+    "date_fin": "1962",
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "AMIE",
+    "nom": "Amiens",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ANGE",
+    "nom": "Angers",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ANTI",
+    "nom": "Antilles",
+    "date_debut": "2015-06-25",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "AGUY"
+        ],
+        "date_debut": "2015-06-25",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ARTO",
+    "nom": "Artois",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ASSA",
+    "nom": "Université Paris-Panthéon-Assas",
+    "date_debut": "2022-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA02"
+        ],
+        "date_debut": "2022-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "AVIG",
+    "nom": "Avignon",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "AZUR",
+    "nom": "Université Côte d'Azur (ComUE)",
+    "date_debut": "2016-09-01",
+    "date_fin": "2020-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "COAZ"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "NICE"
+        ],
+        "date_debut": "2016-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir COAZ à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "BELF",
+    "nom": "Belfort Montbéliard",
+    "date_debut": "2025-01-01",
+    "date_fin": "2017-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "UBFC"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": "2024-12-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "UBFC"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir UBFC de 2017-01-01 à 2024-12-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "BESA",
+    "nom": "Besançon",
+    "date_debut": null,
+    "date_fin": "2017-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "UBFC"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": "2024-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "PAST"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir UBFC de 2017-01-01 à 2024-12-31 puis PAST à partir de 2025-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "BOR1",
+    "nom": "Bordeaux 1",
+    "date_debut": "1970-11-13",
+    "date_fin": "1995-05-09",
+    "voir_apres": [
+      {
+        "codes": [
+          "BOR4"
+        ],
+        "date_debut": "1995-05-09",
+        "date_fin": null,
+        "condition": "pour les thèses de Droit, Sciences sociales et politiques, Sciences économiques et Gestion"
+      },
+      {
+        "codes": [
+          "BORD"
+        ],
+        "date_debut": "2014-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "BORU"
+        ],
+        "date_debut": "1970-11-13",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir BOR4 à partir de 1995-05-09 (pour les thèses de Droit, Sciences sociales et politiques, Sciences économiques et Gestion) Voir BORD à partir de 2014-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "BOR2",
+    "nom": "Bordeaux 2",
+    "date_debut": "1970-11-13",
+    "date_fin": "2014-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "BORD"
+        ],
+        "date_debut": "2014-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "BORU"
+        ],
+        "date_debut": "1970-11-13",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir BORD à partir de 2014-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "BOR3",
+    "nom": "Bordeaux 3",
+    "date_debut": "1970-11-13",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "BORU"
+        ],
+        "date_debut": "1970-11-13",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "BOR4",
+    "nom": "Bordeaux 4",
+    "date_debut": "1995-05-09",
+    "date_fin": "2014-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "BORD"
+        ],
+        "date_debut": "2014-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "BOR1"
+        ],
+        "date_debut": "1995-05-09",
+        "date_fin": null,
+        "condition": "pour les thèses de Droit, Sciences sociales et politiques, Sciences économiques et Gestion"
+      }
+    ],
+    "note_source": "Voir BORD à partir de 2014-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "BORD",
+    "nom": "Bordeaux",
+    "date_debut": "2014-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "BOR1"
+        ],
+        "date_debut": "2014-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "BOR2"
+        ],
+        "date_debut": "2014-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "BOR4"
+        ],
+        "date_debut": "2014-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "BORU",
+    "nom": "Université de Bordeaux (1441-1970)",
+    "date_debut": "1441",
+    "date_fin": "1970",
+    "voir_apres": [
+      {
+        "codes": [
+          "BOR1",
+          "BOR2",
+          "BOR3"
+        ],
+        "date_debut": "1970-11-13",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir BOR1, BOR2 ou BOR3 à partir de 1970-11-13",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "BRES",
+    "nom": "Brest - Bretagne occidentale",
+    "date_debut": null,
+    "date_fin": "2025-03-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "BRUN"
+        ],
+        "date_debut": "2025-03-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir BRUN à partir du 2025-03-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "BRUN",
+    "nom": "Université de Brest (2025-....)",
+    "date_debut": "2025-03-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "BRES"
+        ],
+        "date_debut": "2025-03-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "CAEN",
+    "nom": "Caen",
+    "date_debut": null,
+    "date_fin": "2017-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "NORM"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir NORM à partir de 2017-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "CERG",
+    "nom": "Cergy-Pontoise",
+    "date_debut": null,
+    "date_fin": "2020-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "CYUN"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir CYUN à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "CHAM",
+    "nom": "Chambéry",
+    "date_debut": null,
+    "date_fin": "2010-11-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "GREN"
+        ],
+        "date_debut": "2010-11-01",
+        "date_fin": "2014-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "GREA"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir GREN de 2010-11-01 à 2014-12-31 Voir GREA de 2015-01-01 à 2019-12-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "CLF1",
+    "nom": "Clermont-Ferrand 1",
+    "date_debut": null,
+    "date_fin": "2017-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "CLFA"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir CLFA à partir de 2017-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "CLF2",
+    "nom": "Clermont-Ferrand 2",
+    "date_debut": null,
+    "date_fin": "2017-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "CLFA"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir CLFA à partir de 2017-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "CLFA",
+    "nom": "Université Clermont Auvergne (2017-2020)",
+    "date_debut": "2017",
+    "date_fin": "2020",
+    "voir_apres": [
+      {
+        "codes": [
+          "UCFA"
+        ],
+        "date_debut": "2021-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "CLF1"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "CLF2"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir UCFA à partir de 2021-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "CLFD",
+    "nom": "Université de Clermont-Ferrand",
+    "date_debut": null,
+    "date_fin": "1976-03-16",
+    "voir_apres": [
+      {
+        "codes": [
+          "CFL1",
+          "CFL2"
+        ],
+        "date_debut": "1976-03-16",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir CFL1 ou CFL2 à partir de 1976-03-16",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "CLIL",
+    "nom": "Centrale Lille Institut",
+    "date_debut": "2020-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "ECLI"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "CNAM",
+    "nom": "Conservatoire national des arts et métiers",
+    "date_debut": "2024-08-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "HESA"
+        ],
+        "date_debut": "2024-08-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "COAZ",
+    "nom": "Université Côte d'Azur",
+    "date_debut": "2020-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "AZUR"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "COMP",
+    "nom": "Compiègne",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "CORT",
+    "nom": "Corte",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "CSUP",
+    "nom": "CentraleSupélec",
+    "date_debut": "2015-01-01",
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPAS"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "SUPL"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir aussi SACL de 2015-09-01 à 2019-12-31 Voir aussi UPAS à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "CYUN",
+    "nom": "CY Cergy Paris Université",
+    "date_debut": "2020-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "CERG"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "DENS",
+    "nom": "Ecole normale supérieure - Cachan",
+    "date_debut": null,
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPAS"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir SACL de 2015-09-01 à 2019-12-31 Voir UPAS à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "DIJO",
+    "nom": "Dijon",
+    "date_debut": null,
+    "date_fin": "2017-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "UBFC"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": "2024-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UBEU"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir UBFC de 2017-01-01 à 2024-12-31 puis UBEU à partir de 2025-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "DUNK",
+    "nom": "Littoral Dunkerque",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ECAP",
+    "nom": "Ecole centrale des arts et manufactures de Paris",
+    "date_debut": null,
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPAS"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir SACL de 2015-09-01 à 2019-12-31 Voir UPAS à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ECDL",
+    "nom": "Ecole centrale de Lyon",
+    "date_debut": "2022-09-01",
+    "date_fin": "2015-03-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2022-08-31",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENIS"
+        ],
+        "date_debut": "2022-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LYSE de 2015-03-01 à 2022-08-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ECDM",
+    "nom": "Ecole centrale de Marseille",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ECDN",
+    "nom": "Ecole centrale de Nantes",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ECLI",
+    "nom": "Ecole centrale de Lille",
+    "date_debut": null,
+    "date_fin": "2020-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "CLIL"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir CLIL à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "EHEC",
+    "nom": "Ecole des hautes études commerciales",
+    "date_debut": null,
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir SACL de 2015-09-01 à 2019-08-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "EHES",
+    "nom": "Ecole des hautes études en sciences sociales",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "EIAA",
+    "nom": "Ecole nationale supérieure des industries alimentaires - Massy",
+    "date_debut": null,
+    "date_fin": "2007-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "AGPT"
+        ],
+        "date_debut": "2007-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir AGPT à partir de 2007-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "EMAC",
+    "nom": "Ecole nationale des Mines d'Albi-Carmaux",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "EMAL",
+    "nom": "IMT Mines Alès",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "EMNA",
+    "nom": "Ecole des Mines de Nantes",
+    "date_debut": null,
+    "date_fin": "2017-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "IMTA"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir IMTA à partir de 2017-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "EMSE",
+    "nom": "Ecole nationale supérieure des Mines - Saint-Etienne",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENAC",
+    "nom": "Ecole nationale de l'aviation civile",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENAM",
+    "nom": "Ecole nationale supérieure d'arts et métiers",
+    "date_debut": "2024-08-01",
+    "date_fin": "2020-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "HESA"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": "2024-07-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "HESA"
+        ],
+        "date_debut": "2024-08-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir HESA de 2020-01-01 à 2024-07-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENCM",
+    "nom": "Ecole nationale supérieure de chimie de Montpellier",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENCP",
+    "nom": "Ecole nationale des chartes",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENCR",
+    "nom": "Ecole nationale supérieure de chimie de Rennes",
+    "date_debut": null,
+    "date_fin": "2023-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "UREN"
+        ],
+        "date_debut": "2023-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir UREN à partir de 2023-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENGR",
+    "nom": "Ecole nationale du génie rural, des eaux et forêts",
+    "date_debut": null,
+    "date_fin": "2007-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "AGPT"
+        ],
+        "date_debut": "2007-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir AGPT à partir de 2007-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENIB",
+    "nom": "Ecole nationale d'ingénieurs de Brest",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENIS",
+    "nom": "Ecole nationale d'ingénieurs de Saint-Etienne",
+    "date_debut": null,
+    "date_fin": "2015-03-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "ECDL"
+        ],
+        "date_debut": "2022-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir LYSE de 2015-03-01 à 2022-08-31 Voir ECDL à partir de 2022-09-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENMP",
+    "nom": "Ecole nationale supérieure des Mines - Paris",
+    "date_debut": null,
+    "date_fin": "2016-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PSLE"
+        ],
+        "date_debut": "2016-01-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPSL"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PSLE de 2016-01-01 à 2019-12-31 Voir UPSL à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENPC",
+    "nom": "Ecole nationale des ponts et chaussées",
+    "date_debut": null,
+    "date_fin": "2008-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PEST"
+        ],
+        "date_debut": "2008-01-01",
+        "date_fin": "2020-09-01",
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PEST de 2008-01-01 à 2020-09-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENSA",
+    "nom": "Ecole nationale supérieure d'agronomie - Montpellier",
+    "date_debut": null,
+    "date_fin": "2007-12-31",
+    "voir_apres": [
+      {
+        "codes": [
+          "NSAM"
+        ],
+        "date_debut": "2007-12-31",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir NSAM à partir de 2007-12-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENSF",
+    "nom": "Ecole normale supérieure lettres et sciences humaines - Lyon (anciennement Ecole normale supérieure lettres et sciences humaines - Fontenay-Saint-Cloud",
+    "date_debut": null,
+    "date_fin": "2009-12-10",
+    "voir_apres": [
+      {
+        "codes": [
+          "ENSL"
+        ],
+        "date_debut": "2009-12-10",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir ENSL à partir de 2009-12-10",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENSL",
+    "nom": "Ecole normale supérieure (sciences) - Lyon Voir Ecole normale supérieure de Lyon à partir de 2009-12-10",
+    "date_debut": "2022-08-31",
+    "date_fin": null,
+    "voir_apres": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2022-08-31",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENSF"
+        ],
+        "date_debut": "2009-12-10",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENSR",
+    "nom": "Ecole normale supérieure de Rennes",
+    "date_debut": null,
+    "date_fin": "2023-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "UREN"
+        ],
+        "date_debut": "2023-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir UREN à partir de 2023-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENST",
+    "nom": "Ecole nationale supérieure des télécommunications",
+    "date_debut": null,
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "IPPA"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir SACL de 2015-09-01 à 2019-08-31 Voir IPPA à partir de 2019-09-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENSU",
+    "nom": "Ecole normale supérieure- Paris (rue d'Ulm)",
+    "date_debut": null,
+    "date_fin": "2016-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PSLE"
+        ],
+        "date_debut": "2016-01-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPSL"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PSLE de 2016-01-01 à 2019-12-31 Voir UPSL à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENTA",
+    "nom": "Ecole nationale supérieure de techniques avancées Bretagne",
+    "date_debut": null,
+    "date_fin": "2025-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "ESTA"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir ESTA à partir de 2025-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENTP",
+    "nom": "Ecole nationale des travaux publics",
+    "date_debut": "2022-08-31",
+    "date_fin": "2015-03-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2022-08-31",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LYSE de 2015-03-01 à 2022-08-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ENVA",
+    "nom": "Ecole nationale vétérinaire - Maisons Alfort",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "EPHE",
+    "nom": "Ecole pratique des hautes études",
+    "date_debut": null,
+    "date_fin": "2016-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PSLE"
+        ],
+        "date_debut": "2016-01-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPSL"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PSLE de 2016-01-01 à 2019-12-31 Voir UPSL à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "EPXX",
+    "nom": "Ecole polytechnique",
+    "date_debut": null,
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "IPPA"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir SACL de 2015-09-01 à 2019-08-31 Voir IPPA à partir de 2019-09-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ESAE",
+    "nom": "ISAE (Fusion de SUPAERO et ENSICA à partir de 2007-01-01)",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ESAL",
+    "nom": "École nationale supérieure d'architecture - Lyon",
+    "date_debut": "2022-08-31",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2022-08-31",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ESEC",
+    "nom": "Ecole supérieure des sciences économiques et commerciales",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ESMA",
+    "nom": "Ecole nationale supérieure de mécanique et d'aérotechnique",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ESTA",
+    "nom": "Ecole nationale supérieure de techniques avancées",
+    "date_debut": "2025-01-01",
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "IPPA"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "ENTA"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir SACL de 2015-09-01 à 2019-08-31 Voir, pour partie, IPPA à partir de 2019-09-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "EVRY",
+    "nom": "Evry Val d'Essonne",
+    "date_debut": null,
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPAS"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir SACL de 2015-09-01 à 2019-12-31 Voir UPAS à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "GFDE",
+    "nom": "Faculté de Droit et Sciences économiques de Grenoble",
+    "date_debut": "1896-01-01",
+    "date_fin": "1970-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "GRE2"
+        ],
+        "date_debut": "1970-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "GRFD"
+        ],
+        "date_debut": "1896-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir GRE2 à partir de 1970-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "GFLH",
+    "nom": "Faculté de Lettres et Sciences humaines de Grenoble",
+    "date_debut": "1896-01-01",
+    "date_fin": "1970-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "GRE3"
+        ],
+        "date_debut": "1970-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "GRFL"
+        ],
+        "date_debut": "1896-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir GRE3 à partir de 1970-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "GLOB",
+    "nom": "Institut de physique du Globe",
+    "date_debut": null,
+    "date_fin": "2015-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "USPC"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir USPC à partir de 2015-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "GRAL",
+    "nom": "Université Grenoble Alpes",
+    "date_debut": "2020-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "GREA"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "GRE1",
+    "nom": "Grenoble 1",
+    "date_debut": null,
+    "date_fin": "2010-11-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "GREN"
+        ],
+        "date_debut": "2010-11-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir GREN à partir de 2010-11-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "GRE2",
+    "nom": "Grenoble 2",
+    "date_debut": "1970-01-01",
+    "date_fin": "2010-11-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "GREN"
+        ],
+        "date_debut": "2010-11-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "GFDE"
+        ],
+        "date_debut": "1970-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir GREN à partir de 2010-11-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "GRE3",
+    "nom": "Grenoble 3",
+    "date_debut": "1970-01-01",
+    "date_fin": "2010-11-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "GREN"
+        ],
+        "date_debut": "2010-11-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "GFLH"
+        ],
+        "date_debut": "1970-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir GREN à partir de 2010-11-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "GREA",
+    "nom": "Université Grenoble Alpes (ComUE)",
+    "date_debut": "2015-01-01",
+    "date_fin": "2020-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "GRAL"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "CHAM"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "GREN"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir GRAL à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "GREN",
+    "nom": "Grenoble",
+    "date_debut": "2010-11-01",
+    "date_fin": "2015-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "GREA"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "CHAM"
+        ],
+        "date_debut": "2010-11-01",
+        "date_fin": "2014-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "GRE1"
+        ],
+        "date_debut": "2010-11-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "GRE2"
+        ],
+        "date_debut": "2010-11-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "GRE3"
+        ],
+        "date_debut": "2010-11-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "INPG"
+        ],
+        "date_debut": "2010-11-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir GREA à partir de 2015-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "GRFD",
+    "nom": "Faculté de droit de Grenoble",
+    "date_debut": null,
+    "date_fin": "1896-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "GFDE"
+        ],
+        "date_debut": "1896-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir GFDE à partir de 1896-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "GRFL",
+    "nom": "Faculté de Lettres de Grenoble",
+    "date_debut": null,
+    "date_fin": "1896-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "GFLH"
+        ],
+        "date_debut": "1896-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir GFLH à partir de 1896-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "HESA",
+    "nom": "HESAM",
+    "date_debut": "2020-01-01",
+    "date_fin": "2024-08-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "CNAM",
+          "ENAM"
+        ],
+        "date_debut": "2024-08-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "ENAM"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": "2024-07-31",
+        "condition": null
+      }
+    ],
+    "note_source": "Voir CNAM et ENAM à partir de 2024-08-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "HESP",
+    "nom": "Ecole des hautes études en santé publique - Rennes",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "IAVF",
+    "nom": "Institut agronomique, vétérinaire et forestier de France - Paris",
+    "date_debut": "2016-09-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "AGPT"
+        ],
+        "date_debut": "2016-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "IEPP",
+    "nom": "Institut d'études politiques - Paris",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "IMTA",
+    "nom": "Ecole nationale supérieure Mines-Télécom Atlantique Bretagne Pays de la Loire",
+    "date_debut": "2017-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "EMNA"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "TELB"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "INAL",
+    "nom": "Institut national des langues et civilisations orientales (INALCO)",
+    "date_debut": "2019-09-01",
+    "date_fin": "2015-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "USPC"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "USPC"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "(Voir USPC de 2015-01-01 à 2019-08-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "INAP",
+    "nom": "Institut national d'agronomie - Paris Grignon",
+    "date_debut": null,
+    "date_fin": "2007-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "AGPT"
+        ],
+        "date_debut": "2007-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir AGPT à partir de 2007-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "INPG",
+    "nom": "Institut national polytechnique - Grenoble",
+    "date_debut": null,
+    "date_fin": "2010-11-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "GREN"
+        ],
+        "date_debut": "2010-11-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir GREN à partir de 2010-11-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "INPL",
+    "nom": "Institut national polytechnique - Lorraine",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "INPT",
+    "nom": "Institut national polytechnique - Toulouse",
+    "date_debut": null,
+    "date_fin": "2024-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "TLSE"
+        ],
+        "date_debut": "2024-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir TLSE à partir de 2024-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "IOTA",
+    "nom": "Institut d'optique théorique et appliquée - Palaiseau",
+    "date_debut": null,
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPAS"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir SACL de 2015-09-01 à 2019-12-31 Voir UPAS à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "IPPA",
+    "nom": "Institut Polytechnique de Paris",
+    "date_debut": "2019-09-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "ENST"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "EPXX"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ESTA"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "TELE"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ISAB",
+    "nom": "Institut national des sciences appliquées Val de Loire - Bourges",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ISAL",
+    "nom": "Institut national des sciences appliquées - Lyon",
+    "date_debut": null,
+    "date_fin": "2015-03-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir LYSE de 2015-03-01 à 2022-08-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ISAM",
+    "nom": "Institut national des sciences appliquées - Rouen",
+    "date_debut": null,
+    "date_fin": "2017-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "NORM"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir NORM à partir de 2017-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ISAR",
+    "nom": "Institut national des sciences appliquées - Rennes",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ISAT",
+    "nom": "Institut national des sciences appliquées - Toulouse",
+    "date_debut": null,
+    "date_fin": "2024-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "TLSE"
+        ],
+        "date_debut": "2024-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir TLSE à partir de 2024-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LARE",
+    "nom": "La Réunion",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LARO",
+    "nom": "La Rochelle",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LEHA",
+    "nom": "Le Havre",
+    "date_debut": null,
+    "date_fin": "2017-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "NORM"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir NORM à partir de 2017-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LEMA",
+    "nom": "Le Mans",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LIFS",
+    "nom": "Faculté des sciences de Lille",
+    "date_debut": null,
+    "date_fin": "1896-07-10",
+    "voir_apres": [
+      {
+        "codes": [
+          "LILL"
+        ],
+        "date_debut": "1896-07-10",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir LILL à partir de 1896-07-10",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LIL1",
+    "nom": "Lille 1",
+    "date_debut": "1969-12-18",
+    "date_fin": "2018-01-15",
+    "voir_apres": [
+      {
+        "codes": [
+          "LILU"
+        ],
+        "date_debut": "2018-01-15",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LILL"
+        ],
+        "date_debut": "1969-12-18",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LILU à partir de 2018-01-15",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LIL2",
+    "nom": "Lille 2",
+    "date_debut": "1971-01-01",
+    "date_fin": "2018-01-15",
+    "voir_apres": [
+      {
+        "codes": [
+          "LILU"
+        ],
+        "date_debut": "2018-01-15",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LILL"
+        ],
+        "date_debut": "1971-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LILU à partir de 2018-01-15",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LIL3",
+    "nom": "Lille 3",
+    "date_debut": "1969-12-18",
+    "date_fin": "2018-01-15",
+    "voir_apres": [
+      {
+        "codes": [
+          "LILU"
+        ],
+        "date_debut": "2018-01-15",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LILL"
+        ],
+        "date_debut": "1969-12-18",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LILU à partir de 2018-01-15",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LILL",
+    "nom": "Université de Lille (1896-1970)",
+    "date_debut": "1896",
+    "date_fin": "1970",
+    "voir_apres": [
+      {
+        "codes": [
+          "LIL1"
+        ],
+        "date_debut": "1969-12-18",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "LIL2"
+        ],
+        "date_debut": "1971-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "LIL3"
+        ],
+        "date_debut": "1969-12-18",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LIFS"
+        ],
+        "date_debut": "1896-07-10",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LIL1 à partir de 1969-12-18 Voir LIL2 à partir de 1971-01-01 Voir LIL3 à partir de 1969-12-18",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LILU",
+    "nom": "Université de Lille (2018-2021)",
+    "date_debut": "2018",
+    "date_fin": "2021",
+    "voir_apres": [
+      {
+        "codes": [
+          "ULIL"
+        ],
+        "date_debut": "2022-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LIL1"
+        ],
+        "date_debut": "2018-01-15",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "LIL2"
+        ],
+        "date_debut": "2018-01-15",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "LIL3"
+        ],
+        "date_debut": "2018-01-15",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir ULIL à partir de 2022-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LIMO",
+    "nom": "Limoges",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LORI",
+    "nom": "Lorient - Bretagne sud",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LORR",
+    "nom": "Université de Lorraine",
+    "date_debut": "2012-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "METZ"
+        ],
+        "date_debut": "2012-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "NAN1"
+        ],
+        "date_debut": "2012-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "NAN2"
+        ],
+        "date_debut": "2012-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LY01",
+    "nom": "Ecole nationale vétérinaire - Lyon",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LYFM",
+    "nom": "Faculté de médecine et de pharmacie de Lyon",
+    "date_debut": "1874-11-08",
+    "date_fin": "1896-07-10",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYON"
+        ],
+        "date_debut": "1896-07-10",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LYMP"
+        ],
+        "date_debut": "1874-11-08",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LYON à partir de 1896-07-10",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LYFS",
+    "nom": "Faculté de sciences de Lyon",
+    "date_debut": null,
+    "date_fin": "1896-07-10",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYON"
+        ],
+        "date_debut": "1896-07-10",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir LYON à partir de 1896-07-10",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LYMP",
+    "nom": "Ecole préparatoire de médecine et de pharmacie de Lyon",
+    "date_debut": null,
+    "date_fin": "1874-11-08",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYFM"
+        ],
+        "date_debut": "1874-11-08",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir LYFM à partir de 1874-11-08",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LYO1",
+    "nom": "Lyon 1",
+    "date_debut": "2022-08-31",
+    "date_fin": "2015-03-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LYON"
+        ],
+        "date_debut": "1969-12-05",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2022-08-31",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LYSE de 2015-03-01 à 2022-08-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LYO2",
+    "nom": "Lyon 2",
+    "date_debut": "2022-08-31",
+    "date_fin": "2015-03-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LYON"
+        ],
+        "date_debut": "1969-12-05",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2022-08-31",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LYSE de 2015-03-01 à 2022-08-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LYO3",
+    "nom": "Lyon 3",
+    "date_debut": "2022-08-31",
+    "date_fin": "2015-03-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LYON"
+        ],
+        "date_debut": "1973-07-26",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2022-08-31",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LYSE de 2015-03-01 à 2022-08-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LYON",
+    "nom": "Université de Lyon",
+    "date_debut": "1896-07-10",
+    "date_fin": "1969-12-05",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYO1"
+        ],
+        "date_debut": "1969-12-05",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "LYO2"
+        ],
+        "date_debut": "1969-12-05",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "LYO3"
+        ],
+        "date_debut": "1973-07-26",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LYFM"
+        ],
+        "date_debut": "1896-07-10",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "LYFS"
+        ],
+        "date_debut": "1896-07-10",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LYO1 à partir de 1969-12-05 Voir LYO2 à partir de 1969-12-05 Voir LYO3 à partir de 1973-07-26",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "LYSE",
+    "nom": "Lyon (COMUE)",
+    "date_debut": "2015-03-01",
+    "date_fin": "2022-08-31",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYO1",
+          "LYO2",
+          "LYO3",
+          "ECDL",
+          "ENSL",
+          "ENTP",
+          "ESAL",
+          "STET",
+          "VETA"
+        ],
+        "date_debut": "2022-08-31",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LYO1"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "LYO2"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "LYO3"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "STET"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "ECDL"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENIS"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENSL"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENTP"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "ISAL"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LYO1, LYO2, LYO3, ECDL, ENSL, ENTP, ESAL, STET, VETA à partir de 2022-08-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "MARN",
+    "nom": "Marne la Vallée",
+    "date_debut": null,
+    "date_fin": "2008-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PEST"
+        ],
+        "date_debut": "2008-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PEST à partir de 2008-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "METZ",
+    "nom": "Metz",
+    "date_debut": null,
+    "date_fin": "2012-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "LORR"
+        ],
+        "date_debut": "2012-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir LORR à partir de 2012-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "MNHN",
+    "nom": "Museum d'histoire naturelle",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "MON1",
+    "nom": "Montpellier 1",
+    "date_debut": null,
+    "date_fin": "2015-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "MONT"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir MONT à partir de 2015-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "MON2",
+    "nom": "Montpellier 2",
+    "date_debut": null,
+    "date_fin": "2015-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "MONT"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir MONT à partir de 2015-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "MON3",
+    "nom": "Montpellier 3",
+    "date_debut": null,
+    "date_fin": "2025-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "UMPV"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir UMPV à partir de 2025-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "MONT",
+    "nom": "Montpellier",
+    "date_debut": "2015-01-01",
+    "date_fin": "2022-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "UMON"
+        ],
+        "date_debut": "2022-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "MON1"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "MON2"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir UMON à partir de 2022-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "MTLD",
+    "nom": "Ecole nationale supérieure Mines-Télécom Lille Douai",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "MULH",
+    "nom": "Mulhouse",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NAFD",
+    "nom": "Faculté de droit de Nancy",
+    "date_debut": null,
+    "date_fin": "1970-12-23",
+    "voir_apres": [
+      {
+        "codes": [
+          "NAN2"
+        ],
+        "date_debut": "1970-12-23",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir NAN2 à partir de 1970-12-23",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NAFL",
+    "nom": "Faculté des lettres de Nancy",
+    "date_debut": null,
+    "date_fin": "1970-12-23",
+    "voir_apres": [
+      {
+        "codes": [
+          "NAN2"
+        ],
+        "date_debut": "1970-12-23",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir NAN2 à partir de 1970-12-23",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NAFS",
+    "nom": "Faculté des sciences de Nancy",
+    "date_debut": null,
+    "date_fin": "1970-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "NAN1"
+        ],
+        "date_debut": "1970-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir NAN1 à partir de 1970-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NAN1",
+    "nom": "Nancy 1",
+    "date_debut": "1970-01-01",
+    "date_fin": "2012-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "LORR"
+        ],
+        "date_debut": "2012-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "NAFS"
+        ],
+        "date_debut": "1970-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LORR à partir de 2012-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NAN2",
+    "nom": "Nancy 2",
+    "date_debut": "1970-12-23",
+    "date_fin": "2012-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "LORR"
+        ],
+        "date_debut": "2012-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "NAFD"
+        ],
+        "date_debut": "1970-12-23",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "NAFL"
+        ],
+        "date_debut": "1970-12-23",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LORR à partir de 2012-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NANT",
+    "nom": "Nantes",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [
+      {
+        "codes": [
+          "NANU"
+        ],
+        "date_debut": null,
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ONIR"
+        ],
+        "date_debut": "2008-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir NANU àpartir de 2022-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NANU",
+    "nom": "Nantes Université",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "NANT"
+        ],
+        "date_debut": null,
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NCAL",
+    "nom": "Nouvelle Calédonie",
+    "date_debut": "1999-06-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "PACI"
+        ],
+        "date_debut": "1999-06-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NICE",
+    "nom": "Nice",
+    "date_debut": null,
+    "date_fin": "2016-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "AZUR"
+        ],
+        "date_debut": "2016-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir AZUR à partir de 2016-09-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NIME",
+    "nom": "Nîmes",
+    "date_debut": null,
+    "date_fin": "2025-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "NIMU"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir NIMU à partir de 2025-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NIMU",
+    "nom": "Nïmes Université",
+    "date_debut": "2025-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "NIME"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NORM",
+    "nom": "Normandie (COMUE)",
+    "date_debut": "2017-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "CAEN"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "LEHA"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ROUE"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ISAM"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NSAI",
+    "nom": "Ecole nationale de la Statistique et de l'Analyse de l'Information - Rennes",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NSAM",
+    "nom": "SupAgro - Montpellier",
+    "date_debut": "2007-12-31",
+    "date_fin": "2020-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "AGRO"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "ENSA"
+        ],
+        "date_debut": "2007-12-31",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir AGRO à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "NSAR",
+    "nom": "ENSA - Rennes",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [
+      {
+        "codes": [
+          "AGRO"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "voir NSAR à partir de 2004-01-14",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "OBSP",
+    "nom": "Observatoire de Paris",
+    "date_debut": null,
+    "date_fin": "2016-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PSLE"
+        ],
+        "date_debut": "2016-01-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPSL"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PSLE de 2016-01-01 à 2019-12-31 Voir UPSL à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ONIR",
+    "nom": "Ecole nationale vétérinaire - Nantes",
+    "date_debut": "2008-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "NANT"
+        ],
+        "date_debut": "2008-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ORLE",
+    "nom": "Orléans",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA00",
+    "nom": "Université de Paris (1896-1968)",
+    "date_debut": "1896",
+    "date_fin": "1968",
+    "voir_apres": [
+      {
+        "codes": [
+          "PA01",
+          "PA02",
+          "PA03",
+          "PA04",
+          "PA05",
+          "PA06",
+          "PA07",
+          "PA08",
+          "PA09",
+          "PA10",
+          "PA11",
+          "PA12",
+          "PA13"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PAFD"
+        ],
+        "date_debut": "1896-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "PAFL"
+        ],
+        "date_debut": "1896-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "PAFM"
+        ],
+        "date_debut": "1896-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "PAFS"
+        ],
+        "date_debut": "1896-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "PAPH"
+        ],
+        "date_debut": "1920-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "PATC"
+        ],
+        "date_debut": "1885-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "PATP"
+        ],
+        "date_debut": null,
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir PA01, PA02, PA03, PA04, PA05, PA06, PA07, PA08, PA09, PA10, PA11, PA12, PA13 à partir de 1970-03-21 ATTENTION : la date officielle de fin est 1968 mais ce libellé couvre les thèses soutenues jusqu'au 1970-12-31 date à laquelle l'université de Paris créée en 1896 a définitivement cessé d'exister",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA01",
+    "nom": "Paris 1",
+    "date_debut": "1970-03-21",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA02",
+    "nom": "Paris 2",
+    "date_debut": "1970-03-21",
+    "date_fin": "2022-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "ASSA"
+        ],
+        "date_debut": "2022-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir ASSA à partir de 2022-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA03",
+    "nom": "Paris 3",
+    "date_debut": "2019-09-01",
+    "date_fin": "2015-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "USPC"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "USPC"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir USPC de 2015-01-01 à 2019-08-31",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA04",
+    "nom": "Paris 4",
+    "date_debut": "1970-03-21",
+    "date_fin": "2018-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SORU"
+        ],
+        "date_debut": "2018-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir SORU à partir de 2018-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA05",
+    "nom": "Paris 5",
+    "date_debut": "1970-03-21",
+    "date_fin": "2015-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "USPC"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UNIP"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir USPC de 2015-01-01 à 2019-08-31 Voir UNIP à partir de 2019-09-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA06",
+    "nom": "Paris 6",
+    "date_debut": "1970-03-21",
+    "date_fin": "2018-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SORU"
+        ],
+        "date_debut": "2018-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir SORU à partir de 2018-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA07",
+    "nom": "Paris 7",
+    "date_debut": "1970-03-21",
+    "date_fin": "2015-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "USPC"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UNIP"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir USPC de 2015-01-01 à 2019-08-31 Voir UNIP à partir de 2019-09-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA08",
+    "nom": "Paris 8",
+    "date_debut": "1970-03-21",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA09",
+    "nom": "Paris 9",
+    "date_debut": "1970-03-21",
+    "date_fin": "2016-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PSLE"
+        ],
+        "date_debut": "2016-01-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPSL"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir PSLE de 2016-01-01 à 2019-12-31 Voir UPSL à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA10",
+    "nom": "Paris 10",
+    "date_debut": "1970-03-21",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA11",
+    "nom": "Paris 11",
+    "date_debut": "1970-03-21",
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPAS"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir SACL de 2015-09-01 à 2019-12-31 Voir UPAS à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA12",
+    "nom": "Paris 12",
+    "date_debut": "1970-03-21",
+    "date_fin": "2008-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PEST"
+        ],
+        "date_debut": "2008-01-01",
+        "date_fin": "2020-09-01",
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir PEST de 2008-01-01 à 2020-09-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PA13",
+    "nom": "Paris 13",
+    "date_debut": "2019-09-01",
+    "date_fin": "2015-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "USPC"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1970-03-21",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "USPC"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "(Voir USPC de 2015-01-01 à 2019-08-31)",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PACI",
+    "nom": "Pacifique",
+    "date_debut": null,
+    "date_fin": "1999-06-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "NCAL"
+        ],
+        "date_debut": "1999-06-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "POLF"
+        ],
+        "date_debut": "1999-06-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir NCAL à partir de 1999-06-01 Voir POLF à partir de 1999-06-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PAFD",
+    "nom": "Faculté de Droit de Paris",
+    "date_debut": null,
+    "date_fin": "1896-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1896-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PA00 à partir de 1896-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PAFL",
+    "nom": "Faculté des Lettres de Paris",
+    "date_debut": null,
+    "date_fin": "1896-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1896-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PA00 à partir de 1896-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PAFM",
+    "nom": "Faculté de Médecine de Paris",
+    "date_debut": null,
+    "date_fin": "1896-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1896-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PA00 à partir de 1896-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PAFS",
+    "nom": "Faculté des Sciences de Paris",
+    "date_debut": null,
+    "date_fin": "1896-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1896-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PA00 à partir de 1896-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PAPH",
+    "nom": "Ecole supérieure de pharmacie de Paris",
+    "date_debut": null,
+    "date_fin": "1920-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1920-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PA00 à partir de 1920-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PAST",
+    "nom": "Université Marie et Louis Pasteur",
+    "date_debut": "2025-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "BESA"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "UBFC"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PATC",
+    "nom": "Faculté de Théologie catholique de Paris",
+    "date_debut": null,
+    "date_fin": "1885-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": "1885-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PA00 à partir de 1885-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PATP",
+    "nom": "Faculté de Théologie protestante de Paris",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [
+      {
+        "codes": [
+          "PA00"
+        ],
+        "date_debut": null,
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir PA00 de 1896-01-01 à 1905-01-0",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PAUU",
+    "nom": "Pau",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PERP",
+    "nom": "Perpignan",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PESC",
+    "nom": "Paris Est (COMUE)",
+    "date_debut": "2015-03-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "PEST"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PEST",
+    "nom": "Paris Est (PRES)",
+    "date_debut": "2008-01-01",
+    "date_fin": "2015-03-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PESC"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "MARN"
+        ],
+        "date_debut": "2008-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "PA12"
+        ],
+        "date_debut": "2008-01-01",
+        "date_fin": "2020-09-01",
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENPC"
+        ],
+        "date_debut": "2008-01-01",
+        "date_fin": "2020-09-01",
+        "condition": null
+      }
+    ],
+    "note_source": "Voir PESC à partir de 2015-03-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "POIT",
+    "nom": "Poitiers",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "POLF",
+    "nom": "Polynésie franà§aise",
+    "date_debut": "1999-06-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "PACI"
+        ],
+        "date_debut": "1999-06-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "PSLE",
+    "nom": "Paris Sciences et Lettres (ComUE)",
+    "date_debut": "2016-01-01",
+    "date_fin": "2020-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "UPSL"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA09"
+        ],
+        "date_debut": "2016-01-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENMP"
+        ],
+        "date_debut": "2016-01-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENSU"
+        ],
+        "date_debut": "2016-01-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "EPHE"
+        ],
+        "date_debut": "2016-01-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "OBSP"
+        ],
+        "date_debut": "2016-01-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      }
+    ],
+    "note_source": "Voir UPSL à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "REIM",
+    "nom": "Reims",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "REN0",
+    "nom": "Université de Rennes",
+    "date_debut": null,
+    "date_fin": "1971-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "REN1",
+          "REN2"
+        ],
+        "date_debut": "1971-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir REN1 ou REN2 à partir de 1971-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "REN1",
+    "nom": "Rennes 1",
+    "date_debut": "1971-01-01",
+    "date_fin": "2023-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "UREN"
+        ],
+        "date_debut": "2023-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "REN0"
+        ],
+        "date_debut": "1971-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir UREN à partir de 2023-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "REN2",
+    "nom": "Rennes 2",
+    "date_debut": "1971-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "REN0"
+        ],
+        "date_debut": "1971-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ROUE",
+    "nom": "Rouen",
+    "date_debut": null,
+    "date_fin": "2017-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "NORM"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir NORM à partir de 2017-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "SACL",
+    "nom": "Université Paris-Saclay (ComUE)",
+    "date_debut": "2015-09-01",
+    "date_fin": "2020-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "UPAS"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "EVRY"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "PA11"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "VERS"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "AGPT"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "CSUP"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "DENS"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "ECAP"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "EHEC"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENST"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "EPXX"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "ESTA"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "IOTA"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "TELE"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      }
+    ],
+    "note_source": "Voir UPAS à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "SORU",
+    "nom": "Sorbonne université",
+    "date_debut": "2018-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA04"
+        ],
+        "date_debut": "2018-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "PA06"
+        ],
+        "date_debut": "2018-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "STET",
+    "nom": "Saint-Etienne",
+    "date_debut": "2022-08-31",
+    "date_fin": "2015-03-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2015-03-01",
+        "date_fin": "2022-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UJMO"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2022-08-31",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir LYSE de 2015-03-01 à 2022-08-31 Voir UJMO à partir du 2025-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "STR1",
+    "nom": "Strasbourg 1",
+    "date_debut": null,
+    "date_fin": "2009-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "STRA"
+        ],
+        "date_debut": "2009-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir STRA à partir de 2009-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "STR2",
+    "nom": "Strasbourg 2",
+    "date_debut": null,
+    "date_fin": "2009-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "STRA"
+        ],
+        "date_debut": "2009-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir STRA à partir de 2009-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "STR3",
+    "nom": "Strasbourg 3",
+    "date_debut": null,
+    "date_fin": "2009-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "STRA"
+        ],
+        "date_debut": "2009-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir STRA à partir de 2009-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "STRA",
+    "nom": "Strasbourg",
+    "date_debut": "2009-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "STR1"
+        ],
+        "date_debut": "2009-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "STR2"
+        ],
+        "date_debut": "2009-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "STR3"
+        ],
+        "date_debut": "2009-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "SUPL",
+    "nom": "Supélec",
+    "date_debut": null,
+    "date_fin": "2015-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "CSUP"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir CSUP à partir de 2015-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "SUPM",
+    "nom": "Besançon, École Nationale Supérieure de Mécanique et des Microtechniques",
+    "date_debut": "2025-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "UBFC"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "TELB",
+    "nom": "Ecole nationale supérieure des Telecom de Bretagne - Brest",
+    "date_debut": null,
+    "date_fin": "2017-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "IMTA"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir IMTA à partir de 2017-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "TELE",
+    "nom": "Institut national des télécommunications",
+    "date_debut": null,
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "IPPA"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir SACL de 2015-09-01 à 2019-08-31 Voir IPPA à partir de 2019-09-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "TLSE",
+    "nom": "Université de Toulouse (2023-….)",
+    "date_debut": "2024-01-01",
+    "date_fin": "2026-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "UTLSE"
+        ],
+        "date_debut": "2026-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "TOU2"
+        ],
+        "date_debut": "2024-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "TOU3"
+        ],
+        "date_debut": "2024-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "INPT"
+        ],
+        "date_debut": "2024-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ISAT"
+        ],
+        "date_debut": "2024-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": "Voir UTLSE à partir de 2026-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "TOU1",
+    "nom": "Toulouse 1",
+    "date_debut": null,
+    "date_fin": "2023-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "TOUC"
+        ],
+        "date_debut": "2023-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir TOUC à partir de 2023-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "TOU2",
+    "nom": "Toulouse 2",
+    "date_debut": null,
+    "date_fin": "2024-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "TLSE"
+        ],
+        "date_debut": "2024-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir TLSE à partir de 2024-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "TOU3",
+    "nom": "Toulouse 3",
+    "date_debut": null,
+    "date_fin": "2024-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "TLSE"
+        ],
+        "date_debut": "2024-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir TLSE à partir de 2024-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "TOUC",
+    "nom": "Université Toulouse Capitole",
+    "date_debut": "2023-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "TOU1"
+        ],
+        "date_debut": "2023-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "TOUL",
+    "nom": "Toulon",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "TOUR",
+    "nom": "Tours",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "TROY",
+    "nom": "Troyes",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UBEU",
+    "nom": "Université Bourgogne Europe",
+    "date_debut": "2025-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "DIJO"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "UBFC"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UBFC",
+    "nom": "Bourgogne Franche-Comté",
+    "date_debut": "2017-01-01",
+    "date_fin": "2025-01-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PAST",
+          "UBEU",
+          "SUPM",
+          "BELF",
+          "AGRO"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "BELF"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": "2024-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "BESA"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": "2024-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "DIJO"
+        ],
+        "date_debut": "2017-01-01",
+        "date_fin": "2024-12-31",
+        "condition": null
+      }
+    ],
+    "note_source": "Voir PAST, UBEU, SUPM, BELF, AGRO à partir de 2025-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UCFA",
+    "nom": "Université Clermont-Auvergne (2021-...)",
+    "date_debut": "2021-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "CLFA"
+        ],
+        "date_debut": "2021-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UEFL",
+    "nom": "Université Gustave Eiffel",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UJMO",
+    "nom": "Saint-Etienne, Université Jean Monnet",
+    "date_debut": "2025-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "STET"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "ULIL",
+    "nom": "Université de Lille (2022-....)",
+    "date_debut": "2022-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "LILU"
+        ],
+        "date_debut": "2022-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UMON",
+    "nom": "Université de Montpellier (2022-....)",
+    "date_debut": "2022-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "MONT"
+        ],
+        "date_debut": "2022-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UMPV",
+    "nom": "Université de Montpellier Paul-Valéry",
+    "date_debut": "2025-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "MON3"
+        ],
+        "date_debut": "2025-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UNIP",
+    "nom": "Université Paris Cité",
+    "date_debut": "2019-09-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA05"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "PA07"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "USPC"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UPAS",
+    "nom": "Université Paris-Saclay",
+    "date_debut": "2020-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "EVRY"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "PA11"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "VERS"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "AGPT"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "CSUP"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "DENS"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ECAP"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "IOTA"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UPHF",
+    "nom": "Université Polytechnique des Hauts-de-France - Valenciennes",
+    "date_debut": "2019-09-09",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "VALE"
+        ],
+        "date_debut": "2019-09-09",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UPSL",
+    "nom": "Université Paris sciences et lettres",
+    "date_debut": "2020-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA09"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENMP"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENSU"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "EPHE"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "OBSP"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "PSLE"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UREN",
+    "nom": "Université de Renne (2023-...)",
+    "date_debut": "2023-01-01",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "REN1"
+        ],
+        "date_debut": "2023-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENCR"
+        ],
+        "date_debut": "2023-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "ENSR"
+        ],
+        "date_debut": "2023-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "USPC",
+    "nom": "Sorbonne Paris Cité",
+    "date_debut": "2015-01-01",
+    "date_fin": "2019-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "PA03",
+          "PA13",
+          "INAL",
+          "UNIP"
+        ],
+        "date_debut": "2019-09-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [
+      {
+        "codes": [
+          "PA03"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "PA05"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "PA07"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "PA13"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "GLOB"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": null,
+        "condition": null
+      },
+      {
+        "codes": [
+          "INAL"
+        ],
+        "date_debut": "2015-01-01",
+        "date_fin": "2019-08-31",
+        "condition": null
+      }
+    ],
+    "note_source": "Voir PA03, PA13, INAL et UNIP à partir de 2019-09-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "UTLS",
+    "nom": "Université de Toulouse (2026-...)",
+    "date_debut": null,
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "VALE",
+    "nom": "Valenciennes",
+    "date_debut": null,
+    "date_fin": "2019-09-09",
+    "voir_apres": [
+      {
+        "codes": [
+          "UPHF"
+        ],
+        "date_debut": "2019-09-09",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir UPHF à partir de 2019-09-09",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "VERS",
+    "nom": "Versailles St Quentin en Yvelines",
+    "date_debut": null,
+    "date_fin": "2015-09-01",
+    "voir_apres": [
+      {
+        "codes": [
+          "SACL"
+        ],
+        "date_debut": "2015-09-01",
+        "date_fin": "2019-12-31",
+        "condition": null
+      },
+      {
+        "codes": [
+          "UPAS"
+        ],
+        "date_debut": "2020-01-01",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "voir_avant": [],
+    "note_source": "Voir SACL de 2015-09-01 à 2019-12-31 Voir UPAS à partir de 2020-01-01",
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "VETA",
+    "nom": "VetAgro Sup – Marcy l'Etoile",
+    "date_debut": "2022-08-31",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "LYSE"
+        ],
+        "date_debut": "2022-08-31",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  },
+  {
+    "code": "YANE",
+    "nom": "Guyane",
+    "date_debut": "2015-03-16",
+    "date_fin": null,
+    "voir_apres": [],
+    "voir_avant": [
+      {
+        "codes": [
+          "AGUY"
+        ],
+        "date_debut": "2015-03-16",
+        "date_fin": null,
+        "condition": null
+      }
+    ],
+    "note_source": null,
+    "ppn": null,
+    "label_idref": null,
+    "ecoles_doctorales": []
+  }
+]

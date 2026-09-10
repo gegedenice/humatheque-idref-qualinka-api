@@ -20,9 +20,10 @@ from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException, Query, Security
 from fastapi.concurrency import run_in_threadpool
 from fastapi.security import APIKeyHeader
-from pydantic import BaseModel, Field
+from pydantic import AliasChoices, BaseModel, Field
 
 load_dotenv()
+
 
 FIND_RA_ENDPOINT = os.getenv(
     "FIND_RA_ENDPOINT",
@@ -56,8 +57,20 @@ DEFAULT_WEIGHT_ATTRRA_NOTE = float(os.getenv("IDREF_WEIGHT_ATTRRA_NOTE", "0.15")
 DEFAULT_WEIGHT_REFERENCES = float(os.getenv("IDREF_WEIGHT_REFERENCES", "0.15"))
 DEFAULT_WEIGHT_INSTITUTION_YEAR = float(os.getenv("IDREF_WEIGHT_INSTITUTION_YEAR", "0.05"))
 
+ORG_INDEX_PATH = os.getenv(
+    "IDREF_ORG_INDEX_PATH",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "idref_org_alignment", "index_recherche.json"),
+)
+ORG_SPARQL_ENDPOINT = os.getenv("IDREF_ORG_SPARQL_ENDPOINT", "https://data.idref.fr/sparql")
+DEFAULT_ORG_ACCEPT_THRESHOLD = float(os.getenv("IDREF_ORG_ACCEPT_THRESHOLD", "0.72"))
+DEFAULT_ORG_MARGIN_THRESHOLD = float(os.getenv("IDREF_ORG_MARGIN_THRESHOLD", "0.08"))
+DEFAULT_ORG_LOW_THRESHOLD = float(os.getenv("IDREF_ORG_LOW_THRESHOLD", "0.45"))
+DEFAULT_ORG_FLOOR_THRESHOLD = float(os.getenv("IDREF_ORG_FLOOR_THRESHOLD", "0.30"))
+DEFAULT_ORG_MAX_CANDIDATES = int(os.getenv("IDREF_ORG_MAX_CANDIDATES", "5"))
+
 EMBEDDER = None
 EMBEDDING_CACHE: dict[str, list[float]] = {}
+ORG_INDEX: dict[str, Any] | None = None
 
 app = FastAPI(
     title="Humatheque IdRef Qualinka API",
@@ -73,7 +86,15 @@ def require_api_key(api_key: str | None = Security(api_key_header)) -> None:
         raise HTTPException(status_code=401, detail="Invalid or missing API key")
 
 
-class AlignPersonRequest(BaseModel):
+class HttpTuning(BaseModel):
+    """Transport knobs shared by every request model."""
+
+    timeout: float = Field(DEFAULT_TIMEOUT, gt=0.0, le=120.0)
+    retries: int = Field(DEFAULT_RETRIES, ge=0, le=10)
+    backoff: float = Field(DEFAULT_BACKOFF, ge=0.0, le=30.0)
+
+
+class AlignPersonRequest(HttpTuning):
     name: str = Field(..., description="Extracted full person name.")
     first_name: str = Field("", description="Optional parsed first-name override.")
     last_name: str = Field("", description="Optional parsed last-name override.")
@@ -102,9 +123,6 @@ class AlignPersonRequest(BaseModel):
     weight_attrra_note: float = Field(DEFAULT_WEIGHT_ATTRRA_NOTE, ge=0.0)
     weight_references: float = Field(DEFAULT_WEIGHT_REFERENCES, ge=0.0)
     weight_institution_year: float = Field(DEFAULT_WEIGHT_INSTITUTION_YEAR, ge=0.0)
-    timeout: float = Field(DEFAULT_TIMEOUT, gt=0.0, le=120.0)
-    retries: int = Field(DEFAULT_RETRIES, ge=0, le=10)
-    backoff: float = Field(DEFAULT_BACKOFF, ge=0.0, le=30.0)
 
 
 class FindPersonResponse(BaseModel):
@@ -231,11 +249,12 @@ def similarity_mode(embedding_model: str | None) -> dict[str, str | None]:
     }
 
 
-def request_json(url: str, timeout: float, retries: int, backoff: float) -> tuple[Any | None, str | None]:
+def request_json(url: str, timeout: float, retries: int, backoff: float,
+                 accept: str = "application/json") -> tuple[Any | None, str | None]:
     last_error = None
     for attempt in range(retries + 1):
         try:
-            request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
+            request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": accept})
             with urlopen(request, timeout=timeout) as response:
                 payload = response.read().decode("utf-8")
             return json.loads(payload), None
@@ -726,7 +745,393 @@ async def align_person_endpoint(
     return await run_in_threadpool(align_person, payload)
 
 
+# --------------------------------------------------------------------------- #
+# Organization alignment (établissements de soutenance + écoles doctorales)
+#
+# A different problem from persons: the universe is closed and small (~231 ABES
+# codes, a few hundred doctoral schools), so we resolve against a locally built
+# referential instead of querying candidates live. The risk is not homonymy but
+# confusing temporal versions of one institution ("Paris 4" / "Université
+# Paris-Sorbonne" / "Sorbonne Université") — the defense year is what settles it,
+# which is why this stays strictly lexical and never uses embeddings.
+# --------------------------------------------------------------------------- #
+
+ORG_STOPWORDS = {"de", "des", "du", "d", "la", "le", "les", "l", "et", "en",
+                 "the", "of", "for", "a"}
+ED_NUMBER_RE = re.compile(r"\bed\s*(\d{1,4})\b")
+# mots génériques d'organisation : mauvais filtres SPARQL (« universitat » ramène
+# toute l'Europe avant Heidelberg). Utilisés seulement pour choisir le terme de
+# recherche distant, jamais pour le scoring local.
+ORG_GENERIC_TERMS = {"universite", "universitat", "university", "universidad", "universita",
+                     "ecole", "school", "institut", "institute", "college", "faculte",
+                     "centre", "center", "laboratoire", "hochschule", "universitaet"}
+
+
+class AlignOrganizationRequest(HttpTuning):
+    label: str = Field(..., description="Extracted organization label.")
+    kind: str = Field(
+        "institution",
+        description='Either "institution" (granting / co-tutelle) or "doctoral_school".',
+    )
+    year: str = Field("", validation_alias=AliasChoices("year", "defense_year"),
+                      description="Extracted defense year; disambiguates temporal versions. "
+                                  "The extraction schema's defense_year is accepted as an alias.")
+    parent_ppn: str = Field(
+        "",
+        description="Optional institution PPN. For a doctoral school, restricts candidates to that institution's schools.",
+    )
+    allow_remote: bool = Field(
+        False,
+        description="On a local miss, fall back to a live data.idref.fr SPARQL search (covers foreign co-tutelle partners).",
+    )
+    max_candidates: int = Field(DEFAULT_ORG_MAX_CANDIDATES, ge=1, le=50)
+    accept_threshold: float = Field(DEFAULT_ORG_ACCEPT_THRESHOLD, ge=0.0, le=1.0)
+    margin_threshold: float = Field(DEFAULT_ORG_MARGIN_THRESHOLD, ge=0.0, le=1.0)
+    low_threshold: float = Field(DEFAULT_ORG_LOW_THRESHOLD, ge=0.0, le=1.0)
+    floor_threshold: float = Field(DEFAULT_ORG_FLOOR_THRESHOLD, ge=0.0, le=1.0)
+
+
+class AlignThesisOrganizationsRequest(HttpTuning):
+    granting_institution: str = Field("", description="Extracted granting institution.")
+    co_tutelle_institutions: list[str] = Field(
+        default_factory=list, description="Extracted co-tutelle institution names."
+    )
+    doctoral_school: str = Field("", description="Extracted doctoral school.")
+    year: str = Field("", validation_alias=AliasChoices("year", "defense_year"),
+                      description="Extracted defense year; defense_year accepted as an alias.")
+    allow_remote: bool = Field(False, description="See AlignOrganizationRequest.allow_remote.")
+    max_candidates: int = Field(DEFAULT_ORG_MAX_CANDIDATES, ge=1, le=50)
+    accept_threshold: float = Field(DEFAULT_ORG_ACCEPT_THRESHOLD, ge=0.0, le=1.0)
+    margin_threshold: float = Field(DEFAULT_ORG_MARGIN_THRESHOLD, ge=0.0, le=1.0)
+    low_threshold: float = Field(DEFAULT_ORG_LOW_THRESHOLD, ge=0.0, le=1.0)
+    floor_threshold: float = Field(DEFAULT_ORG_FLOOR_THRESHOLD, ge=0.0, le=1.0)
+
+
+def org_tokens(value: str) -> set[str]:
+    return {token for token in normalize_text(value).split() if token not in ORG_STOPWORDS}
+
+
+def org_similarity(left: str, right: str) -> float:
+    """Sequence ratio (word order) + token Jaccard (shared words) + inclusion bonus.
+
+    Deliberately not name_similarity: that one is tuned for person names and has no
+    stopword handling, which matters here ("Université *de* Paris").
+    """
+    left_norm, right_norm = normalize_text(left), normalize_text(right)
+    if not left_norm or not right_norm:
+        return 0.0
+    sequence = SequenceMatcher(None, left_norm, right_norm).ratio()
+    left_tokens, right_tokens = org_tokens(left), org_tokens(right)
+    union = left_tokens | right_tokens
+    jaccard = len(left_tokens & right_tokens) / len(union) if union else 0.0
+    inclusion = 1.0 if left_tokens and left_tokens.issubset(right_tokens) else 0.0
+    return 0.5 * sequence + 0.4 * jaccard + 0.1 * inclusion
+
+
+def ed_numbers(value: str) -> set[str]:
+    """Doctoral-school numbers ("ED 472", "ED472"). A decisive signal when present."""
+    return {match.lstrip("0") or "0" for match in ED_NUMBER_RE.findall(normalize_text(value))}
+
+
+def load_org_index() -> dict[str, Any]:
+    """Load the referential once into {entities, by_ppn}. Same lazy pattern as EMBEDDER."""
+    global ORG_INDEX
+    if ORG_INDEX is None:
+        try:
+            with open(ORG_INDEX_PATH, encoding="utf-8") as handle:
+                entities = json.load(handle)
+        except FileNotFoundError:
+            raise HTTPException(
+                status_code=503,
+                detail=(
+                    f"Organization referential not built: {ORG_INDEX_PATH} is missing. "
+                    "Run idref_org_alignment/run_all.py."
+                ),
+            )
+        ORG_INDEX = {
+            "entities": entities,
+            "by_ppn": {item["ppn"]: item for item in entities if item.get("ppn")},
+        }
+    return ORG_INDEX
+
+
+def org_year(value: Any) -> int | None:
+    match = re.search(r"\d{4}", str(value or ""))
+    return int(match.group(0)) if match else None
+
+
+def year_in_window(year: int | None, start: Any, end: Any) -> bool:
+    if year is None:
+        return True
+    low, high = org_year(start), org_year(end)
+    if low is not None and year < low:
+        return False
+    if high is not None and year > high:
+        return False
+    return True
+
+
+def org_candidate_pool(index: dict[str, Any], kind: str, parent_ppn: str) -> tuple[list[dict[str, Any]], str]:
+    """Doctoral schools are scoped to the parent institution when we know it:
+    ~14 candidates instead of ~500. Widened to the parent's predecessors and
+    successors, since a school outlives the institution version it was created under."""
+    entity_type = "ecole_doctorale" if kind == "doctoral_school" else "etablissement"
+    typed = [item for item in index["entities"] if item.get("type") == entity_type]
+    if entity_type != "ecole_doctorale" or not parent_ppn:
+        return typed, "global"
+
+    parent = index["by_ppn"].get(parent_ppn)
+    if not parent:
+        return typed, "global"
+    related = {parent_ppn}
+    for key in ("predecesseurs", "successeurs"):
+        related.update(link["ppn"] for link in parent.get(key, []) if link.get("ppn"))
+    scoped_ppns = set()
+    for ppn in related:
+        node = index["by_ppn"].get(ppn)
+        if node:
+            scoped_ppns.update(node.get("ecoles_doctorales", []))
+    scoped = [item for item in typed if item["ppn"] in scoped_ppns]
+    return (scoped, "parent") if scoped else (typed, "global")
+
+
+def score_org_entity(entity: dict[str, Any], label: str, query_numbers: set[str]) -> float:
+    labels = entity.get("labels") or [entity.get("label_officiel") or ""]
+    score = max((org_similarity(label, form) for form in labels), default=0.0)
+    if query_numbers and query_numbers & set(entity.get("numeros", [])):
+        score = max(score, 0.95)
+    return score
+
+
+def org_status(top: float, margin: float, payload: Any) -> str:
+    if top < payload.floor_threshold:
+        return "not_found"
+    if top < payload.low_threshold:
+        return "low_confidence"
+    if top >= payload.accept_threshold and margin >= payload.margin_threshold:
+        return "accepted"
+    if top >= payload.accept_threshold:
+        return "ambiguous"
+    return "low_confidence"
+
+
+def org_candidate_to_json(entity: dict[str, Any], score: float, valid_year: bool) -> dict[str, Any]:
+    return {
+        "ppn": entity.get("ppn"),
+        "label_officiel": entity.get("label_officiel"),
+        "type": entity.get("type"),
+        "codes": entity.get("codes"),
+        "score": round(score, 4),
+        "valid_for_year": valid_year,
+        "date_debut": entity.get("date_debut"),
+        "date_fin": entity.get("date_fin"),
+        "url": f"https://www.idref.fr/{entity['ppn']}" if entity.get("ppn") else None,
+    }
+
+
+def org_redirect(index: dict[str, Any], entity: dict[str, Any], year: int | None) -> dict[str, Any] | None:
+    """Best match right, wrong era: surface the successor valid that year as evidence.
+    Never auto-accepted — a human decides."""
+    if year is None:
+        return None
+    for link in entity.get("successeurs", []):
+        node = index["by_ppn"].get(link.get("ppn"))
+        target = node or link
+        if year_in_window(year, target.get("date_debut"), target.get("date_fin")):
+            return {
+                "reason": "matched_label_out_of_period",
+                "from_ppn": entity.get("ppn"),
+                "ppn": target.get("ppn"),
+                "label_officiel": target.get("label_officiel") or link.get("label"),
+                "date_debut": target.get("date_debut"),
+                "date_fin": target.get("date_fin"),
+            }
+    return None
+
+
+def remote_org_search(label: str, timeout: float, retries: int, backoff: float, limit: int) -> tuple[list[dict[str, Any]], str | None]:
+    """Live foaf:Organization search on data.idref.fr, for organizations absent from the
+    referential by construction (foreign co-tutelle partners, master's-only institutions)."""
+    terms = [token for token in org_tokens(label) if len(token) > 2]
+    if not terms:
+        return [], "No searchable term in label."
+    # un seul filtre, sur le terme le plus long — le plus discriminant (« heidelberg »
+    # plutôt que « universitat »). Un ET sur tous les termes est trop strict : la regex
+    # SPARQL travaille sur le libellé accentué (« Universität ») alors que nos tokens
+    # sont désaccentués. Le tri fin est fait localement par org_similarity.
+    discriminants = [t for t in terms if t not in ORG_GENERIC_TERMS] or terms
+    filtres = f'FILTER(regex(?label,"{re.escape(max(discriminants, key=len))}","i"))'
+    query = (
+        "PREFIX foaf: <http://xmlns.com/foaf/0.1/> "
+        "SELECT DISTINCT ?s ?label WHERE { "
+        "?s a foaf:Organization. ?s skos:prefLabel ?label. "
+        f'{filtres} }} LIMIT {max(limit * 10, 50)}'
+    )
+    url = f"{ORG_SPARQL_ENDPOINT}?{urlencode({'query': query, 'format': 'json'})}"
+    # data.idref.fr renvoie 406 sur Accept: application/json malgré ?format=json.
+    # l'endpoint SPARQL répond en 30-60 s : le timeout HTTP par défaut (20 s) est
+    # calibré pour Qualinka, pas pour lui.
+    payload, error = request_json(url, max(timeout, 90.0), retries, backoff,
+                                  accept="application/sparql-results+json")
+    if error:
+        return [], error
+    results = []
+    for binding in (payload or {}).get("results", {}).get("bindings", []):
+        uri = binding.get("s", {}).get("value", "")
+        match = re.search(r"idref\.fr/(\w+)/id", uri)
+        form = binding.get("label", {}).get("value")
+        if match and form:
+            results.append({"ppn": match.group(1), "label_officiel": form,
+                            "labels": [form], "type": "remote"})
+    return results, None
+
+
+def align_organization(payload: AlignOrganizationRequest) -> dict[str, Any]:
+    index = load_org_index()
+    year = org_year(payload.year)
+    query_numbers = ed_numbers(payload.label)
+    pool, scope = org_candidate_pool(index, payload.kind, payload.parent_ppn)
+
+    scored = [
+        (score_org_entity(entity, payload.label, query_numbers),
+         year_in_window(year, entity.get("date_debut"), entity.get("date_fin")),
+         entity)
+        for entity in pool
+    ]
+    # Year-valid entities win as a block; fall back to all of them if none qualifies.
+    eligible = [row for row in scored if row[1]] or scored
+    eligible.sort(key=lambda row: row[0], reverse=True)
+
+    result: dict[str, Any] = {
+        "source": "idref_org_referential",
+        "query": {
+            "label": payload.label,
+            "kind": payload.kind,
+            "year": payload.year,
+            "parent_ppn": payload.parent_ppn or None,
+        },
+        "candidate_scope": scope,
+        "pool_size": len(pool),
+        "status": "not_found",
+        "ppn": None,
+        "label_officiel": None,
+        "score": 0.0,
+        "margin": 0.0,
+        "redirect": None,
+        "candidates": [],
+        "error": None,
+    }
+    if not payload.label.strip():
+        result["error"] = "Empty label."
+        return result
+
+    if eligible:
+        top_score, top_valid, top_entity = eligible[0]
+        second_score = eligible[1][0] if len(eligible) > 1 else 0.0
+        margin = top_score - second_score
+        status = org_status(top_score, margin, payload)
+        result.update({
+            "status": status,
+            "ppn": top_entity.get("ppn") if status == "accepted" else None,
+            "label_officiel": top_entity.get("label_officiel") if status == "accepted" else None,
+            "score": round(top_score, 4),
+            "margin": round(margin, 4),
+            "candidates": [
+                org_candidate_to_json(entity, score, valid)
+                for score, valid, entity in eligible[:payload.max_candidates]
+            ],
+        })
+        if not top_valid and top_score >= payload.low_threshold:
+            result["redirect"] = org_redirect(index, top_entity, year)
+
+    if payload.allow_remote and result["status"] in ("not_found", "low_confidence"):
+        remote, remote_error = remote_org_search(
+            payload.label, payload.timeout, payload.retries, payload.backoff, payload.max_candidates
+        )
+        remote_scored = sorted(
+            ((score_org_entity(entity, payload.label, query_numbers), entity) for entity in remote),
+            key=lambda row: row[0],
+            reverse=True,
+        )[:payload.max_candidates]
+        result["remote"] = {
+            "source": "idref_sparql",
+            "error": remote_error,
+            "candidates": [org_candidate_to_json(entity, score, True) for score, entity in remote_scored],
+        }
+    return result
+
+
+def align_thesis_organizations(payload: AlignThesisOrganizationsRequest) -> dict[str, Any]:
+    """Institution first, then the doctoral school scoped to it — the whole reason the
+    composite route exists (~14 candidates instead of ~500)."""
+    shared = payload.model_dump(
+        include={"year", "allow_remote", "max_candidates", "accept_threshold",
+                 "margin_threshold", "low_threshold", "floor_threshold",
+                 "timeout", "retries", "backoff"}
+    )
+
+    def align_one(label: str, kind: str, parent_ppn: str = "") -> dict[str, Any] | None:
+        if not label.strip():
+            return None
+        return align_organization(
+            AlignOrganizationRequest(label=label, kind=kind, parent_ppn=parent_ppn, **shared)
+        )
+
+    granting = align_one(payload.granting_institution, "institution")
+    parent_ppn = (granting or {}).get("ppn") or ""
+    return {
+        "source": "idref_org_referential",
+        "query": {
+            "granting_institution": payload.granting_institution,
+            "co_tutelle_institutions": payload.co_tutelle_institutions,
+            "doctoral_school": payload.doctoral_school,
+            "year": payload.year,
+        },
+        "granting_institution": granting,
+        "co_tutelle_institutions": [
+            align_one(label, "institution") for label in payload.co_tutelle_institutions if label.strip()
+        ],
+        "doctoral_school": align_one(payload.doctoral_school, "doctoral_school", parent_ppn),
+    }
+
+
+@app.get("/org-index/search")
+async def org_index_search_endpoint(
+    q: str = Query(..., description="Organization label to score against the referential."),
+    year: str = Query("", description="Optional defense-year filter."),
+    type: str = Query("etablissement", description='"etablissement" or "ecole_doctorale".'),
+    parent_ppn: str = Query("", description="Optional institution PPN scoping doctoral schools."),
+    max_results: int = Query(DEFAULT_ORG_MAX_CANDIDATES, ge=1, le=50),
+    _: None = Depends(require_api_key),
+) -> dict[str, Any]:
+    payload = AlignOrganizationRequest(
+        label=q,
+        kind="doctoral_school" if type == "ecole_doctorale" else "institution",
+        year=year,
+        parent_ppn=parent_ppn,
+        max_candidates=max_results,
+    )
+    return await run_in_threadpool(align_organization, payload)
+
+
+@app.post("/align/organization")
+async def align_organization_endpoint(
+    payload: AlignOrganizationRequest,
+    _: None = Depends(require_api_key),
+) -> dict[str, Any]:
+    return await run_in_threadpool(align_organization, payload)
+
+
+@app.post("/align/thesis-organizations")
+async def align_thesis_organizations_endpoint(
+    payload: AlignThesisOrganizationsRequest,
+    _: None = Depends(require_api_key),
+) -> dict[str, Any]:
+    return await run_in_threadpool(align_thesis_organizations, payload)
+
+
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("app:app", host="0.0.0.0", port=8001)
+    port = int(os.getenv("PORT", "8000"))
+    uvicorn.run("app:app", host="0.0.0.0", port=port)

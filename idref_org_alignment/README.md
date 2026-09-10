@@ -40,12 +40,25 @@ graphe. `note_source` conserve l'annotation brute (auditable).
 
 *A. code ABES → PPN.* Le code d'établissement n'existe dans aucune notice ni
 aucun index de recherche IdRef ; il n'apparaît qu'au milieu du NNT. On interroge
-`theses.fr/api/v1/theses/recherche/?q=nnt:*{CODE}*&nombre=1` et on lit
+`theses.fr/api/v1/theses/recherche/?q=nnt:*{CODE}*&nombre=300` et on lit
 `etabSoutenancePpn`. La troncature à gauche fonctionne, donc **aucune année à
 deviner** — c'est le gain sur `enrich_ppn.py`, qui essayait une liste d'années
 candidates contre le SRU et abandonnait s'il tombait à côté. Les codes
 antérieurs au NNT (PAFD, 1896) ne renvoient rien et restent `ppn: null` ; le SRU
 ne les trouvait pas non plus.
+
+Deux pièges, tous deux corrigés **en gardant l'échantillon, pas le premier hit** :
+
+1. *Le joker de tête matche le code ailleurs dans le NNT.* Un NNT vaut
+   `AAAA` + code sur 4 caractères + suffixe : `*HESA*` remonte `2016EHESA001`
+   (EHESS, pas HESAM), `*LY01*` remonte `2020GRALY015` (Grenoble). Les 231 codes
+   ABES font tous exactement 4 caractères sans collision de préfixe, donc le
+   filtre positionnel `nnt[4:8] == code` est exact. Sans lui, 6 PPN étaient faux
+   et portaient deux codes contradictoires (bug « EHES | HESA »).
+2. *theses.fr n'est pas exempt de NNT mal rattachés.* On vote donc à la majorité
+   sur `etabSoutenancePpn`. `nombre=300` et pas 50 : les 50 premiers hits d'AGPT
+   sont majoritairement d'anciennes thèses INA-PG et faisaient gagner le mauvais
+   PPN.
 
 *B. PPN → libellés, dates, graphe local.* `https://www.idref.fr/{ppn}.json`. Une
 notice donne tout, parce que les zones 510 sont **typées** :

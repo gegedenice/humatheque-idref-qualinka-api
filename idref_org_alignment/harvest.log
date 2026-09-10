@@ -3,41 +3,31 @@
   [50/231] 47 PPN trouvés
   [75/231] 72 PPN trouvés
   [100/231] 93 PPN trouvés
-  [125/231] 114 PPN trouvés
-  [150/231] 134 PPN trouvés
-  [175/231] 157 PPN trouvés
-  [200/231] 177 PPN trouvés
-  [225/231] 202 PPN trouvés
-  [231/231] 208 PPN trouvés
+  [125/231] 113 PPN trouvés
+  [150/231] 133 PPN trouvés
+  [175/231] 155 PPN trouvés
+  [200/231] 174 PPN trouvés
+  [225/231] 199 PPN trouvés
+  [231/231] 205 PPN trouvés
 
-# B. 202 notices établissement (idref.fr/{ppn}.json)
-  [25/202]
-  [50/202]
-  [75/202]
-  [100/202]
-  [125/202]
-  [150/202]
-  [175/202]
-  [200/202]
-  [202/202]
+# B. 205 notices établissement (idref.fr/{ppn}.json)
+  [25/205]
+  [50/205]
+  [75/205]
+  [100/205]
+  [125/205]
+  [150/205]
+  [175/205]
+  [200/205]
+  [205/205]
 
-# B'. 82 notices liées (ED, prédécesseurs, successeurs)
-  [50/82]
-  [82/82]
+# B'. 84 notices liées (ED, prédécesseurs, successeurs)
+  [50/84]
+  [84/84]
 
-# C. 477 notices d'école doctorale
-  [50/477]
-  [100/477]
-  [150/477]
-  [200/477]
-  [250/477]
-  [300/477]
-  [350/477]
-  [400/477]
-  [450/477]
-  [477/477]
+# C. 0 notices d'école doctorale
 
 Terminé -> organisations_full.json
-  codes ABES avec PPN : 208/231
-  notices récupérées  : 761
+  codes ABES avec PPN : 205/231
+  notices récupérées  : 767
   écoles doctorales   : 493

@@ -37042,5 +37042,253 @@
    }
   ],
   "ecoles_doctorales": []
+ },
+ "030267676": {
+  "ppn": "030267676",
+  "label_officiel": "Centrale Lyon ENISE",
+  "labels": [
+   "Centrale Lyon ENISE",
+   "ENISE",
+   "Ecole nationale d’ingénieurs de Saint-Etienne"
+  ],
+  "date_debut": "1961",
+  "date_fin": null,
+  "predecesseurs": [],
+  "successeurs": [],
+  "membres": [
+   {
+    "ppn": "033894221",
+    "label": "École Centrale de Lyon",
+    "note": "Depuis le 1er janvier 2021, l’ENISE est une école interne de  l’École Centrale de Lyon",
+    "date_debut": "1857",
+    "date_fin": null
+   }
+  ],
+  "ecoles_doctorales": []
+ },
+ "074314807": {
+  "ppn": "074314807",
+  "label_officiel": "Université de Rennes",
+  "labels": [
+   "Université de Rennes"
+  ],
+  "date_debut": "1896",
+  "date_fin": "1969",
+  "predecesseurs": [
+   {
+    "ppn": "155024884",
+    "label": "Faculté de droit",
+    "note": "Avant 1896, voir",
+    "date_debut": "1806",
+    "date_fin": "1896"
+   },
+   {
+    "ppn": "151085307",
+    "label": "Faculté des lettres",
+    "note": "Avant 1896, voir",
+    "date_debut": "1810",
+    "date_fin": "1896"
+   }
+  ],
+  "successeurs": [
+   {
+    "ppn": "02778715X",
+    "label": "Université de Rennes 1",
+    "note": "Après 1969, voir",
+    "date_debut": "1969",
+    "date_fin": "2022"
+   },
+   {
+    "ppn": "054447658",
+    "label": "Université Rennes 2",
+    "note": "Après 1969, voir",
+    "date_debut": "1969",
+    "date_fin": null
+   }
+  ],
+  "membres": [],
+  "ecoles_doctorales": []
+ },
+ "238277429": {
+  "ppn": "238277429",
+  "label_officiel": "HESAM Université",
+  "labels": [
+   "ComUE HESAM Université",
+   "ComUE Hautes écoles Sorbonne Arts et métiers université",
+   "Communauté d'universités et d'établissements HESAM Université",
+   "Communauté d'universités et d'établissements Hautes écoles Sorbonne Arts et métiers université",
+   "HESAM Université",
+   "Hautes Ecoles Sorbonne Arts et Métiers Université"
+  ],
+  "date_debut": "2010",
+  "date_fin": "2024",
+  "predecesseurs": [],
+  "successeurs": [],
+  "membres": [
+   {
+    "ppn": "027404978",
+    "label": "Conservatoire national des arts et métiers",
+    "note": null,
+    "date_debut": "1794",
+    "date_fin": null
+   },
+   {
+    "ppn": "02637515X",
+    "label": "École nationale supérieure d'arts et métiers",
+    "note": null,
+    "date_debut": "1780",
+    "date_fin": null
+   },
+   {
+    "ppn": "02636817X",
+    "label": "Centre national de la recherche scientifique",
+    "note": null,
+    "date_debut": "1939",
+    "date_fin": null
+   },
+   {
+    "ppn": "027601986",
+    "label": "École Boulle",
+    "note": null,
+    "date_debut": null,
+    "date_fin": null
+   },
+   {
+    "ppn": "027295710",
+    "label": "École supérieure des arts appliqués Duperré",
+    "note": null,
+    "date_debut": null,
+    "date_fin": null
+   },
+   {
+    "ppn": "162447418",
+    "label": "Ecole nationale supérieure des arts appliqués et des métiers d'art",
+    "note": null,
+    "date_debut": null,
+    "date_fin": null
+   },
+   {
+    "ppn": "185977049",
+    "label": "École nationale supérieure d'architecture de Paris-La Villette",
+    "note": null,
+    "date_debut": null,
+    "date_fin": null
+   },
+   {
+    "ppn": "026578603",
+    "label": "Ecole nationale supérieure de création industrielle",
+    "note": null,
+    "date_debut": null,
+    "date_fin": null
+   },
+   {
+    "ppn": "030785979",
+    "label": "Institut français de la mode",
+    "note": null,
+    "date_debut": null,
+    "date_fin": null
+   },
+   {
+    "ppn": "198630298",
+    "label": "SKEMA Business school",
+    "note": null,
+    "date_debut": null,
+    "date_fin": null
+   },
+   {
+    "ppn": "029639883",
+    "label": "Centre de formation des journalistes",
+    "note": null,
+    "date_debut": null,
+    "date_fin": null
+   },
+   {
+    "ppn": "186209649",
+    "label": "Fondation nationale Entreprise et performance",
+    "note": null,
+    "date_debut": null,
+    "date_fin": null
+   },
+   {
+    "ppn": "026496461",
+    "label": "Association ouvrière des Compagnons du Devoir",
+    "note": null,
+    "date_debut": null,
+    "date_fin": null
+   },
+   {
+    "ppn": "150495099",
+    "label": "École doctorale Sciences des métiers de l'ingénieur",
+    "note": null,
+    "date_debut": "2000",
+    "date_fin": null
+   },
+   {
+    "ppn": "155154397",
+    "label": "École doctorale Abbé Grégoire",
+    "note": null,
+    "date_debut": null,
+    "date_fin": null
+   }
+  ],
+  "ecoles_doctorales": []
+ },
+ "151085307": {
+  "ppn": "151085307",
+  "label_officiel": "Faculté des lettres",
+  "labels": [
+   "Faculté des lettres"
+  ],
+  "date_debut": "1810",
+  "date_fin": "1896",
+  "predecesseurs": [],
+  "successeurs": [
+   {
+    "ppn": "060247460",
+    "label": "Université de Rennes",
+    "note": "Après 1896, voir",
+    "date_debut": "1896",
+    "date_fin": "1969"
+   }
+  ],
+  "membres": [],
+  "ecoles_doctorales": []
+ },
+ "155024884": {
+  "ppn": "155024884",
+  "label_officiel": "Faculté de droit",
+  "labels": [
+   "Faculté de droit",
+   "Université de France",
+   "Université impériale"
+  ],
+  "date_debut": "1806",
+  "date_fin": "1896",
+  "predecesseurs": [],
+  "successeurs": [
+   {
+    "ppn": "035647191",
+    "label": "Université de Rennes",
+    "note": "Après 1896, voir",
+    "date_debut": "1896",
+    "date_fin": "1969"
+   }
+  ],
+  "membres": [],
+  "ecoles_doctorales": []
+ },
+ "191321761": {
+  "ppn": "191321761",
+  "label_officiel": "École nationale supérieure de l'aéronautique",
+  "labels": [
+   "ENSA",
+   "École nationale supérieure de l'aéronautique"
+  ],
+  "date_debut": "1930",
+  "date_fin": "1972",
+  "predecesseurs": [],
+  "successeurs": [],
+  "membres": [],
+  "ecoles_doctorales": []
  }
 }

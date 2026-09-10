@@ -526,7 +526,7 @@ Qualinka) :
 | Étape | Source | Ce qu'elle apporte |
 |---|---|---|
 | `parse_abes.py` | `documentation_abes_codes_etab.htm` | les 231 codes d'établissement ABES |
-| `harvest_idref.py` A | `theses.fr/api/v1/theses/recherche/?q=nnt:*CODE*&nombre=1` | `etabSoutenancePpn` — la jointure code → PPN, qui n'existe nulle part ailleurs |
+| `harvest_idref.py` A | `theses.fr/api/v1/theses/recherche/?q=nnt:*CODE*&nombre=300` | `etabSoutenancePpn` — la jointure code → PPN, qui n'existe nulle part ailleurs. Le joker de tête matche aussi le code *ailleurs* dans le NNT : on ne garde que les thèses dont `nnt[4:8] == code`, puis vote majoritaire  |
 | `harvest_idref.py` B | `https://www.idref.fr/{ppn}.json` | UNIMARC `210$a/$c` (libellé + fenêtre de validité), `410$a` (formes rejetées), `510` (prédécesseurs, successeurs, membres, écoles doctorales) |
 | `harvest_idref.py` C | SPARQL `data.idref.fr`, une requête sur `prefLabel ~ "^École doctorale"` | les écoles doctorales, que les notices d'établissement ne listent pas |
 | `build_index.py` | — | `index_recherche.json` + `index_recherche.meta.json` (date de build, endpoints sources, volumétrie) |
@@ -544,9 +544,9 @@ entièrement mis en cache et reprenable) :
 cd idref_org_alignment && python run_all.py && python lookup.py --selftest
 ```
 
-Couverture actuelle : **208 / 231** codes ABES résolus en PPN (les manques sont
+Couverture actuelle : **205 / 231** codes ABES résolus en PPN (les manques sont
 des entrées historiques antérieures au NNT, par exemple un doctorat de 1896 : pas
-de NNT, donc pas de clé de jointure), **268 établissements** et **516 écoles
+de NNT, donc pas de clé de jointure), **274 établissements** et **516 écoles
 doctorales**, dont 421 portent un numéro d'ED et 396 un établissement de
 rattachement.
 
@@ -762,7 +762,7 @@ d'entrée vide :
     "source": "idref_org_referential",
     "query": {"label": "...", "kind": "institution", "year": "2015", "parent_ppn": null},
     "candidate_scope": "global",
-    "pool_size": 268,
+    "pool_size": 274,
     "status": "accepted",
     "ppn": "02640463X",
     "label_officiel": "Université Sorbonne Paris Nord",
@@ -918,6 +918,23 @@ cp .example.env .env
 pip install -r requirements.txt
 uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 ```
+
+## Application de démonstration
+
+`gradio_app.py` est un client Gradio autonome de cette API — on colle un JSON
+d'extraction, on aligne les personnes une par une, et les trois champs
+organisations en un appel. C'est un consommateur des routes HTTP, pas un morceau
+du service : il n'importe pas `app.py` et le service n'en dépend pas.
+
+Déployée sur
+**<https://huggingface.co/spaces/Geraldine/Idref-Qualinka-alignement>**.
+
+```bash
+uv run --script gradio_app.py     # dépendances déclarées inline (PEP 723) ; PORT, défaut 7862
+```
+
+`IDREF_QUALINKA_API_URL` et `IDREF_QUALINKA_API_KEY` préremplissent les champs API,
+modifiables dans l'interface.
 
 ## Docker
 

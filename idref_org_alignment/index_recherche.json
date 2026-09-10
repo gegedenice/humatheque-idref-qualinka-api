@@ -91,15 +91,13 @@
     "type": "etablissement",
     "ppn": "026374889",
     "codes": [
-      "EHES",
-      "HESA"
+      "EHES"
     ],
     "label_officiel": "École des hautes études en sciences sociales",
     "labels": [
       "E.H.E.S.S.",
       "EHESS",
       "Ecole des hautes études en sciences sociales",
-      "HESAM",
       "Paris, EHESS",
       "École des hautes études en sciences sociales"
     ],
@@ -253,7 +251,7 @@
     "labels": [
       "ENST",
       "Ecole nationale supérieure des télécommunications",
-      "Paris, ENST",
+      "Paris, Télécom ParisTech",
       "SupTélécom",
       "Télécom Paris",
       "Télécom ParisTech",
@@ -333,8 +331,8 @@
       "INA-PG",
       "Institut national agronomique",
       "Institut national agronomique Paris-Grignon",
-      "Institut national d'agronomie - Paris Grignon",
-      "Paris, Institut national d'agronomie de Paris Grignon"
+      "Institut national agronomique Paris-Grignon (1971-2006)",
+      "Institut national d'agronomie - Paris Grignon"
     ],
     "numeros": [],
     "date_debut": "1971",
@@ -2309,8 +2307,6 @@
       "Strasbourg 1",
       "ULP",
       "Université Louis Pasteur",
-      "Université Louis Pasteur (Strasbourg)",
-      "Université Louis Pasteur (Strasbourg) (1971-2008)",
       "Université de Strasbourg 01",
       "Université de Strasbourg 1",
       "Université de Strasbourg I"
@@ -2592,6 +2588,7 @@
       "USTMG",
       "Université Grenoble-I",
       "Université Joseph Fourier",
+      "Université Joseph Fourier (Grenoble, Isère, France ; 1971-2015)",
       "Université de Grenoble 1",
       "Université de Grenoble I",
       "Université scientifique et médicale",
@@ -2658,8 +2655,8 @@
     "labels": [
       "ENGREF",
       "Ecole nationale du génie rural, des eaux et des forêts",
-      "Ecole nationale du génie rural, des eaux et des forêts (Paris ; Nancy ; 1968-2006)",
-      "Ecole nationale du génie rural, des eaux et forêts"
+      "Ecole nationale du génie rural, des eaux et forêts",
+      "Paris, ENGREF"
     ],
     "numeros": [],
     "date_debut": "1968",
@@ -2689,8 +2686,6 @@
       "UMB",
       "USHS",
       "Université Marc Bloch",
-      "Université Marc Bloch (Strasbourg)",
-      "Université Marc Bloch (Strasbourg) (1971-2008)",
       "Université de Strasbourg 02",
       "Université de Strasbourg 2",
       "Université de Strasbourg II",
@@ -3487,8 +3482,7 @@
     "type": "etablissement",
     "ppn": "027918459",
     "codes": [
-      "IEPP",
-      "PA00"
+      "IEPP"
     ],
     "label_officiel": "Institut d'études politiques",
     "labels": [
@@ -3499,7 +3493,6 @@
       "Paris, Institut d'études politiques",
       "SCPO",
       "Sciences po",
-      "Université de Paris",
       "Université de Paris (1896-1968)"
     ],
     "numeros": [],
@@ -3618,7 +3611,6 @@
       "Centrale Lille",
       "EC Lille",
       "ECLI",
-      "Ecole Centrale de Lille",
       "Ecole centrale de Lille",
       "IDN",
       "Institut industriel du Nord",
@@ -3977,16 +3969,12 @@
   {
     "type": "etablissement",
     "ppn": "028232224",
-    "codes": [
-      "ENSL"
-    ],
+    "codes": [],
     "label_officiel": "École normale supérieure de Lyon",
     "labels": [
       "ENS Lyon",
       "ENS de Lyon",
-      "Ecole normale supérieure (sciences) - Lyon Voir Ecole normale supérieure de Lyon à partir de 2009-12-10",
       "École normale supérieure de Lyon",
-      "École normale supérieure de Lyon (Lyon ; 1987-2009)",
       "École normale supérieure de Lyon (sciences)",
       "École normale supérieure de Lyon - Sciences"
     ],
@@ -4089,7 +4077,8 @@
       "Centre universitaire de Pirae",
       "Centre universitaire de Polynésie française",
       "Pacifique",
-      "Université française du Pacifique"
+      "Université française du Pacifique",
+      "Université française du Pacifique (1987-1999)"
     ],
     "numeros": [],
     "date_debut": "1987",
@@ -4208,6 +4197,7 @@
     "labels": [
       "Centrale Nantes",
       "ENSM",
+      "Ecole Centrale de Nantes",
       "Ecole centrale de Nantes",
       "Institut polytechnique de l'Ouest",
       "Université de Nantes",
@@ -4687,15 +4677,13 @@
     "type": "etablissement",
     "ppn": "033894221",
     "codes": [
-      "ECDL",
-      "ENIS"
+      "ECDL"
     ],
     "label_officiel": "École Centrale de Lyon",
     "labels": [
       "Centrale Lyon",
       "ECL",
       "Ecole centrale de Lyon",
-      "Ecole nationale d'ingénieurs de Saint-Etienne",
       "Ecully, Ecole centrale de Lyon",
       "École Centrale de Lyon",
       "École centrale lyonnaise"
@@ -5663,9 +5651,7 @@
   {
     "type": "etablissement",
     "ppn": "159330114",
-    "codes": [
-      "ESAE"
-    ],
+    "codes": [],
     "label_officiel": "Institut supérieur de l'aéronautique et de l'espace",
     "labels": [
       "ENICA",
@@ -5683,15 +5669,13 @@
       "Ecole supérieure d'aéronautique et de constructions mécaniques",
       "France",
       "ISAE",
-      "ISAE (Fusion de SUPAERO et ENSICA à partir de 2007-01-01)",
       "ISAE-SUPAERO",
       "ISAE-Supaéro",
       "Institut supérieur de l'aéronautique et de l'espace",
       "Institut supérieur de l'aéronautique et de l'espace-SUPAERO",
       "Institut supérieur de l'aéronautique et de l'espace-Supaéro",
       "SUPAERO",
-      "Sup'aéro",
-      "Toulouse, ISAE"
+      "Sup'aéro"
     ],
     "numeros": [],
     "date_debut": "2007",
@@ -6976,13 +6960,11 @@
     "type": "etablissement",
     "ppn": "240648315",
     "codes": [
-      "GRAL",
-      "LY01"
+      "GRAL"
     ],
     "label_officiel": "Université Grenoble Alpes",
     "labels": [
       "EPE UGA",
-      "Ecole nationale vétérinaire - Lyon",
       "UGA",
       "UGA 2020",
       "Univ. Grenoble Alpes",
@@ -7073,14 +7055,12 @@
     "type": "etablissement",
     "ppn": "241345251",
     "codes": [
-      "PAST",
       "UPAS"
     ],
     "label_officiel": "Université Paris-Saclay",
     "labels": [
       "Paris-Saclay",
       "UPSaclay",
-      "Université Marie et Louis Pasteur",
       "Université Paris Saclay",
       "Université Paris-Saclay",
       "Université Paris-Saclay 2020",
@@ -7542,7 +7522,6 @@
     "type": "etablissement",
     "ppn": "26693823X",
     "codes": [
-      "REN0",
       "UREN"
     ],
     "label_officiel": "Université de Rennes",
@@ -8060,15 +8039,20 @@
   {
     "type": "etablissement",
     "ppn": "026523493",
-    "codes": [],
+    "codes": [
+      "ESAE"
+    ],
     "label_officiel": "École nationale supérieure de l'aéronautique et de l'espace",
     "labels": [
       "ENSA",
       "ENSAE",
       "ESA",
       "France",
+      "ISAE",
+      "ISAE (Fusion de SUPAERO et ENSICA à partir de 2007-01-01)",
       "SUPAERO",
       "Sup'aéro",
+      "Toulouse, ENSAE",
       "École nationale supérieure de l'aéronautique",
       "École nationale supérieure de l'aéronautique et de l'espace",
       "École supérieure d'aéronautique et de construction mécanique",
@@ -9671,12 +9655,16 @@
   {
     "type": "etablissement",
     "ppn": "149154992",
-    "codes": [],
+    "codes": [
+      "ENSL"
+    ],
     "label_officiel": "École normale supérieure de Lyon",
     "labels": [
       "ENS Lyon",
       "ENS de Lyon",
       "ENSL",
+      "Ecole normale supérieure (sciences) - Lyon Voir Ecole normale supérieure de Lyon à partir de 2009-12-10",
+      "Lyon, École normale supérieure",
       "École normale supérieure",
       "École normale supérieure de Lyon"
     ],
@@ -15915,6 +15903,7 @@
     "ecoles_doctorales": [],
     "etablissements": [
       "026402823",
+      "030267676",
       "031738257",
       "033894221",
       "052444724",
@@ -16031,7 +16020,8 @@
       "02637515X",
       "026375249",
       "027404978",
-      "182292592"
+      "182292592",
+      "238277429"
     ]
   },
   {
@@ -17224,7 +17214,8 @@
     "successeurs": [],
     "ecoles_doctorales": [],
     "etablissements": [
-      "027404978"
+      "027404978",
+      "238277429"
     ]
   },
   {
@@ -25166,6 +25157,175 @@
     "etablissements": [
       "236453505"
     ]
+  },
+  {
+    "type": "etablissement",
+    "ppn": "030267676",
+    "codes": [
+      "ENIS"
+    ],
+    "label_officiel": "Centrale Lyon ENISE",
+    "labels": [
+      "Centrale Lyon ENISE",
+      "Centrale Lyon ENISE (Saint-Etienne)",
+      "Centrale Lyon ENISE (Saint-Etienne) (1961-....)",
+      "ENISE",
+      "Ecole nationale d'ingénieurs de Saint-Etienne",
+      "Ecole nationale d’ingénieurs de Saint-Etienne"
+    ],
+    "numeros": [],
+    "date_debut": "1961",
+    "date_fin": null,
+    "predecesseurs": [],
+    "successeurs": [],
+    "ecoles_doctorales": [
+      "150103409"
+    ],
+    "etablissements": []
+  },
+  {
+    "type": "etablissement",
+    "ppn": "074314807",
+    "codes": [
+      "REN0"
+    ],
+    "label_officiel": "Université de Rennes",
+    "labels": [
+      "Université de Rennes",
+      "Université de Rennes (1896-1969)"
+    ],
+    "numeros": [],
+    "date_debut": "1896",
+    "date_fin": "1969",
+    "predecesseurs": [
+      {
+        "ppn": "155024884",
+        "label": "Faculté de droit",
+        "note": "Avant 1896, voir",
+        "date_debut": "1806",
+        "date_fin": "1896"
+      },
+      {
+        "ppn": "151085307",
+        "label": "Faculté des lettres",
+        "note": "Avant 1896, voir",
+        "date_debut": "1810",
+        "date_fin": "1896"
+      }
+    ],
+    "successeurs": [
+      {
+        "ppn": "02778715X",
+        "label": "Université de Rennes 1",
+        "note": "Après 1969, voir",
+        "date_debut": "1969",
+        "date_fin": "2022"
+      },
+      {
+        "ppn": "054447658",
+        "label": "Université Rennes 2",
+        "note": "Après 1969, voir",
+        "date_debut": "1969",
+        "date_fin": null
+      }
+    ],
+    "ecoles_doctorales": [],
+    "etablissements": []
+  },
+  {
+    "type": "etablissement",
+    "ppn": "238277429",
+    "codes": [
+      "HESA"
+    ],
+    "label_officiel": "HESAM Université",
+    "labels": [
+      "ComUE HESAM Université",
+      "ComUE Hautes écoles Sorbonne Arts et métiers université",
+      "Communauté d'universités et d'établissements HESAM Université",
+      "Communauté d'universités et d'établissements Hautes écoles Sorbonne Arts et métiers université",
+      "HESAM",
+      "HESAM Université",
+      "Hautes Ecoles Sorbonne Arts et Métiers Université",
+      "Paris, HESAM"
+    ],
+    "numeros": [],
+    "date_debut": "2010",
+    "date_fin": "2024",
+    "predecesseurs": [],
+    "successeurs": [],
+    "ecoles_doctorales": [
+      "150495099",
+      "155154397"
+    ],
+    "etablissements": []
+  },
+  {
+    "type": "etablissement",
+    "ppn": "151085307",
+    "codes": [],
+    "label_officiel": "Faculté des lettres",
+    "labels": [
+      "Faculté des lettres"
+    ],
+    "numeros": [],
+    "date_debut": "1810",
+    "date_fin": "1896",
+    "predecesseurs": [],
+    "successeurs": [
+      {
+        "ppn": "060247460",
+        "label": "Université de Rennes",
+        "note": "Après 1896, voir",
+        "date_debut": "1896",
+        "date_fin": "1969"
+      }
+    ],
+    "ecoles_doctorales": [],
+    "etablissements": []
+  },
+  {
+    "type": "etablissement",
+    "ppn": "155024884",
+    "codes": [],
+    "label_officiel": "Faculté de droit",
+    "labels": [
+      "Faculté de droit",
+      "Université de France",
+      "Université impériale"
+    ],
+    "numeros": [],
+    "date_debut": "1806",
+    "date_fin": "1896",
+    "predecesseurs": [],
+    "successeurs": [
+      {
+        "ppn": "035647191",
+        "label": "Université de Rennes",
+        "note": "Après 1896, voir",
+        "date_debut": "1896",
+        "date_fin": "1969"
+      }
+    ],
+    "ecoles_doctorales": [],
+    "etablissements": []
+  },
+  {
+    "type": "etablissement",
+    "ppn": "191321761",
+    "codes": [],
+    "label_officiel": "École nationale supérieure de l'aéronautique",
+    "labels": [
+      "ENSA",
+      "École nationale supérieure de l'aéronautique"
+    ],
+    "numeros": [],
+    "date_debut": "1930",
+    "date_fin": "1972",
+    "predecesseurs": [],
+    "successeurs": [],
+    "ecoles_doctorales": [],
+    "etablissements": []
   },
   {
     "type": "ecole_doctorale",

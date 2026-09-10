@@ -65,13 +65,34 @@ def get_json(url, timeout=TIMEOUT, accept="application/json"):
 # --------------------------------------------------------------------------- #
 # A. code ABES -> PPN
 # --------------------------------------------------------------------------- #
+ECHANTILLON = 300   # 50 suffisait pour trancher le code, pas pour le vote : les 50
+                    # premiers hits AGPT sont majoritairement d'anciennes theses INA-PG.
+
+
 def ppn_for_code(code):
-    url = THESES_API + "?" + urlencode({"q": f"nnt:*{code}*", "nombre": 1})
+    """Le joker de tête `nnt:*CODE*` matche aussi le code AILLEURS dans le NNT :
+    « LY01 » dans « 2020GRALY015 », « HESA » dans « 2016EHESA001 » (EHESS, pas
+    HESAM). Or un NNT est AAAA + code sur 4 caractères + suffixe, et les 231 codes
+    ABES font tous exactement 4 caractères sans collision de préfixe : on ne garde
+    donc que les thèses dont nnt[4:8] == code, puis on vote à la majorité sur
+    l'établissement de soutenance (theses.fr n'est pas exempt de NNT mal rattachés).
+    Sans ce filtre, 6 PPN étaient faux — c'est le bug « EHES | HESA »."""
+    url = THESES_API + "?" + urlencode({"q": f"nnt:*{code}*", "nombre": ECHANTILLON})
     d = get_json(url)
-    if not d or not d.get("theses"):
+    if not d:
         return None, None, 0
-    t = d["theses"][0]
-    return t.get("etabSoutenancePpn"), t.get("etabSoutenanceN"), d.get("totalHits", 0)
+    votes = {}
+    for t in d.get("theses", []):
+        if (t.get("nnt") or "").upper()[4:8] != code.upper():
+            continue
+        ppn = t.get("etabSoutenancePpn")
+        if ppn:
+            n, _ = votes.get(ppn, (0, None))
+            votes[ppn] = (n + 1, t.get("etabSoutenanceN"))
+    if not votes:
+        return None, None, 0
+    ppn, (n, nom) = max(votes.items(), key=lambda kv: kv[1][0])
+    return ppn, nom, n
 
 
 # --------------------------------------------------------------------------- #

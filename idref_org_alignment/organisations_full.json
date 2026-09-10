@@ -1164,7 +1164,7 @@
    "ppn": "03063525X",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Ecole centrale de Nantes"
+   "nom_theses": "Ecole Centrale de Nantes"
   },
   {
    "code": "ECLI",
@@ -1186,7 +1186,7 @@
    "ppn": "027964361",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Ecole Centrale de Lille"
+   "nom_theses": "Ecole centrale de Lille"
   },
   {
    "code": "EHEC",
@@ -1418,7 +1418,7 @@
    "ppn": "026436930",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Ecole nationale du génie rural, des eaux et des forêts (Paris ; Nancy ; 1968-2006)"
+   "nom_theses": "Paris, ENGREF"
   },
   {
    "code": "ENIB",
@@ -1458,10 +1458,10 @@
    ],
    "voir_avant": [],
    "note_source": "Voir LYSE de 2015-03-01 à 2022-08-31 Voir ECDL à partir de 2022-09-01",
-   "ppn": "033894221",
+   "ppn": "030267676",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Ecully, Ecole centrale de Lyon"
+   "nom_theses": "Centrale Lyon ENISE (Saint-Etienne) (1961-....)"
   },
   {
    "code": "ENMP",
@@ -1593,10 +1593,10 @@
     }
    ],
    "note_source": null,
-   "ppn": "028232224",
+   "ppn": "149154992",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "École normale supérieure de Lyon (Lyon ; 1987-2009)"
+   "nom_theses": "Lyon, École normale supérieure"
   },
   {
    "code": "ENSR",
@@ -1648,7 +1648,7 @@
    "ppn": "026375273",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Paris, ENST"
+   "nom_theses": "Paris, Télécom ParisTech"
   },
   {
    "code": "ENSU",
@@ -1814,10 +1814,10 @@
    "voir_apres": [],
    "voir_avant": [],
    "note_source": null,
-   "ppn": "159330114",
+   "ppn": "026523493",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Toulouse, ISAE"
+   "nom_theses": "Toulouse, ENSAE"
   },
   {
    "code": "ESAL",
@@ -2062,7 +2062,7 @@
    "ppn": "026404796",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Grenoble 1"
+   "nom_theses": "Université Joseph Fourier (Grenoble, Isère, France ; 1971-2015)"
   },
   {
    "code": "GRE2",
@@ -2299,10 +2299,10 @@
     }
    ],
    "note_source": "Voir CNAM et ENAM à partir de 2024-08-01",
-   "ppn": "026374889",
+   "ppn": "238277429",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Paris, EHESS"
+   "nom_theses": "Paris, HESAM"
   },
   {
    "code": "HESP",
@@ -2433,7 +2433,7 @@
    "ppn": "026387859",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Paris, Institut national d'agronomie de Paris Grignon"
+   "nom_theses": "Institut national agronomique Paris-Grignon (1971-2006)"
   },
   {
    "code": "INPG",
@@ -3002,10 +3002,10 @@
    "voir_apres": [],
    "voir_avant": [],
    "note_source": null,
-   "ppn": "240648315",
+   "ppn": null,
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Université Grenoble Alpes"
+   "nom_theses": null
   },
   {
    "code": "LYFM",
@@ -4084,10 +4084,10 @@
     }
    ],
    "note_source": "Voir PA01, PA02, PA03, PA04, PA05, PA06, PA07, PA08, PA09, PA10, PA11, PA12, PA13 à partir de 1970-03-21 ATTENTION : la date officielle de fin est 1968 mais ce libellé couvre les thèses soutenues jusqu'au 1970-12-31 date à laquelle l'université de Paris créée en 1896 a définitivement cessé d'exister",
-   "ppn": "027918459",
+   "ppn": null,
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Paris, Institut d'études politiques"
+   "nom_theses": null
   },
   {
    "code": "PA01",
@@ -4541,7 +4541,7 @@
    "ppn": "029981735",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Pacifique"
+   "nom_theses": "Université française du Pacifique (1987-1999)"
   },
   {
    "code": "PAFD",
@@ -4678,10 +4678,10 @@
     }
    ],
    "note_source": null,
-   "ppn": "241345251",
+   "ppn": null,
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "université Paris-Saclay"
+   "nom_theses": null
   },
   {
    "code": "PATC",
@@ -4951,10 +4951,10 @@
    ],
    "voir_avant": [],
    "note_source": "Voir REN1 ou REN2 à partir de 1971-01-01",
-   "ppn": "26693823X",
+   "ppn": "074314807",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Université de Rennes (2023-....)"
+   "nom_theses": "Université de Rennes (1896-1969)"
   },
   {
    "code": "REN1",
@@ -5247,7 +5247,7 @@
    "ppn": "026404540",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Université Louis Pasteur (Strasbourg) (1971-2008)"
+   "nom_theses": "Strasbourg 1"
   },
   {
    "code": "STR2",
@@ -5269,7 +5269,7 @@
    "ppn": "026438763",
    "label_idref": null,
    "ecoles_doctorales": [],
-   "nom_theses": "Université Marc Bloch (Strasbourg) (1971-2008)"
+   "nom_theses": "Strasbourg 2"
   },
   {
    "code": "STR3",
@@ -43782,6 +43782,254 @@
     }
    ],
    "ecoles_doctorales": []
+  },
+  "030267676": {
+   "ppn": "030267676",
+   "label_officiel": "Centrale Lyon ENISE",
+   "labels": [
+    "Centrale Lyon ENISE",
+    "ENISE",
+    "Ecole nationale d’ingénieurs de Saint-Etienne"
+   ],
+   "date_debut": "1961",
+   "date_fin": null,
+   "predecesseurs": [],
+   "successeurs": [],
+   "membres": [
+    {
+     "ppn": "033894221",
+     "label": "École Centrale de Lyon",
+     "note": "Depuis le 1er janvier 2021, l’ENISE est une école interne de  l’École Centrale de Lyon",
+     "date_debut": "1857",
+     "date_fin": null
+    }
+   ],
+   "ecoles_doctorales": []
+  },
+  "074314807": {
+   "ppn": "074314807",
+   "label_officiel": "Université de Rennes",
+   "labels": [
+    "Université de Rennes"
+   ],
+   "date_debut": "1896",
+   "date_fin": "1969",
+   "predecesseurs": [
+    {
+     "ppn": "155024884",
+     "label": "Faculté de droit",
+     "note": "Avant 1896, voir",
+     "date_debut": "1806",
+     "date_fin": "1896"
+    },
+    {
+     "ppn": "151085307",
+     "label": "Faculté des lettres",
+     "note": "Avant 1896, voir",
+     "date_debut": "1810",
+     "date_fin": "1896"
+    }
+   ],
+   "successeurs": [
+    {
+     "ppn": "02778715X",
+     "label": "Université de Rennes 1",
+     "note": "Après 1969, voir",
+     "date_debut": "1969",
+     "date_fin": "2022"
+    },
+    {
+     "ppn": "054447658",
+     "label": "Université Rennes 2",
+     "note": "Après 1969, voir",
+     "date_debut": "1969",
+     "date_fin": null
+    }
+   ],
+   "membres": [],
+   "ecoles_doctorales": []
+  },
+  "238277429": {
+   "ppn": "238277429",
+   "label_officiel": "HESAM Université",
+   "labels": [
+    "ComUE HESAM Université",
+    "ComUE Hautes écoles Sorbonne Arts et métiers université",
+    "Communauté d'universités et d'établissements HESAM Université",
+    "Communauté d'universités et d'établissements Hautes écoles Sorbonne Arts et métiers université",
+    "HESAM Université",
+    "Hautes Ecoles Sorbonne Arts et Métiers Université"
+   ],
+   "date_debut": "2010",
+   "date_fin": "2024",
+   "predecesseurs": [],
+   "successeurs": [],
+   "membres": [
+    {
+     "ppn": "027404978",
+     "label": "Conservatoire national des arts et métiers",
+     "note": null,
+     "date_debut": "1794",
+     "date_fin": null
+    },
+    {
+     "ppn": "02637515X",
+     "label": "École nationale supérieure d'arts et métiers",
+     "note": null,
+     "date_debut": "1780",
+     "date_fin": null
+    },
+    {
+     "ppn": "02636817X",
+     "label": "Centre national de la recherche scientifique",
+     "note": null,
+     "date_debut": "1939",
+     "date_fin": null
+    },
+    {
+     "ppn": "027601986",
+     "label": "École Boulle",
+     "note": null,
+     "date_debut": null,
+     "date_fin": null
+    },
+    {
+     "ppn": "027295710",
+     "label": "École supérieure des arts appliqués Duperré",
+     "note": null,
+     "date_debut": null,
+     "date_fin": null
+    },
+    {
+     "ppn": "162447418",
+     "label": "Ecole nationale supérieure des arts appliqués et des métiers d'art",
+     "note": null,
+     "date_debut": null,
+     "date_fin": null
+    },
+    {
+     "ppn": "185977049",
+     "label": "École nationale supérieure d'architecture de Paris-La Villette",
+     "note": null,
+     "date_debut": null,
+     "date_fin": null
+    },
+    {
+     "ppn": "026578603",
+     "label": "Ecole nationale supérieure de création industrielle",
+     "note": null,
+     "date_debut": null,
+     "date_fin": null
+    },
+    {
+     "ppn": "030785979",
+     "label": "Institut français de la mode",
+     "note": null,
+     "date_debut": null,
+     "date_fin": null
+    },
+    {
+     "ppn": "198630298",
+     "label": "SKEMA Business school",
+     "note": null,
+     "date_debut": null,
+     "date_fin": null
+    },
+    {
+     "ppn": "029639883",
+     "label": "Centre de formation des journalistes",
+     "note": null,
+     "date_debut": null,
+     "date_fin": null
+    },
+    {
+     "ppn": "186209649",
+     "label": "Fondation nationale Entreprise et performance",
+     "note": null,
+     "date_debut": null,
+     "date_fin": null
+    },
+    {
+     "ppn": "026496461",
+     "label": "Association ouvrière des Compagnons du Devoir",
+     "note": null,
+     "date_debut": null,
+     "date_fin": null
+    },
+    {
+     "ppn": "150495099",
+     "label": "École doctorale Sciences des métiers de l'ingénieur",
+     "note": null,
+     "date_debut": "2000",
+     "date_fin": null
+    },
+    {
+     "ppn": "155154397",
+     "label": "École doctorale Abbé Grégoire",
+     "note": null,
+     "date_debut": null,
+     "date_fin": null
+    }
+   ],
+   "ecoles_doctorales": []
+  },
+  "151085307": {
+   "ppn": "151085307",
+   "label_officiel": "Faculté des lettres",
+   "labels": [
+    "Faculté des lettres"
+   ],
+   "date_debut": "1810",
+   "date_fin": "1896",
+   "predecesseurs": [],
+   "successeurs": [
+    {
+     "ppn": "060247460",
+     "label": "Université de Rennes",
+     "note": "Après 1896, voir",
+     "date_debut": "1896",
+     "date_fin": "1969"
+    }
+   ],
+   "membres": [],
+   "ecoles_doctorales": []
+  },
+  "155024884": {
+   "ppn": "155024884",
+   "label_officiel": "Faculté de droit",
+   "labels": [
+    "Faculté de droit",
+    "Université de France",
+    "Université impériale"
+   ],
+   "date_debut": "1806",
+   "date_fin": "1896",
+   "predecesseurs": [],
+   "successeurs": [
+    {
+     "ppn": "035647191",
+     "label": "Université de Rennes",
+     "note": "Après 1896, voir",
+     "date_debut": "1896",
+     "date_fin": "1969"
+    }
+   ],
+   "membres": [],
+   "ecoles_doctorales": []
+  },
+  "191321761": {
+   "ppn": "191321761",
+   "label_officiel": "École nationale supérieure de l'aéronautique",
+   "labels": [
+    "ENSA",
+    "École nationale supérieure de l'aéronautique"
+   ],
+   "date_debut": "1930",
+   "date_fin": "1972",
+   "predecesseurs": [],
+   "successeurs": [],
+   "membres": [],
+   "ecoles_doctorales": []
   }
  },
  "ppn_racines": [
@@ -43854,6 +44102,7 @@
   "026436930",
   "026438763",
   "026523477",
+  "026523493",
   "026524031",
   "026550520",
   "026569477",
@@ -43887,11 +44136,11 @@
   "028139577",
   "02819005X",
   "028209966",
-  "028232224",
   "028237080",
   "029473284",
   "029981735",
   "030138787",
+  "030267676",
   "030327202",
   "03063525X",
   "030820499",
@@ -43924,6 +44173,7 @@
   "060121076",
   "067101925",
   "068859813",
+  "074314807",
   "081711883",
   "115588701",
   "117553956",
@@ -43932,10 +44182,10 @@
   "131056549",
   "139408088",
   "140178198",
+  "149154992",
   "157040569",
   "157779092",
   "15863621X",
-  "159330114",
   "161356915",
   "163078998",
   "175206562",
@@ -43963,6 +44213,7 @@
   "223446556",
   "231125755",
   "236453505",
+  "238277429",
   "238327159",
   "240648315",
   "241035694",

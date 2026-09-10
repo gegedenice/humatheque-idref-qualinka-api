@@ -2,37 +2,37 @@
  "AGPT": {
   "ppn": "139408088",
   "nom_theses": "AgroParisTech",
-  "hits": 697
+  "hits": 194
  },
  "AGRO": {
   "ppn": "260373249",
   "nom_theses": "Institut Agro",
-  "hits": 446
+  "hits": 300
  },
  "AGUY": {
   "ppn": "026603136",
   "nom_theses": "Antilles-Guyane",
-  "hits": 443
+  "hits": 300
  },
  "AIX1": {
   "ppn": "026403781",
   "nom_theses": "Aix-Marseille 1",
-  "hits": 4256
+  "hits": 296
  },
  "AIX2": {
   "ppn": "026402882",
   "nom_theses": "Aix-Marseille 2",
-  "hits": 6508
+  "hits": 299
  },
  "AIX3": {
   "ppn": "026403153",
   "nom_theses": "Aix-Marseille 3",
-  "hits": 3816
+  "hits": 298
  },
  "AIXM": {
   "ppn": "15863621X",
   "nom_theses": "Aix-Marseille",
-  "hits": 8897
+  "hits": 300
  },
  "ALGF": {
   "ppn": null,
@@ -42,37 +42,37 @@
  "AMIE": {
   "ppn": "026403714",
   "nom_theses": "Amiens",
-  "hits": 2701
+  "hits": 300
  },
  "ANGE": {
   "ppn": "026402920",
   "nom_theses": "Angers",
-  "hits": 2749
+  "hits": 297
  },
  "ANTI": {
   "ppn": "187841578",
   "nom_theses": "Antilles",
-  "hits": 341
+  "hits": 300
  },
  "ARTO": {
   "ppn": "034634894",
   "nom_theses": "Artois",
-  "hits": 602
+  "hits": 300
  },
  "ASSA": {
   "ppn": "260745863",
   "nom_theses": "Université Paris-Panthéon-Assas",
-  "hits": 350
+  "hits": 300
  },
  "AVIG": {
   "ppn": "026369044",
   "nom_theses": "Avignon",
-  "hits": 986
+  "hits": 300
  },
  "AZUR": {
   "ppn": "185433669",
   "nom_theses": "Université Côte d'Azur (ComUE)",
-  "hits": 859
+  "hits": 300
  },
  "BELF": {
   "ppn": "068859813",
@@ -82,32 +82,32 @@
  "BESA": {
   "ppn": "026403188",
   "nom_theses": "Besançon",
-  "hits": 3816
+  "hits": 300
  },
  "BOR1": {
   "ppn": "027548341",
   "nom_theses": "Bordeaux 1",
-  "hits": 5534
+  "hits": 300
  },
  "BOR2": {
   "ppn": "026403005",
   "nom_theses": "Bordeaux 2",
-  "hits": 5624
+  "hits": 300
  },
  "BOR3": {
   "ppn": "027548392",
   "nom_theses": "Bordeaux 3",
-  "hits": 2817
+  "hits": 300
  },
  "BOR4": {
   "ppn": "034137823",
   "nom_theses": "Bordeaux 4",
-  "hits": 1006
+  "hits": 300
  },
  "BORD": {
   "ppn": "175206562",
   "nom_theses": "Bordeaux",
-  "hits": 5566
+  "hits": 300
  },
  "BORU": {
   "ppn": null,
@@ -117,42 +117,42 @@
  "BRES": {
   "ppn": "026403021",
   "nom_theses": "Brest",
-  "hits": 2966
+  "hits": 300
  },
  "BRUN": {
   "ppn": "291809022",
   "nom_theses": "Université de Brest (2025-....)",
-  "hits": 125
+  "hits": 126
  },
  "CAEN": {
   "ppn": "026403064",
   "nom_theses": "Caen",
-  "hits": 3923
+  "hits": 300
  },
  "CERG": {
   "ppn": "03463486X",
   "nom_theses": "Cergy-Pontoise",
-  "hits": 1046
+  "hits": 300
  },
  "CHAM": {
   "ppn": "026369125",
   "nom_theses": "Chambéry",
-  "hits": 1193
+  "hits": 297
  },
  "CLF1": {
   "ppn": "028032829",
   "nom_theses": "Clermont-Ferrand 1",
-  "hits": 2021
+  "hits": 300
  },
  "CLF2": {
   "ppn": "026403102",
   "nom_theses": "Clermont-Ferrand 2",
-  "hits": 3430
+  "hits": 300
  },
  "CLFA": {
   "ppn": "196200032",
   "nom_theses": "Université Clermont Auvergne‎ (2017-2020)",
-  "hits": 717
+  "hits": 300
  },
  "CLFD": {
   "ppn": null,
@@ -167,22 +167,22 @@
  "CNAM": {
   "ppn": "027404978",
   "nom_theses": "Paris, CNAM",
-  "hits": 1270
+  "hits": 297
  },
  "COAZ": {
   "ppn": "241035694",
   "nom_theses": "Université Côte d'Azur",
-  "hits": 1591
+  "hits": 300
  },
  "COMP": {
   "ppn": "026570564",
   "nom_theses": "Compiègne",
-  "hits": 2922
+  "hits": 300
  },
  "CORT": {
   "ppn": "029473284",
   "nom_theses": "Corte",
-  "hits": 513
+  "hits": 300
  },
  "CSUP": {
   "ppn": "184443237",
@@ -192,32 +192,32 @@
  "CYUN": {
   "ppn": "241871808",
   "nom_theses": "CY Cergy Paris Université",
-  "hits": 522
+  "hits": 300
  },
  "DENS": {
   "ppn": "028237080",
   "nom_theses": "Cachan, Ecole normale supérieure",
-  "hits": 919
+  "hits": 300
  },
  "DIJO": {
   "ppn": "02819005X",
   "nom_theses": "Dijon",
-  "hits": 4269
+  "hits": 300
  },
  "DUNK": {
   "ppn": "030969379",
   "nom_theses": "Littoral",
-  "hits": 780
+  "hits": 300
  },
  "ECAP": {
   "ppn": "027960250",
   "nom_theses": "Châtenay-Malabry, Ecole centrale de Paris",
-  "hits": 1422
+  "hits": 300
  },
  "ECDL": {
   "ppn": "033894221",
   "nom_theses": "Ecully, Ecole centrale de Lyon",
-  "hits": 1406
+  "hits": 300
  },
  "ECDM": {
   "ppn": "163078998",
@@ -226,13 +226,13 @@
  },
  "ECDN": {
   "ppn": "03063525X",
-  "nom_theses": "Ecole centrale de Nantes",
-  "hits": 758
+  "nom_theses": "Ecole Centrale de Nantes",
+  "hits": 300
  },
  "ECLI": {
   "ppn": "027964361",
-  "nom_theses": "Ecole Centrale de Lille",
-  "hits": 364
+  "nom_theses": "Ecole centrale de Lille",
+  "hits": 299
  },
  "EHEC": {
   "ppn": "027321118",
@@ -242,7 +242,7 @@
  "EHES": {
   "ppn": "026374889",
   "nom_theses": "Paris, EHESS",
-  "hits": 6590
+  "hits": 300
  },
  "EIAA": {
   "ppn": "034751386",
@@ -267,7 +267,7 @@
  "EMSE": {
   "ppn": "028028694",
   "nom_theses": "Saint-Etienne, EMSE",
-  "hits": 586
+  "hits": 300
  },
  "ENAC": {
   "ppn": "027771881",
@@ -277,7 +277,7 @@
  "ENAM": {
   "ppn": "02637515X",
   "nom_theses": "Paris, ENSAM",
-  "hits": 1538
+  "hits": 300
  },
  "ENCM": {
   "ppn": "027956768",
@@ -296,8 +296,8 @@
  },
  "ENGR": {
   "ppn": "026436930",
-  "nom_theses": "Ecole nationale du génie rural, des eaux et des forêts (Paris ; Nancy ; 1968-2006)",
-  "hits": 127
+  "nom_theses": "Paris, ENGREF",
+  "hits": 126
  },
  "ENIB": {
   "ppn": "120796899",
@@ -305,34 +305,34 @@
   "hits": 26
  },
  "ENIS": {
-  "ppn": "033894221",
-  "nom_theses": "Ecully, Ecole centrale de Lyon",
-  "hits": 33
+  "ppn": "030267676",
+  "nom_theses": "Centrale Lyon ENISE (Saint-Etienne) (1961-....)",
+  "hits": 30
  },
  "ENMP": {
   "ppn": "026375249",
   "nom_theses": "Paris, ENMP",
-  "hits": 2217
+  "hits": 295
  },
  "ENPC": {
   "ppn": "026375060",
   "nom_theses": "Marne-la-vallée, ENPC",
-  "hits": 921
+  "hits": 291
  },
  "ENSA": {
   "ppn": "026523477",
   "nom_theses": "École nationale supérieure agronomique (Montpellier ; 1960-2006)",
-  "hits": 436
+  "hits": 289
  },
  "ENSF": {
   "ppn": "031738257",
   "nom_theses": "École normale supérieure-Lettres et sciences humaines (Lyon ; 1987-2009)",
-  "hits": 78
+  "hits": 77
  },
  "ENSL": {
-  "ppn": "028232224",
-  "nom_theses": "École normale supérieure de Lyon (Lyon ; 1987-2009)",
-  "hits": 1441
+  "ppn": "149154992",
+  "nom_theses": "Lyon, École normale supérieure",
+  "hits": 207
  },
  "ENSR": {
   "ppn": "17864577X",
@@ -341,8 +341,8 @@
  },
  "ENST": {
   "ppn": "026375273",
-  "nom_theses": "Paris, ENST",
-  "hits": 1201
+  "nom_theses": "Paris, Télécom ParisTech",
+  "hits": 300
  },
  "ENSU": {
   "ppn": "031738419",
@@ -367,17 +367,17 @@
  "EPHE": {
   "ppn": "026375478",
   "nom_theses": "Paris, EPHE",
-  "hits": 1256
+  "hits": 296
  },
  "EPXX": {
   "ppn": "027309320",
   "nom_theses": "Palaiseau, Ecole polytechnique",
-  "hits": 1559
+  "hits": 300
  },
  "ESAE": {
-  "ppn": "159330114",
-  "nom_theses": "Toulouse, ISAE",
-  "hits": 1698
+  "ppn": "026523493",
+  "nom_theses": "Toulouse, ENSAE",
+  "hits": 183
  },
  "ESAL": {
   "ppn": "140178198",
@@ -392,7 +392,7 @@
  "ESMA": {
   "ppn": "028024400",
   "nom_theses": "Chasseneuil-du-Poitou, Ecole nationale supérieure de mécanique et d'aérotechnique",
-  "hits": 434
+  "hits": 300
  },
  "ESTA": {
   "ppn": "028139577",
@@ -402,7 +402,7 @@
  "EVRY": {
   "ppn": "030820529",
   "nom_theses": "Evry-Val d'Essonne",
-  "hits": 613
+  "hits": 300
  },
  "GFDE": {
   "ppn": null,
@@ -422,32 +422,32 @@
  "GRAL": {
   "ppn": "240648315",
   "nom_theses": "Université Grenoble Alpes",
-  "hits": 3999
+  "hits": 300
  },
  "GRE1": {
   "ppn": "026404796",
-  "nom_theses": "Grenoble 1",
-  "hits": 6023
+  "nom_theses": "Université Joseph Fourier (Grenoble, Isère, France ; 1971-2015)",
+  "hits": 300
  },
  "GRE2": {
   "ppn": "02640432X",
   "nom_theses": "Grenoble 2",
-  "hits": 1336
+  "hits": 296
  },
  "GRE3": {
   "ppn": "026404125",
   "nom_theses": "Université Stendhal (Grenoble ; 1970-2015)",
-  "hits": 719
+  "hits": 300
  },
  "GREA": {
   "ppn": "184668794",
   "nom_theses": "Université Grenoble Alpes (ComUE)",
-  "hits": 3726
+  "hits": 300
  },
  "GREN": {
   "ppn": "030327202",
   "nom_theses": "Grenoble",
-  "hits": 3410
+  "hits": 297
  },
  "GRFD": {
   "ppn": null,
@@ -460,9 +460,9 @@
   "hits": 0
  },
  "HESA": {
-  "ppn": "026374889",
-  "nom_theses": "Paris, EHESS",
-  "hits": 807
+  "ppn": "238277429",
+  "nom_theses": "Paris, HESAM",
+  "hits": 274
  },
  "HESP": {
   "ppn": "161356915",
@@ -477,37 +477,37 @@
  "IEPP": {
   "ppn": "027918459",
   "nom_theses": "Paris, Institut d'études politiques",
-  "hits": 1871
+  "hits": 300
  },
  "IMTA": {
   "ppn": "202743233",
   "nom_theses": "Ecole nationale supérieure Mines-Télécom Atlantique Bretagne Pays de la Loire",
-  "hits": 541
+  "hits": 300
  },
  "INAL": {
   "ppn": "026388715",
   "nom_theses": "Paris, INALCO",
-  "hits": 793
+  "hits": 299
  },
  "INAP": {
   "ppn": "026387859",
-  "nom_theses": "Paris, Institut national d'agronomie de Paris Grignon",
-  "hits": 439
+  "nom_theses": "Institut national agronomique Paris-Grignon (1971-2006)",
+  "hits": 300
  },
  "INPG": {
   "ppn": "026388804",
   "nom_theses": "Grenoble INPG",
-  "hits": 4300
+  "hits": 299
  },
  "INPL": {
   "ppn": "026388812",
   "nom_theses": "Vandoeuvre-les-Nancy, INPL",
-  "hits": 2370
+  "hits": 300
  },
  "INPT": {
   "ppn": "026388820",
   "nom_theses": "Toulouse, INPT",
-  "hits": 4894
+  "hits": 300
  },
  "IOTA": {
   "ppn": "033592497",
@@ -517,7 +517,7 @@
  "IPPA": {
   "ppn": "238327159",
   "nom_theses": "Institut polytechnique de Paris",
-  "hits": 1584
+  "hits": 300
  },
  "ISAB": {
   "ppn": "203592077",
@@ -527,42 +527,42 @@
  "ISAL": {
   "ppn": "052444724",
   "nom_theses": "Lyon, INSA",
-  "hits": 4020
+  "hits": 299
  },
  "ISAM": {
   "ppn": "033364346",
   "nom_theses": "Rouen, INSA",
-  "hits": 339
+  "hits": 300
  },
  "ISAR": {
   "ppn": "050228064",
   "nom_theses": "Rennes, INSA",
-  "hits": 853
+  "hits": 299
  },
  "ISAT": {
   "ppn": "026388766",
   "nom_theses": "Toulouse, INSA",
-  "hits": 1689
+  "hits": 300
  },
  "LARE": {
   "ppn": "026404451",
   "nom_theses": "La Réunion",
-  "hits": 991
+  "hits": 300
  },
  "LARO": {
   "ppn": "035375043",
   "nom_theses": "La Rochelle",
-  "hits": 1026
+  "hits": 300
  },
  "LEHA": {
   "ppn": "031308570",
   "nom_theses": "Le Havre",
-  "hits": 442
+  "hits": 300
  },
  "LEMA": {
   "ppn": "026404435",
   "nom_theses": "Le Mans",
-  "hits": 1374
+  "hits": 300
  },
  "LIFS": {
   "ppn": null,
@@ -572,17 +572,17 @@
  "LIL1": {
   "ppn": "026404184",
   "nom_theses": "Lille 1",
-  "hits": 6842
+  "hits": 300
  },
  "LIL2": {
   "ppn": "026404389",
   "nom_theses": "Lille 2",
-  "hits": 4514
+  "hits": 299
  },
  "LIL3": {
   "ppn": "026404524",
   "nom_theses": "Lille 3",
-  "hits": 1347
+  "hits": 300
  },
  "LILL": {
   "ppn": null,
@@ -592,27 +592,27 @@
  "LILU": {
   "ppn": "223446556",
   "nom_theses": "Université de Lille (2018-2021)",
-  "hits": 1449
+  "hits": 300
  },
  "LIMO": {
   "ppn": "026403315",
   "nom_theses": "Limoges",
-  "hits": 3956
+  "hits": 298
  },
  "LORI": {
   "ppn": "05017746X",
   "nom_theses": "Lorient",
-  "hits": 700
+  "hits": 298
  },
  "LORR": {
   "ppn": "157040569",
   "nom_theses": "Université de Lorraine",
-  "hits": 5206
+  "hits": 300
  },
  "LY01": {
-  "ppn": "240648315",
-  "nom_theses": "Université Grenoble Alpes",
-  "hits": 87
+  "ppn": null,
+  "nom_theses": null,
+  "hits": 0
  },
  "LYFM": {
   "ppn": null,
@@ -632,17 +632,17 @@
  "LYO1": {
   "ppn": "026402823",
   "nom_theses": "Lyon 1",
-  "hits": 12328
+  "hits": 300
  },
  "LYO2": {
   "ppn": "02640334X",
   "nom_theses": "Lyon 2",
-  "hits": 3069
+  "hits": 300
  },
  "LYO3": {
   "ppn": "026404494",
   "nom_theses": "Lyon 3",
-  "hits": 1887
+  "hits": 300
  },
  "LYON": {
   "ppn": null,
@@ -652,42 +652,42 @@
  "LYSE": {
   "ppn": "190915757",
   "nom_theses": "Lyon",
-  "hits": 5995
+  "hits": 300
  },
  "MARN": {
   "ppn": "030820499",
   "nom_theses": "Université de Marne-la-Vallée (1991-2019)",
-  "hits": 390
+  "hits": 300
  },
  "METZ": {
   "ppn": "026403366",
   "nom_theses": "Metz",
-  "hits": 1499
+  "hits": 299
  },
  "MNHN": {
   "ppn": "026394944",
   "nom_theses": "Paris, Muséum national d'histoire naturelle",
-  "hits": 1171
+  "hits": 299
  },
  "MON1": {
   "ppn": "028032837",
   "nom_theses": "Montpellier 1",
-  "hits": 5973
+  "hits": 297
  },
  "MON2": {
   "ppn": "026404214",
   "nom_theses": "Montpellier 2",
-  "hits": 6188
+  "hits": 300
  },
  "MON3": {
   "ppn": "026404702",
   "nom_theses": "Montpellier 3",
-  "hits": 3065
+  "hits": 299
  },
  "MONT": {
   "ppn": "183316401",
   "nom_theses": "Montpellier",
-  "hits": 3007
+  "hits": 300
  },
  "MTLD": {
   "ppn": "20073511X",
@@ -697,7 +697,7 @@
  "MULH": {
   "ppn": "026403250",
   "nom_theses": "Mulhouse",
-  "hits": 1537
+  "hits": 300
  },
  "NAFD": {
   "ppn": null,
@@ -717,22 +717,22 @@
  "NAN1": {
   "ppn": "026403390",
   "nom_theses": "Nancy 1",
-  "hits": 4029
+  "hits": 287
  },
  "NAN2": {
   "ppn": "026403412",
   "nom_theses": "Nancy 2",
-  "hits": 1224
+  "hits": 300
  },
  "NANT": {
   "ppn": "026403447",
   "nom_theses": "Nantes",
-  "hits": 7385
+  "hits": 298
  },
  "NANU": {
   "ppn": "258086599",
   "nom_theses": "Nantes Université",
-  "hits": 1661
+  "hits": 300
  },
  "NCAL": {
   "ppn": "060121076",
@@ -742,7 +742,7 @@
  "NICE": {
   "ppn": "026403498",
   "nom_theses": "Nice",
-  "hits": 6715
+  "hits": 300
  },
  "NIME": {
   "ppn": "115588701",
@@ -757,7 +757,7 @@
  "NORM": {
   "ppn": "190906332",
   "nom_theses": "Normandie",
-  "hits": 3179
+  "hits": 300
  },
  "NSAI": {
   "ppn": "034052410",
@@ -767,12 +767,12 @@
  "NSAM": {
   "ppn": "117553956",
   "nom_theses": "Montpellier, SupAgro",
-  "hits": 466
+  "hits": 295
  },
  "NSAR": {
   "ppn": "026637065",
   "nom_theses": "École nationale supérieure agronomique de Rennes (1961-2004)",
-  "hits": 578
+  "hits": 116
  },
  "OBSP": {
   "ppn": "026550520",
@@ -782,86 +782,86 @@
  "ONIR": {
   "ppn": "157779092",
   "nom_theses": "Ecole nationale vétérinaire, agroalimentaire et de l'alimentation, Nantes-Atlantique (ONIRIS)",
-  "hits": 227
+  "hits": 225
  },
  "ORLE": {
   "ppn": "026402971",
   "nom_theses": "Orléans",
-  "hits": 3466
+  "hits": 300
  },
  "PA00": {
-  "ppn": "027918459",
-  "nom_theses": "Paris, Institut d'études politiques",
-  "hits": 41
+  "ppn": null,
+  "nom_theses": null,
+  "hits": 0
  },
  "PA01": {
   "ppn": "027361802",
   "nom_theses": "Paris 1",
-  "hits": 12360
+  "hits": 300
  },
  "PA02": {
   "ppn": "026403145",
   "nom_theses": "Paris 2",
-  "hits": 3406
+  "hits": 299
  },
  "PA03": {
   "ppn": "027361837",
   "nom_theses": "Paris 3",
-  "hits": 5346
+  "hits": 299
  },
  "PA04": {
   "ppn": "026403633",
   "nom_theses": "Paris 4",
-  "hits": 8590
+  "hits": 298
  },
  "PA05": {
   "ppn": "026404788",
   "nom_theses": "Paris 5",
-  "hits": 8178
+  "hits": 295
  },
  "PA06": {
   "ppn": "027787087",
   "nom_theses": "Paris 6",
-  "hits": 22986
+  "hits": 300
  },
  "PA07": {
   "ppn": "027542084",
   "nom_theses": "Paris 7",
-  "hits": 11691
+  "hits": 299
  },
  "PA08": {
   "ppn": "026403552",
   "nom_theses": "Paris 8",
-  "hits": 5563
+  "hits": 296
  },
  "PA09": {
   "ppn": "027787109",
   "nom_theses": "Paris 9",
-  "hits": 2072
+  "hits": 300
  },
  "PA10": {
   "ppn": "026403587",
   "nom_theses": "Paris 10",
-  "hits": 7242
+  "hits": 300
  },
  "PA11": {
   "ppn": "026404664",
   "nom_theses": "Paris 11",
-  "hits": 16168
+  "hits": 300
  },
  "PA12": {
   "ppn": "028021037",
   "nom_theses": "Paris 12",
-  "hits": 2241
+  "hits": 299
  },
  "PA13": {
   "ppn": "02640463X",
   "nom_theses": "Paris 13",
-  "hits": 2776
+  "hits": 300
  },
  "PACI": {
   "ppn": "029981735",
-  "nom_theses": "Pacifique",
+  "nom_theses": "Université française du Pacifique (1987-1999)",
   "hits": 36
  },
  "PAFD": {
@@ -890,9 +890,9 @@
   "hits": 0
  },
  "PAST": {
-  "ppn": "241345251",
-  "nom_theses": "université Paris-Saclay",
-  "hits": 1235
+  "ppn": null,
+  "nom_theses": null,
+  "hits": 0
  },
  "PATC": {
   "ppn": null,
@@ -907,27 +907,27 @@
  "PAUU": {
   "ppn": "026403668",
   "nom_theses": "Pau",
-  "hits": 2536
+  "hits": 300
  },
  "PERP": {
   "ppn": "026403692",
   "nom_theses": "Perpignan",
-  "hits": 1867
+  "hits": 299
  },
  "PESC": {
   "ppn": "190456396",
   "nom_theses": "Paris Est",
-  "hits": 1799
+  "hits": 300
  },
  "PEST": {
   "ppn": "121855465",
   "nom_theses": "Paris Est",
-  "hits": 1609
+  "hits": 300
  },
  "POIT": {
   "ppn": "026403765",
   "nom_theses": "Poitiers",
-  "hits": 5386
+  "hits": 288
  },
  "POLF": {
   "ppn": "067101925",
@@ -937,67 +937,67 @@
  "PSLE": {
   "ppn": "182292592",
   "nom_theses": "Paris Sciences et Lettres (ComUE)",
-  "hits": 2297
+  "hits": 181
  },
  "REIM": {
   "ppn": "026403838",
   "nom_theses": "Reims",
-  "hits": 3409
+  "hits": 300
  },
  "REN0": {
-  "ppn": "26693823X",
-  "nom_theses": "Université de Rennes (2023-....)",
-  "hits": 2
+  "ppn": "074314807",
+  "nom_theses": "Université de Rennes (1896-1969)",
+  "hits": 1
  },
  "REN1": {
   "ppn": "02778715X",
   "nom_theses": "Rennes 1",
-  "hits": 8462
+  "hits": 300
  },
  "REN2": {
   "ppn": "054447658",
   "nom_theses": "Rennes 2",
-  "hits": 2072
+  "hits": 292
  },
  "ROUE": {
   "ppn": "026403919",
   "nom_theses": "Rouen",
-  "hits": 3208
+  "hits": 300
  },
  "SACL": {
   "ppn": "188120777",
   "nom_theses": "Université Paris-Saclay (ComUE)",
-  "hits": 5053
+  "hits": 300
  },
  "SORU": {
   "ppn": "221333754",
   "nom_theses": "Sorbonne université",
-  "hits": 6692
+  "hits": 300
  },
  "STET": {
   "ppn": "028209966",
   "nom_theses": "Saint-Etienne",
-  "hits": 1612
+  "hits": 285
  },
  "STR1": {
   "ppn": "026404540",
-  "nom_theses": "Université Louis Pasteur (Strasbourg) (1971-2008)",
-  "hits": 8552
+  "nom_theses": "Strasbourg 1",
+  "hits": 300
  },
  "STR2": {
   "ppn": "026438763",
-  "nom_theses": "Université Marc Bloch (Strasbourg) (1971-2008)",
-  "hits": 1563
+  "nom_theses": "Strasbourg 2",
+  "hits": 296
  },
  "STR3": {
   "ppn": "026404311",
   "nom_theses": "Strasbourg 3",
-  "hits": 447
+  "hits": 299
  },
  "STRA": {
   "ppn": "131056549",
   "nom_theses": "Strasbourg",
-  "hits": 7717
+  "hits": 300
  },
  "SUPL": {
   "ppn": "026524031",
@@ -1017,27 +1017,27 @@
  "TELE": {
   "ppn": "030138787",
   "nom_theses": "Evry, Institut national des télécommunications",
-  "hits": 381
+  "hits": 297
  },
  "TLSE": {
   "ppn": "269359931",
   "nom_theses": "Université de Toulouse (2023-2025)",
-  "hits": 1359
+  "hits": 300
  },
  "TOU1": {
   "ppn": "026404354",
   "nom_theses": "Toulouse 1",
-  "hits": 2343
+  "hits": 300
  },
  "TOU2": {
   "ppn": "026403994",
   "nom_theses": "Toulouse 2",
-  "hits": 4058
+  "hits": 296
  },
  "TOU3": {
   "ppn": "026404672",
   "nom_theses": "Toulouse 3",
-  "hits": 13737
+  "hits": 300
  },
  "TOUC": {
   "ppn": "271180641",
@@ -1047,17 +1047,17 @@
  "TOUL": {
   "ppn": "031122337",
   "nom_theses": "Toulon",
-  "hits": 1024
+  "hits": 298
  },
  "TOUR": {
   "ppn": "026404478",
   "nom_theses": "Tours",
-  "hits": 3775
+  "hits": 298
  },
  "TROY": {
   "ppn": "050522604",
   "nom_theses": "Troyes",
-  "hits": 812
+  "hits": 300
  },
  "UBEU": {
   "ppn": "28258160X",
@@ -1067,32 +1067,32 @@
  "UBFC": {
   "ppn": "200716271",
   "nom_theses": "Bourgogne Franche-Comté",
-  "hits": 2657
+  "hits": 300
  },
  "UCFA": {
   "ppn": "252404955",
   "nom_theses": "Université Clermont Auvergne (2021-...)",
-  "hits": 1005
+  "hits": 300
  },
  "UEFL": {
   "ppn": "244936234",
   "nom_theses": "Université Gustave Eiffel",
-  "hits": 478
+  "hits": 300
  },
  "UJMO": {
   "ppn": "285395831",
   "nom_theses": "Saint-Etienne, Université Jean Monnet (2025-....)",
-  "hits": 81
+  "hits": 82
  },
  "ULIL": {
   "ppn": "259265152",
   "nom_theses": "Université de Lille (2022-....)",
-  "hits": 1689
+  "hits": 300
  },
  "UMON": {
   "ppn": "25843614X",
   "nom_theses": "Université de Montpellier (2022-....)",
-  "hits": 1213
+  "hits": 300
  },
  "UMPV": {
   "ppn": "282217916",
@@ -1102,32 +1102,32 @@
  "UNIP": {
   "ppn": "236453505",
   "nom_theses": "Université Paris Cité",
-  "hits": 4185
+  "hits": 300
  },
  "UPAS": {
   "ppn": "241345251",
   "nom_theses": "université Paris-Saclay",
-  "hits": 6242
+  "hits": 300
  },
  "UPHF": {
   "ppn": "242335675",
   "nom_theses": "Valenciennes, Université Polytechnique Hauts-de-France",
-  "hits": 327
+  "hits": 300
  },
  "UPSL": {
   "ppn": "241597595",
   "nom_theses": "Université Paris sciences et lettres",
-  "hits": 2489
+  "hits": 300
  },
  "UREN": {
   "ppn": "26693823X",
   "nom_theses": "Université de Rennes (2023-....)",
-  "hits": 716
+  "hits": 300
  },
  "USPC": {
   "ppn": "19077990X",
   "nom_theses": "Sorbonne Paris Cité",
-  "hits": 3866
+  "hits": 300
  },
  "UTLS": {
   "ppn": "283322632",
@@ -1137,12 +1137,12 @@
  "VALE": {
   "ppn": "026404079",
   "nom_theses": "Valenciennes",
-  "hits": 1191
+  "hits": 300
  },
  "VERS": {
   "ppn": "03082057X",
   "nom_theses": "Versailles-St Quentin en Yvelines",
-  "hits": 1290
+  "hits": 300
  },
  "VETA": {
   "ppn": "231125755",

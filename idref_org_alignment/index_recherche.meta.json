@@ -1,8 +1,8 @@
 {
-  "genere_le": "2026-09-10T13:27:36+02:00",
+  "genere_le": "2026-09-10T15:59:37+02:00",
   "source_locale": {
     "fichier": "organisations_full.json",
-    "modifie_le": "2026-09-10T11:10:46+02:00"
+    "modifie_le": "2026-09-10T15:42:17+02:00"
   },
   "sources_distantes": [
     "https://theses.fr/api/v1/theses/recherche/",
@@ -10,10 +10,10 @@
     "https://data.idref.fr/sparql"
   ],
   "codes_abes": 231,
-  "codes_abes_avec_ppn": 208,
-  "notices_idref": 761,
-  "entites": 784,
-  "etablissements": 268,
+  "codes_abes_avec_ppn": 205,
+  "notices_idref": 767,
+  "entites": 790,
+  "etablissements": 274,
   "ecoles_doctorales": 516,
   "avec_numero_ed": 421
 }

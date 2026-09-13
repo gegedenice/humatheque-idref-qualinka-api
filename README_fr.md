@@ -1,39 +1,40 @@
 # API Humatheque IdRef Qualinka
 
-Service FastAPI pour aligner des noms de personnes extraits avec des notices
-d'autorite françaises IdRef. Le service est conçu pour un pipeline de
-catalogage dans lequel des métadonnees ont d'abord été extraites d'images de
-pages de titre de thèses ou mémoires, et ou l'étape suivante
-consiste à trouver le PPN IdRef le plus plausible pour chaque personne extraite.
+Service FastAPI pour aligner des noms de personnes et d'organisations extraits
+avec des notices d'autorité françaises IdRef. Le service est conçu pour un
+pipeline de catalogage dans lequel des métadonnées ont d'abord été extraites
+d'images de pages de titre de thèses ou mémoires, et où l'étape suivante consiste
+à trouver le PPN IdRef le plus plausible pour chaque personne extraite.
 
 L'API est volontairement déterministe : elle génère des PPN candidats
-d'autorites, récupère des indices pour chaque candidat, calcule des scores
+d'autorités, récupère des indices pour chaque candidat, calcule des scores
 transparents, puis retourne soit un PPN accepté, soit un statut d'abstention.
 
-## Pourquoi ce service 
+## Alignement des personnes
 
-Les données d'entrée contiennent generalement des champs extraits comme :
+Les données d'entrée contiennent généralement des champs extraits comme :
 
 - auteur
 - directeur
-- president du jury
+- président du jury
 - rapporteurs
 - membres du jury
 - titre
 - discipline
-- etablissement
-- ecole doctorale
-- type de diplome
-- annee de soutenance
+- établissement
+- école doctorale
+- type de diplôme
+- année de soutenance
 
 Le service aligne une personne à la fois. Par exemple, à partir du nom extrait
-`Valérie Robert` et des metadonnées documentaires environnantes, il essaie
-d'identifier le PPN de l'autorite IdRef correspondante en utilisant pour chaque autorité candidate 
-les indices issus de la notice d'autorite et les indices du voisinage bibliographique.
+`Valérie Robert` et des métadonnées documentaires environnantes, il essaie
+d'identifier le PPN de l'autorité IdRef correspondante en utilisant, pour chaque
+autorité candidate, les indices issus de la notice d'autorité et ceux du
+voisinage bibliographique.
 
-## API externes utilisees
+### API externes utilisées
 
-### Qualinka `find-ra-idref`
+#### Qualinka `find-ra-idref`
 
 Endpoint :
 
@@ -53,7 +54,7 @@ simple requete Solr IdRef écrite à la main parce qu'il compacte plusieurs
 stratégies de recherche propres à IdRef et gère mieux la recherche par nom de
 personne.
 
-### Qualinka `attrra`
+#### Qualinka `attrra`
 
 Endpoint :
 
@@ -73,7 +74,7 @@ Pour l'alignement de theses, `attrra.source`, `attrra.noteGen` et
 `attrra.bioNote` peuvent être plus forts que les références liées génériques,
 car ils décrivent souvent précisément pourquoi la notice d'autorite a été créée.
 
-### IdRef `references`
+#### IdRef `references`
 
 Endpoint :
 
@@ -87,7 +88,7 @@ d'explicabilité, mais ils ne sont pas utilisés comme signal fort de classement
 (Par exemple, un directeur de thèse peut apparaitre principalement comme auteur dans IdRef, et
 les libellés de rôle peuvent introduire un biais.)
 
-## Logique d'alignement
+### Logique d'alignement
 
 `POST /align/person` exécute le flux complet.
 
@@ -120,9 +121,9 @@ Le score de nom est toujours fondé sur des chaines. Les scores sémantiques
 bibliographiques peuvent fonctionner soit en mode lexical, soit en mode
 embedding.
 
-### Modes de similarité
+#### Modes de similarité
 
-#### Similarité de chaine pour les noms
+##### Similarité de chaine pour les noms
 
 Le score `name` compare le nom de personne extrait avec les formes d'autorité
 candidates au moyen d'une similarité de chaine normalisée (fuzzy score basé sur la classe python SequenceMatcher).
@@ -139,7 +140,7 @@ indice d'identité strict ; un modèle d'embedding pourrait rendre deux personne
 differentes proches parce que leurs noms ou leurs sujets sont semantiquement
 voisins.
 
-#### Similarite sémantique lexicale
+##### Similarité sémantique lexicale
 
 C'est le mode par défaut pour les indices bibliographiques avec un simple bag-of-words + count vector (similaire dans l'esprit à CountVectorizer)
 
@@ -159,7 +160,7 @@ Le service construit des vecteurs de tokens normalisés basés sur du comptage d
 une similarité cosinus. C'est léger, déterministe, et aucun modèle de machine
 learning n'est chargé.
 
-#### Similarite sémantique par embedding
+##### Similarité sémantique par embedding
 
 Le mode embedding est utilisé lorsqu'un nom de modèle encoder sentence-transformers est
 fourni.
@@ -208,11 +209,11 @@ ou :
 }
 ```
 
-## Calcul Du Score
+### Calcul du score
 
 Chaque candidat reçoit cinq scores de composantes.
 
-### `name`
+#### `name`
 
 Similarité de chaine entre le nom de personne extrait et les formes d'autorité
 candidates :
@@ -223,7 +224,7 @@ candidates :
 Ce score est séparé de la similarité semantique afin qu'un candidat ayant un
 sujet proche mais un mauvais appariement de nom ne "gagne" pas trop facilement.
 
-### `attrra_source`
+#### `attrra_source`
 
 Meilleure similarité sémantique entre le contexte du document courant et chaque
 valeur de `attrra.source`.
@@ -235,7 +236,7 @@ defini.
 Il est fortement pondéré parce que `source` peut contenir des indices proches
 d'une thèse, comme le titre, la date, l'établissement et le nom de l'auteur.
 
-### `attrra_note`
+#### `attrra_note`
 
 Meilleure similarité sémantique entre le contexte du document courant et chaque
 valeur de `attrra.noteGen` ou `attrra.bioNote`.
@@ -249,7 +250,7 @@ Titulaire d'un doctorat d'université en médecine spécialisée (Nancy 1,2003)
 Auteur d'une thèse en Sciences cognitives, psychologie et neurocognition à Université Grenoble Alpes en 2023
 ```
 
-### `references`
+#### `references`
 
 Moyenne top-k des similarités sémantiques entre le contexte du document courant
 et les citations de références liées au candidat dans IdRef.
@@ -264,7 +265,7 @@ Par defaut :
 reference_top_k = 3
 ```
 
-### `institution_year`
+#### `institution_year`
 
 Petit score déterministe de cohérence :
 
@@ -274,7 +275,7 @@ Petit score déterministe de cohérence :
 
 Le score est plafonne à `1.0`.
 
-### Score Final
+#### Score final
 
 ```text
 final =
@@ -317,7 +318,7 @@ else:
 
 `best_ppn` n'est renseigné que lorsque `status` vaut `accepted`.
 
-## Endpoints API
+### Endpoints API
 
 La documentation interactive est disponible à :
 
@@ -325,7 +326,7 @@ La documentation interactive est disponible à :
 /docs
 ```
 
-### `GET /health`
+#### `GET /health`
 
 Controle de santé du conteneur.
 
@@ -335,7 +336,7 @@ Réponse :
 {"ok": true}
 ```
 
-### `GET /find-person`
+#### `GET /find-person`
 
 Exécute uniquement la génération de candidats via Qualinka `find-ra-idref`.
 
@@ -356,7 +357,7 @@ Exemple :
 curl "http://localhost:8000/find-person?name=Val%C3%A9rie%20Robert"
 ```
 
-### `GET /attrra/{ppn}`
+#### `GET /attrra/{ppn}`
 
 Recupère les indices Qualinka `attrra` pour un PPN IdRef.
 
@@ -366,7 +367,7 @@ Exemple :
 curl "http://localhost:8000/attrra/076642860"
 ```
 
-### `GET /references/{ppn}`
+#### `GET /references/{ppn}`
 
 Recupère les références bibliographiques IdRef liées à un PPN.
 
@@ -376,7 +377,7 @@ Exemple :
 curl "http://localhost:8000/references/076642860?max_docs_per_role=10"
 ```
 
-### `POST /align/person`
+#### `POST /align/person`
 
 Exécute le pipeline complet d'alignement.
 
@@ -867,7 +868,7 @@ X-API-Key: <your key>
 
 Si `IDREF_API_KEY` est vide, les endpoints sont publics.
 
-## Variables D'environnement
+## Variables d'environnement
 
 Copier `.example.env` vers `.env` et ajuster les valeurs.
 
@@ -911,7 +912,7 @@ Lorsque cette variable est vide, toutes les requêtes utilisent la similarité
 sémantique lexicale, sauf si le corps de requête fournit explicitement
 `embedding_model`.
 
-## Execution Locale
+## Exécution locale
 
 ```bash
 cp .example.env .env
@@ -942,6 +943,9 @@ modifiables dans l'interface.
 docker build -t humatheque-idref-qualinka-api .
 docker run --env-file .env -p 8000:8000 humatheque-idref-qualinka-api
 ```
+
+L'image Docker suit le même style de déploiement que `humatheque-postgres-api` :
+image Python slim, `requirements.txt`, utilisateur non root et `uvicorn app:app`.
 
 ## Notes opérationnelles
 

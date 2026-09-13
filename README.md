@@ -1,6 +1,6 @@
 # Humatheque IdRef Qualinka API
 
-FastAPI service for aligning extracted person names to French IdRef authority
+FastAPI service for aligning extracted person and organizations names to French IdRef authority
 records. The service is designed for a cataloging pipeline where metadata has
 first been extracted from thesis, dissertation, or memoir cover images, and the
 next step is to find the most plausible IdRef PPN for each extracted person.
@@ -9,7 +9,7 @@ The API is intentionally deterministic: it generates candidate authority PPNs,
 fetches evidence for each candidate, computes transparent evidence scores, and
 returns either an accepted PPN or an abstention status.
 
-## Why this service
+## Person alignement
 
 The input data usually contains extracted fields such as:
 
@@ -30,9 +30,9 @@ The service aligns one person at a time. For example, given the extracted name
 corresponding IdRef authority PPN by using authority-record evidence
 and bibliographic-neighborhood evidence.
 
-## External APIs used
+### External APIs used
 
-### Qualinka `find-ra-idref`
+#### Qualinka `find-ra-idref`
 
 Endpoint:
 
@@ -51,7 +51,7 @@ It returns candidate IdRef person authority PPNs. It is preferred over a simple
 hand-written IdRef Solr query because it compacts multiple IdRef-specific search
 strategies and handles person-name lookup better.
 
-### Qualinka `attrra`
+#### Qualinka `attrra`
 
 Endpoint:
 
@@ -71,7 +71,7 @@ For thesis alignment, `attrra.source`, `attrra.noteGen`, and `attrra.bioNote`
 can be stronger than generic linked references because they often describe
 exactly why the authority record was created.
 
-### IdRef `references`
+#### IdRef `references`
 
 Endpoint:
 
@@ -85,7 +85,7 @@ used as a strong ranking signal.
 (For example a thesis advisor may mostly appear as an author
 in IdRef, and role labels can introduce bias.)
 
-## Alignment logic
+### Alignment logic
 
 `POST /align/person` runs the full flow.
 
@@ -117,9 +117,9 @@ The service uses two different kinds of similarity:
 The name score is always string-based. The bibliographic semantic scores can run
 in either lexical mode or embedding mode.
 
-### Similarity modes
+###{ Similarity modes
 
-#### String similarity for names
+##### String similarity for names
 
 The `name` score compares the extracted person name with candidate authority
 forms using normalized string similarity (custom fuzzy score using Python SequenceMatcher).
@@ -135,7 +135,7 @@ This is deliberately not embedding-based. Names need strict identity evidence;
 an embedding model could make two different people look close because their
 names or topics are semantically nearby.
 
-#### Lexical semantic similarity
+##### Lexical semantic similarity
 
 This is the default mode for bibliographic evidence with a simple bag-of-words count vector (similar in spirit to CountVectorizer).
 
@@ -154,7 +154,7 @@ IDREF_EMBEDDING_MODEL=
 The service builds normalized token-count vectors and computes cosine
 similarity. This is lightweight, deterministic, and does not load any ML model.
 
-#### Embedding semantic similarity
+##### Embedding semantic similarity
 
 Embedding mode is used when a sentence-transformers encoder model name is supplied.
 
@@ -201,11 +201,11 @@ or:
 }
 ```
 
-## Score calculation
+### Score calculation
 
 Each candidate receives five component scores.
 
-### `name`
+#### `name`
 
 String similarity between the extracted person name and the candidate authority
 forms:
@@ -216,7 +216,7 @@ forms:
 This is kept separate from semantic similarity so a candidate with a close topic
 but a poor name match does not win too easily.
 
-### `attrra_source`
+#### `attrra_source`
 
 Best semantic similarity between the current document context and each
 `attrra.source` value.
@@ -227,7 +227,7 @@ similarity when `embedding_model` / `IDREF_EMBEDDING_MODEL` is set.
 This is heavily weighted because `source` can contain thesis-like evidence such
 as title, date, institution, and author name.
 
-### `attrra_note`
+#### `attrra_note`
 
 Best semantic similarity between the current document context and each
 `attrra.noteGen` or `attrra.bioNote` value.
@@ -241,7 +241,7 @@ Titulaire d'un doctorat d'université en médecine spécialisée (Nancy 1,2003)
 Auteur d'une thèse en Sciences cognitives, psychologie et neurocognition à Université Grenoble Alpes en 2023
 ```
 
-### `references`
+#### `references`
 
 Top-k average semantic similarity between the current document context and the
 candidate's linked reference citations from IdRef.
@@ -255,7 +255,7 @@ Default:
 reference_top_k = 3
 ```
 
-### `institution_year`
+#### `institution_year`
 
 Small deterministic consistency score:
 
@@ -265,7 +265,7 @@ Small deterministic consistency score:
 
 The score is capped at `1.0`.
 
-### Final Score
+#### Final Score
 
 ```text
 final =
@@ -308,7 +308,7 @@ else:
 
 `best_ppn` is set only when `status` is `accepted`.
 
-## API endpoints
+### API endpoints
 
 Interactive documentation is available at:
 
@@ -316,7 +316,7 @@ Interactive documentation is available at:
 /docs
 ```
 
-### `GET /health`
+#### `GET /health`
 
 Container health check.
 
@@ -326,7 +326,7 @@ Response:
 {"ok": true}
 ```
 
-### `GET /find-person`
+#### `GET /find-person`
 
 Runs only candidate generation through Qualinka `find-ra-idref`.
 
@@ -347,7 +347,7 @@ Example:
 curl "http://localhost:8000/find-person?name=Val%C3%A9rie%20Robert"
 ```
 
-### `GET /attrra/{ppn}`
+#### `GET /attrra/{ppn}`
 
 Fetches Qualinka `attrra` evidence for one IdRef PPN.
 
@@ -357,7 +357,7 @@ Example:
 curl "http://localhost:8000/attrra/076642860"
 ```
 
-### `GET /references/{ppn}`
+#### `GET /references/{ppn}`
 
 Fetches linked IdRef bibliographic references for one PPN.
 
@@ -367,7 +367,7 @@ Example:
 curl "http://localhost:8000/references/076642860?max_docs_per_role=10"
 ```
 
-### `POST /align/person`
+#### `POST /align/person`
 
 Runs the full alignment pipeline.
 

@@ -3,8 +3,7 @@
 Étape 4 du pipeline : rattacher à chaque établissement (via son PPN) la liste de
 ses écoles doctorales, avec leur PPN, label et dates de validité.
 
-On interroge l'endpoint SPARQL de data.idref.fr avec la requête fournie par
-Géraldine : on cherche les foaf:Organization liées au PPN de l'établissement et
+On interroge l'endpoint SPARQL de data.idref.fr pour chercher les foaf:Organization liées au PPN de l'établissement et
 dont le prefLabel contient « cole docto » (École doctorale…). dateOfBirth /
 dateOfDeath donnent les dates de début / fin.
 
@@ -26,6 +25,7 @@ DELAI, TIMEOUT = 0.5, 60
 
 QUERY_TPL = """#ECOLESDOC
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 select distinct ?structure ?label ?date_debut ?date_fin

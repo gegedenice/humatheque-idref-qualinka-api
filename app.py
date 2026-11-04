@@ -15,6 +15,7 @@ from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException, Query, Security
@@ -41,20 +42,21 @@ USER_AGENT = os.getenv("IDREF_USER_AGENT", "humatheque-idref-qualinka-api/0.1")
 API_KEY = os.getenv("IDREF_API_KEY", "")
 HF_TOKEN = os.getenv("HF_TOKEN", "") or None
 RETRIED_STATUS = {429, 500, 502, 503, 504}
+DEFAULT_MAX_CONCURRENT_REQUESTS = max(1,int(os.getenv("IDREF_MAX_CONCURRENT_REQUESTS", "3")),)
 
-DEFAULT_TIMEOUT = float(os.getenv("IDREF_HTTP_TIMEOUT", "20.0"))
-DEFAULT_RETRIES = int(os.getenv("IDREF_MAX_RETRIES", "2"))
+DEFAULT_TIMEOUT = float(os.getenv("IDREF_HTTP_TIMEOUT", "8.0"))
+DEFAULT_RETRIES = int(os.getenv("IDREF_MAX_RETRIES", "0"))
 DEFAULT_BACKOFF = float(os.getenv("IDREF_BACKOFF_BASE", "1.0"))
-DEFAULT_MAX_CANDIDATES = int(os.getenv("IDREF_MAX_CANDIDATES", "20"))
-DEFAULT_MAX_DOCS_PER_ROLE = int(os.getenv("IDREF_MAX_DOCS_PER_ROLE", "20"))
+DEFAULT_MAX_CANDIDATES = int(os.getenv("IDREF_MAX_CANDIDATES", "5"))
+DEFAULT_MAX_DOCS_PER_ROLE = int(os.getenv("IDREF_MAX_DOCS_PER_ROLE", "5"))
 DEFAULT_REFERENCE_TOP_K = int(os.getenv("IDREF_REFERENCE_TOP_K", "3"))
 DEFAULT_ACCEPT_THRESHOLD = float(os.getenv("IDREF_ACCEPT_THRESHOLD", "0.65"))
 DEFAULT_MARGIN_THRESHOLD = float(os.getenv("IDREF_MARGIN_THRESHOLD", "0.08"))
 DEFAULT_EMBEDDING_MODEL = os.getenv("IDREF_EMBEDDING_MODEL", "")
 DEFAULT_WEIGHT_NAME = float(os.getenv("IDREF_WEIGHT_NAME", "0.40"))
-DEFAULT_WEIGHT_ATTRRA_SOURCE = float(os.getenv("IDREF_WEIGHT_ATTRRA_SOURCE", "0.25"))
+DEFAULT_WEIGHT_ATTRRA_SOURCE = float(os.getenv("IDREF_WEIGHT_ATTRRA_SOURCE", "0.15"))
 DEFAULT_WEIGHT_ATTRRA_NOTE = float(os.getenv("IDREF_WEIGHT_ATTRRA_NOTE", "0.15"))
-DEFAULT_WEIGHT_REFERENCES = float(os.getenv("IDREF_WEIGHT_REFERENCES", "0.15"))
+DEFAULT_WEIGHT_REFERENCES = float(os.getenv("IDREF_WEIGHT_REFERENCES", "0.25"))
 DEFAULT_WEIGHT_INSTITUTION_YEAR = float(os.getenv("IDREF_WEIGHT_INSTITUTION_YEAR", "0.05"))
 
 ORG_INDEX_PATH = os.getenv(
@@ -408,6 +410,62 @@ def fetch_references(
             elif isinstance(docs, dict) and max_docs_per_role == 0:
                 role[docs_key] = []
     candidate.references = payload
+    
+def enrich_candidates_parallel(
+    candidates: list,
+    timeout: float,
+    retries: int,
+    backoff: float,
+    max_docs_per_role: int,
+    max_workers: int = DEFAULT_MAX_CONCURRENT_REQUESTS,
+) -> list:
+    """
+    Enrichit les candidats IdRef en parallèle.
+
+    - Un appel attrra et un appel references par candidat.
+    - Limite globale de concurrence via ThreadPoolExecutor.
+    - Préserve l'ordre initial des candidats.
+    - Propage les exceptions au code appelant.
+    """
+
+    if not candidates:
+        return []
+
+    max_workers = max(1, min(max_workers, len(candidates) * 2))
+
+    results = [
+        {"candidate": candidate, "attrra": None, "references": None}
+        for candidate in candidates
+    ]
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_map = {}
+
+        for index, candidate in enumerate(candidates):
+            attrra_future = executor.submit(
+                fetch_attrra,
+                candidate,
+                timeout,
+                retries,
+                backoff,
+            )
+            future_map[attrra_future] = (index, "attrra")
+
+            references_future = executor.submit(
+                fetch_references,
+                candidate,
+                timeout,
+                retries,
+                backoff,
+                max_docs_per_role,
+            )
+            future_map[references_future] = (index, "references")
+
+        for future in as_completed(future_map):
+            index, source = future_map[future]
+            results[index][source] = future.result()
+
+    return results
 
 
 def as_text_list(value: Any) -> list[str]:
@@ -605,8 +663,7 @@ def candidate_to_json(candidate: Candidate) -> dict[str, Any]:
         "errors": candidate.errors,
     }
 
-
-def align_person(payload: AlignPersonRequest) -> dict[str, Any]:
+def old_align_person(payload: AlignPersonRequest) -> dict[str, Any]:
     candidates, search_meta = find_candidates(
         payload.name,
         first_name_override=payload.first_name or None,
@@ -644,6 +701,76 @@ def align_person(payload: AlignPersonRequest) -> dict[str, Any]:
         "best_candidate": candidate_to_json(ranked[0]) if ranked else None,
         "candidates": [candidate_to_json(candidate) for candidate in ranked],
     }
+    
+
+def align_person(payload: AlignPersonRequest) -> dict[str, Any]:
+    candidates, search_meta = find_candidates(
+        payload.name,
+        first_name_override=payload.first_name or None,
+        last_name_override=payload.last_name or None,
+        timeout=payload.timeout,
+        retries=payload.retries,
+        backoff=payload.backoff,
+        max_candidates=payload.max_candidates,
+    )
+
+    # Enrichissement parallèle des candidats :
+    # - Qualinka attrra
+    # - IdRef references
+    #
+    # Les fonctions fetch_attrra() et fetch_references()
+    # mettent directement à jour les objets Candidate.
+    # La fonction parallèle attend la fin de tous les appels
+    # avant de poursuivre le scoring.
+    enrich_candidates_parallel(
+        candidates=candidates,
+        timeout=payload.timeout,
+        retries=payload.retries,
+        backoff=payload.backoff,
+        max_docs_per_role=payload.max_docs_per_role,
+    )
+
+    # Scoring après enrichissement complet.
+    # On conserve la logique existante.
+    for candidate in candidates:
+        score_candidate(payload, candidate)
+
+    ranked = sorted(
+        candidates,
+        key=lambda item: item.score.final,
+        reverse=True,
+    )
+
+    status = status_for_ranked(
+        ranked,
+        payload.accept_threshold,
+        payload.margin_threshold,
+    )
+
+    return {
+        "source": "idref_qualinka_alignment",
+        "similarity": similarity_mode(payload.embedding_model),
+        "query": {
+            "name": payload.name,
+            "title": payload.title,
+            "subtitle": payload.subtitle,
+            "discipline": payload.discipline,
+            "institution": payload.institution,
+            "doctoral_school": payload.doctoral_school,
+            "degree_type": payload.degree_type,
+            "year": payload.year,
+        },
+        "candidate_search": search_meta,
+        "score_weights": score_weights_to_json(payload),
+        "status": status,
+        "best_ppn": ranked[0].ppn if status == "accepted" else None,
+        "best_candidate": candidate_to_json(ranked[0]) if ranked else None,
+        "candidates": [
+            candidate_to_json(candidate)
+            for candidate in ranked
+        ],
+    }
+
 
 
 @app.get("/")
@@ -1133,4 +1260,4 @@ async def align_thesis_organizations_endpoint(
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("app:app", host="0.0.0.0", port=8001)
+    uvicorn.run("app:app", host="0.0.0.0", port=8000)

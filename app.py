@@ -11,11 +11,12 @@ import time
 import unicodedata
 from dataclasses import dataclass, field
 from difflib import SequenceMatcher
-from typing import Any
+from typing import Any, Literal
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from threading import Lock
 
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException, Query, Security
@@ -53,6 +54,12 @@ DEFAULT_REFERENCE_TOP_K = int(os.getenv("IDREF_REFERENCE_TOP_K", "3"))
 DEFAULT_ACCEPT_THRESHOLD = float(os.getenv("IDREF_ACCEPT_THRESHOLD", "0.50"))
 DEFAULT_MARGIN_THRESHOLD = float(os.getenv("IDREF_MARGIN_THRESHOLD", "0.08"))
 DEFAULT_EMBEDDING_MODEL = os.getenv("IDREF_EMBEDDING_MODEL", "")
+EMBEDDING_ROOT = os.getenv("IDREF_EMBEDDING_ROOT","/models/embeddings",)
+EMBEDDING_MODELS = {
+    "granite": "granite-embedding-97m-multilingual-r2",
+    "minilm": "paraphrase-multilingual-MiniLM-L12-v2",
+    "qwen3": "Qwen3-Embedding-0.6B",
+}
 DEFAULT_WEIGHT_NAME = float(os.getenv("IDREF_WEIGHT_NAME", "0.40"))
 DEFAULT_WEIGHT_ATTRRA_SOURCE = float(os.getenv("IDREF_WEIGHT_ATTRRA_SOURCE", "0.15"))
 DEFAULT_WEIGHT_ATTRRA_NOTE = float(os.getenv("IDREF_WEIGHT_ATTRRA_NOTE", "0.15"))
@@ -70,7 +77,8 @@ DEFAULT_ORG_LOW_THRESHOLD = float(os.getenv("IDREF_ORG_LOW_THRESHOLD", "0.45"))
 DEFAULT_ORG_FLOOR_THRESHOLD = float(os.getenv("IDREF_ORG_FLOOR_THRESHOLD", "0.30"))
 DEFAULT_ORG_MAX_CANDIDATES = int(os.getenv("IDREF_ORG_MAX_CANDIDATES", "5"))
 
-EMBEDDER = None
+EMBEDDER: dict[str, Any] = {}
+EMBEDDER_LOCK = Lock()
 EMBEDDING_CACHE: dict[str, list[float]] = {}
 ORG_INDEX: dict[str, Any] | None = None
 
@@ -110,13 +118,11 @@ class AlignPersonRequest(HttpTuning):
     max_candidates: int = Field(DEFAULT_MAX_CANDIDATES, ge=1, le=100)
     max_docs_per_role: int = Field(DEFAULT_MAX_DOCS_PER_ROLE, ge=0, le=200)
     reference_top_k: int = Field(DEFAULT_REFERENCE_TOP_K, ge=1, le=20)
-    embedding_model: str = Field(
-        DEFAULT_EMBEDDING_MODEL,
-        description=(
-            "Optional sentence-transformers model. Leave empty for lexical token cosine similarity. "
-            "Set a model name, for example sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2, "
-            "to use embedding-based semantic similarity."
-        ),
+    embedding_model: Literal[
+        "lexical", "granite", "minilm", "qwen3"
+        ] = Field(
+            DEFAULT_EMBEDDING_MODEL or "lexical",
+            description="Similarity mode: lexical, granite, minilm or qwen3.",
     )
     accept_threshold: float = Field(DEFAULT_ACCEPT_THRESHOLD, ge=0.0, le=1.0)
     margin_threshold: float = Field(DEFAULT_MARGIN_THRESHOLD, ge=0.0, le=1.0)
@@ -212,42 +218,99 @@ def lexical_similarity(left: str, right: str) -> float:
     return cosine_similarity(text_vector(left), text_vector(right))
 
 
-def load_embedder(model_name: str) -> Any:
-    global EMBEDDER
-    if EMBEDDER is None:
-        from sentence_transformers import SentenceTransformer
 
-        EMBEDDER = SentenceTransformer(model_name, token=HF_TOKEN)
-    return EMBEDDER
+def resolve_embedding_path(model_name: str) -> str:
+    """Resolve an authorized model alias to its local directory."""
+    if model_name not in EMBEDDING_MODELS:
+        raise ValueError(f"Unknown embedding model: {model_name}")
+
+    model_path = os.path.join(
+        EMBEDDING_ROOT,
+        EMBEDDING_MODELS[model_name],
+    )
+
+    if not os.path.isdir(model_path):
+        raise FileNotFoundError(
+            f"Embedding model directory not found: {model_path}"
+        )
+
+    return model_path
+
+
+def load_embedder(model_name: str) -> Any:
+    """Lazy-load and cache local SentenceTransformer models."""
+    global EMBEDDER
+
+    # EMBEDDER is now a dictionary, initialized as {}.
+    with EMBEDDER_LOCK:
+        if model_name not in EMBEDDER:
+            from sentence_transformers import SentenceTransformer
+
+            model_path = resolve_embedding_path(model_name)
+
+            EMBEDDER[model_name] = SentenceTransformer(
+                model_path,
+                device="cpu",
+                local_files_only=True,
+                trust_remote_code=False,
+            )
+
+    return EMBEDDER[model_name]
 
 
 def embedding_vector(text: str, model_name: str) -> list[float]:
     cache_key = f"{model_name}\0{text}"
+
     if cache_key not in EMBEDDING_CACHE:
         model = load_embedder(model_name)
-        EMBEDDING_CACHE[cache_key] = model.encode(text, normalize_embeddings=True).tolist()
+        EMBEDDING_CACHE[cache_key] = model.encode(
+            text,
+            normalize_embeddings=True,
+        ).tolist()
+
     return EMBEDDING_CACHE[cache_key]
 
 
-def embedding_similarity(left: str, right: str, model_name: str) -> float:
+def embedding_similarity(
+    left: str,
+    right: str,
+    model_name: str,
+) -> float:
     left_vec = embedding_vector(left, model_name)
     right_vec = embedding_vector(right, model_name)
+
     return sum(a * b for a, b in zip(left_vec, right_vec))
 
 
-def semantic_similarity(left: str, right: str, embedding_model: str | None = None) -> float:
+def semantic_similarity(
+    left: str,
+    right: str,
+    embedding_model: str | None = None,
+) -> float:
     if not left.strip() or not right.strip():
         return 0.0
-    if embedding_model:
-        return max(0.0, embedding_similarity(left, right, embedding_model))
-    return lexical_similarity(left, right)
+
+    if not embedding_model or embedding_model == "lexical":
+        return lexical_similarity(left, right)
+
+    return max(
+        0.0,
+        embedding_similarity(left, right, embedding_model),
+    )
 
 
-def similarity_mode(embedding_model: str | None) -> dict[str, str | None]:
-    model = embedding_model or None
+def similarity_mode(
+    embedding_model: str | None,
+) -> dict[str, str | None]:
+    if not embedding_model or embedding_model == "lexical":
+        return {
+            "type": "lexical",
+            "model": None,
+        }
+
     return {
-        "type": "embedding" if model else "lexical",
-        "model": model,
+        "type": "embedding",
+        "model": embedding_model,
     }
 
 

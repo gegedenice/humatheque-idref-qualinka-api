@@ -137,18 +137,20 @@ names or topics are semantically nearby.
 
 ##### Lexical semantic similarity
 
-This is the default mode for bibliographic evidence with a simple bag-of-words count vector (similar in spirit to CountVectorizer).
+Lexical mode is the default for bibliographic evidence. It uses normalized token-count vectors and cosine similarity, without loading any machine-learning model.
 
-It is used when:
+Enable lexical mode per request:
 
 ```json
-"embedding_model": ""
+{
+  "embedding_model": "lexical"
+}
 ```
 
-and when `.env` contains:
+Or globally through `.env`:
 
 ```env
-IDREF_EMBEDDING_MODEL=
+IDREF_EMBEDDING_MODEL=lexical
 ```
 
 The service builds normalized token-count vectors and computes cosine
@@ -156,23 +158,39 @@ similarity. This is lightweight, deterministic, and does not load any ML model.
 
 ##### Embedding semantic similarity
 
-Embedding mode is used when a sentence-transformers encoder model name is supplied.
+Embedding mode uses locally installed Sentence Transformers models to compute semantic similarity between the current document context and bibliographic evidence from Qualinka and IdRef.
 
-Per request:
+For now three embeddings models are available:
+
+| Value | Model |
+|---|---|
+| `granite` | ibm-granite/granite-embedding-97m-multilingual-r2 |
+| `minilm` | sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 |
+| `qwen3` | Qwen/Qwen3-Embedding-0.6B |
+
+The API accepts only these four identifiers. Arbitrary Hugging Face model names and filesystem paths cannot be supplied through the request body.
+
+Per request selection:
 
 ```json
 {
   "name": "Valérie Robert",
-  "title": "...",
-  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  "title": "Satisfaction et vécu périopératoire des patients opérés sous anesthésie péribulbaire",
+  "embedding_model": "granite"
 }
 ```
 
-Globally through `.env`:
+Globally through `.env` (The embedding_model request field overrides the global default.):
 
 ```env
-IDREF_EMBEDDING_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+IDREF_EMBEDDING_MODEL=minilm
+IDREF_EMBEDDING_ROOT=/models/embeddings
 ```
+
+Models are loaded lazily from the local filesystem using SentenceTransformer with local_files_only=True. No model download is performed at runtime.
+
+Each model is loaded once per application worker and cached in memory. Switching between models does not require restarting the API, 
+although the first request using a model incurs initialization latency.
 
 In embedding mode, the service encodes the current document context and each
 candidate evidence text with `SentenceTransformer(...).encode(...,
@@ -197,7 +215,7 @@ or:
 ```json
 "similarity": {
   "type": "embedding",
-  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  "model": "qwen3"
 }
 ```
 

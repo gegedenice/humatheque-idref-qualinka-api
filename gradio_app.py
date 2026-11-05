@@ -25,7 +25,7 @@ import requests
 
 DEFAULT_API_URL = os.getenv("IDREF_QUALINKA_API_URL", "https://idref-linker.smartbiblia.fr")
 DEFAULT_API_KEY = os.getenv("IDREF_QUALINKA_API_KEY", "")
-EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+EMBEDDING_MODEL = "minilm"
 
 PERSON_FIELDS = [
     "author",
